@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_115141) do
-
+ActiveRecord::Schema.define(version: 2018_08_27_121442) do
+  
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "option_id"
+    t.bigint "user_id"
+    t.text "reponse"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_id"], name: "index_answers_on_option_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.string "titre"
+    t.bigint "question_id"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_options_on_question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text "description"
+    t.date "deadline"
+    t.string "categorie"
+    t.bigint "user_id"
+    t.string "type_resolution"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_questions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,4 +58,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_115141) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "options"
+  add_foreign_key "answers", "users"
+  add_foreign_key "options", "questions"
+  add_foreign_key "questions", "users"
 end
