@@ -8,15 +8,14 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @question = Question.new
   end
 
   def create
     @question = Question.new(question_params)
-    @user = User.find(params[:user_id])
+    @question.user = current_user
     @question.save!
-    redirect_to user_questions_path
+    redirect_to questions_path
   end
 
   def edit
@@ -31,8 +30,8 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
-    @question.destroy
-    redirect_to user_questions_path
+    @question.destroy!
+    redirect_to questions_path
   end
 
   private

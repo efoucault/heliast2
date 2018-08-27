@@ -1,6 +1,4 @@
 <h1>Toutes les indécisions</h1>
 <% @questions.each do |question| %>
-  <%= question.description %> <%= question.deadline %> <%= question.categorie %> <%= question.user %> <%= question.type_resolution %><%= link_to user_questions_path(question), method: :delete do %>
-      <i class="fas fa-trash-alt"></i>
-  <% end %></br>
+  <%= link_to "#{question.description}", question_path(question) %> <%= question.deadline %> <%= question.categorie %> <%= question.user.email %> <%= question.type_resolution %></br>
 <% end %>
