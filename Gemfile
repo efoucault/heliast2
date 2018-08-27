@@ -20,6 +20,9 @@ gem 'webpacker'
 
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
