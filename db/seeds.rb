@@ -29,3 +29,10 @@ Question.create!(user: charles , description: 'Le suivre ou rester ?' )
 Question.create!(user: chloe , description: 'Passion ou Raison ?' )
 Question.create!(user: sarah , description: 'Payer un loyer à son partenaire ?' )
 p Question.all
+
+puts "categories creation"
+categories = %w(Look-style Travail Alimentaire Culture Achat Amour Adulte)
+categories.each do |category|
+  Category.create!(name: category)
+end
+p Category.all
