@@ -9,11 +9,11 @@
   <div class="options">
     <%= render "options/new" %>
     <% @question.options.each do |option| %>
-      <%= "#{option.titre}" "#{option.photo}" %></br>
+      <%= "#{option.titre}" %></br>
+      <%= cl_image_tag option.photo, height: 300, width: 400, crop: :fill %>
     <% end %>
   </div>
 </div>
-
 
 <%= link_to "Edit", edit_question_path(@question) %>
 <%= link_to "Destroy", question_path(@question), method: :delete %>
