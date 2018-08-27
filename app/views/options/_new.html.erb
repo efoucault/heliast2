@@ -1,0 +1,5 @@
+<%= simple_form_for [@question, Option.new] do |f| %>
+  <%= f.input :titre %>
+  <%= f.input :photo %>
+  <%= f.submit "enregistrer l'option", class: "btn btn-success" %>
+<% end %>
