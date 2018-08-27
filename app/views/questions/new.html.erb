@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Créer une indécision</h1>
+  <%= simple_form_for [@user, @question] do |f| %>
+    <%= f.input :description %>
+    <%= f.input :deadline %>
+    <%= f.input :categorie %>
+    <%= f.input :type_resolution %>
+    <%= f.submit "Créer indécision", class: "btn btn-success" %>
+  <% end %>
+</div>
