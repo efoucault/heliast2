@@ -1,0 +1,4 @@
+<h1>Toutes les indécisions</h1>
+<% @questions.each do |question| %>
+  <%= link_to "#{question.description}", question_path(question) %> <%= question.deadline %> <%= question.categorie %> <%= question.user.email %> <%= question.type_resolution %></br>
+<% end %>
