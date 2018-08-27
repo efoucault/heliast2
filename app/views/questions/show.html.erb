@@ -1,10 +1,19 @@
 <div class="container">
-  <h1>Indécision</h1>
-  <p>Description: <%= @question.description %> </p>
-  <p>Deadline: <%= @question.deadline %> </p>
-  <p>Categorie: <%= @question.categorie %> </p>
-  <p>Type de résolution: <%= @question.type_resolution %> </p>
+  <div class="indecision_form">
+    <h1>Indécision</h1>
+    <p>Description: <%= @question.description %> </p>
+    <p>Deadline: <%= @question.deadline %> </p>
+    <p>Categorie: <%= @question.categorie %> </p>
+    <p>Type de résolution: <%= @question.type_resolution %> </p>
+  </div>
+  <div class="options">
+    <%= render "options/new" %>
+    <% @question.options.each do |option| %>
+      <%= "#{option.titre}" "#{option.photo}" %></br>
+    <% end %>
+  </div>
 </div>
+
 
 <%= link_to "Edit", edit_question_path(@question) %>
 <%= link_to "Destroy", question_path(@question), method: :delete %>
