@@ -1,4 +1,41 @@
-<h1>Toutes les indécisions</h1>
-<% @questions.each do |question| %>
-  <%= link_to "#{question.description}", question_path(question) %> <%= question.deadline %> <%= question.categorie %> <%= question.user.email %> <%= question.type_resolution %></br>
-<% end %>
+<div class="top-dashboard">
+  <div class="info-dashboard">
+    <div class="photo-user">
+      <img src="https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1" alt="" class="avatar-dashboard">
+    </div>
+    <div class="info-user">
+      <h4>Hey Pauline, indécise ?</h4>
+      <p>Tu as <strong><%= @questions.size%></strong> indécisions en attente</p>
+      <p>Heliast niveau XXXXX</p>
+    </div>
+  </div>
+  <div class="banner-dashboard" style="background-image: url(<%= image_path 'background.jpg'%>)">
+  </div>
+</div>
+
+<div class="container">
+
+
+  <div class="row">
+    <div class="col-4">
+    <div class='btn btn-add'>
+      <%= link_to "Nouvelle indécision", new_question_path %>
+     </div>
+
+      <% @questions.each do |question| %>
+      <div class="question-card">
+        <div class="question-card-content">
+          <p><%= question.categorie%></p>
+          <h4><%= question.description%></h4>
+          </div>
+        <div class="question-card-status">
+          <p>status : En attente de décision</p>
+        </div>
+        <%= link_to "", question_path(question), class: 'card-link' %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
