@@ -1,15 +1,39 @@
 <div class="container">
-  <h1>Créer une indécision</h1>
-  <%= simple_form_for @question do |f| %>
-    <%= f.input :description %>
-    <%= f.input :deadline %>
-    <%= f.input :categorie %>
-    <%= f.input :type_resolution %>
-      <%= f.simple_fields_for :options do |p| %>
-        <%= p.input :titre %>
-        <%= p.input :photo %>
-        <%= p.input :photo_cache, as: :hidden %>
-      <% end %>
-    <%= f.submit "Créer indécision", class: "btn btn-success" %>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-post">
+        <h1>Créer Indécision</h1>
+        <%= simple_form_for [@user, @question] do |f| %>
+        <div class="row">
+          <%= f.input :description, placeholder: "Exemple : Que porter aujourd'hui ?" %>
+          <div class="col-xs-6">
+            <%= f.input :deadline, as: :range %>
+          </div>
+          <div class="col-xs-6">
+            <%= f.input :type_resolution, collection: Question::STATUSES, prompt: "Type de Résolution",  label: false %>
+          </div>
+        </div>
+          <div class="form-group">
+            <label class="control-label check_boxes optional">Categories</label>
+            <input type="hidden" name="post[category_ids][]" value="">
+            <div class="category-choices">
+              <% Category.all.each do |category| %>
+                <input type="checkbox" class="hidden" value="<%= category.id %>" name="question[category_ids][]" id="question_category_ids_<%= category.id %>">
+                <label for="question_category_ids_<%= category.id %>">
+                  <%= category.name %>
+                  <i class="fa fa-check"></i>
+                </label>
+              <% end %>
+             </div>
+              <%= f.simple_fields_for :options do |p| %>
+                <%= p.input :titre %>
+                <%= p.input :photo %>
+                <%= p.input :photo_cache, as: :hidden %>
+            <% end %>
+          </div>
+          <%= f.submit "Créer indécision", class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 //= require rails-ujs
 //= require_tree .
-//= require materialize-sprockets
+
+//= require materialize
 

@@ -12,7 +12,6 @@ gem 'redis'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.0.9'
-gem 'materialize-sass', '~> 1.0.0.rc2'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
@@ -22,6 +21,7 @@ gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'materialize-sass', '~> 1.0.0.rc2'
 
 
 group :development do
