@@ -125,6 +125,9 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (0.3.2)
       mimemagic (~> 0.3.2)
+    materialize-sass (1.0.0.rc2)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.5.2)
     method_source (0.9.0)
     mimemagic (0.3.2)
     mini_mime (1.0.1)
@@ -264,6 +267,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
+  materialize-sass (~> 1.0.0.rc2)
   pg (~> 0.21)
   pry-byebug
   pry-rails
@@ -284,4 +288,4 @@ RUBY VERSION
    ruby 2.4.4p296
 
 BUNDLED WITH
-   1.16.2
+   1.16.3
