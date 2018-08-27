@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Créer une option</h1>
+  <%= simple_form_for [@question, @option] do |f| %>
+    <%= f.input :titre %>
+    <%= f.input :photo %>
+    <%= f.submit "enregistrer l'option", class: "btn btn-success" %>
+  <% end %>
+</div>
