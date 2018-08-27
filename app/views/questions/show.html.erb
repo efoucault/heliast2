@@ -7,7 +7,6 @@
     <p>Type de résolution: <%= @question.type_resolution %> </p>
   </div>
   <div class="options">
-    <%= render "options/new" %>
     <% @question.options.each do |option| %>
       <%= "#{option.titre}" %></br>
       <%= cl_image_tag option.photo, height: 300, width: 400, crop: :fill %>

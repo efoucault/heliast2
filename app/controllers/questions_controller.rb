@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    2.times {@question.options.build}
   end
 
   def create
@@ -38,6 +39,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:type_resolution, :description, :deadline, :category_ids, :user_id)
+    params.require(:question).permit(:description, :deadline, :category_ids, :user_id, :type_resolution, options_attributes: [:titre, :photo, :photo_cache])
   end
 end
