@@ -1,0 +1,94 @@
+.top-dashboard {
+  position: relative;
+  margin-bottom: 20px;
+}
+.banner-dashboard {
+  color: white;
+  text-align: center;
+  height: 30vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.info-dashboard {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  text-align: center;
+  padding-left: 50px;
+
+}
+.info-user {
+  text-align: left;
+  h4 {
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  p {
+    color: white;
+    text-align: left;
+    font-weight: lighter;
+  }
+}
+
+.avatar-dashboard {
+  width: 100px;
+  padding-right: 20px;
+}
+
+.btn-add {
+  border-radius: 3px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.question-card {
+  width: 100%;
+  position: relative;
+  margin: .5rem 0 1rem 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  border-left: 10px solid red;
+  position: relative;
+  transition: transform .2s;
+
+}
+
+.question-card-content {
+  padding: 24px;
+  background-color: #F8F9FA;
+  text-align: left;
+}
+
+.question-card-status {
+  position: relative;
+  background-color: inherit;
+  border-top: 1px solid rgba(160,160,160,0.2);
+  padding: 16px 24px;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: red;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+.question-card:hover {
+  transform: scale(1.05);
+}
