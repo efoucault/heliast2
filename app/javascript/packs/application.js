@@ -14,3 +14,25 @@ $("[data-form-prepend]").click(function(e) {
   obj.insertBefore(this);
   return false;
 });
+
+
+const pictureIcons = document.querySelectorAll(".fa-camera");
+
+  pictureIcons.forEach((icon) => {
+  icon.addEventListener("click", (event) => {
+    const index = event.currentTarget.dataset.index;
+    console.log(document.getElementById(`question_options_attributes_${index}_photo`));
+    document.getElementById(`question_options_attributes_${index}_photo`).click();
+    // console.log(chooseFile);
+  });
+});
+
+
+const deleteButtons = document.querySelectorAll(".remove");
+
+deleteButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const index = event.currentTarget.dataset.index;
+    document.getElementById(`option_fields_${index}`).style.display = "none";
+  });
+});

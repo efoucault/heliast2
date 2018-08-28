@@ -1,11 +1,11 @@
-<%= f.input :titre %>
-<%= f.input :photo %>
-<%= f.input :photo_cache, as: :hidden %>
-<div class="remove">
-  <div class="checkbox">
-    <%= f.check_box :_destroy %>
-  </div>
-  <div class="label">
-    <%= f.label :_destroy, "Remove Medication" %>
+<div class="option" id="option_fields_<%= f.index %>">
+  <%= f.input :titre %>
+  <i class="fa fa-camera" data-index="<%= f.index %>"></i>
+  <%= f.input :photo, input_html: { class: 'hide' } %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <div class="test">
+    <div class="checkbox">
+      <%= f.input :_destroy, as: :boolean, :label => "Supprimer l'option", input_html: { class: 'remove', data: { index: f.index } } %>
+    </div>
   </div>
 </div>

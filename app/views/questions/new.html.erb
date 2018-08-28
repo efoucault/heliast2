@@ -14,16 +14,9 @@
           </div>
         </div>
           <div class="form-group">
-            <label class="control-label check_boxes optional">Categories</label>
-            <input type="hidden" name="question[category_ids][]" value="">
+            <label class="control-label">Categories</label>
+            <input name="question[category_ids][]" value="">
             <div class="category-choices">
-              <% Category.all.each do |category| %>
-                <input type="checkbox" class="hidden" value="<%= category.id %>" name="question[category_ids][]" id="question_category_ids_<%= category.id %>">
-                <label class="category-choice" for="question_category_ids_<%= category.id %>">
-                  <%= category.name %>
-                  <i class="fa fa-check"></i>
-                </label>
-              <% end %>
              </div>
              <div class="fields">
               <%= f.simple_fields_for :options do |builder| %>
