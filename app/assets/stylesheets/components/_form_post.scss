@@ -40,27 +40,31 @@
 
 // Checkboxes design
 .category-choices {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 20px 0;
-}
-
-.category-choice {
-  background: #b7b7b7;
-  padding: 20px;
-  border-radius: 5px;
-  opacity: .4;
-  flex: 0 0 30%;
-  text-align: center;
-  &:hover {
-    opacity: 1;
-    cursor: pointer;
+  input[type=radio] {
+    display: none;
   }
-  &.active {
-  background-image: linear-gradient(to right top, #89c4bb, #90c7be, #96c9c1, #9dccc4, #a3cec7);
-  color: white;
-  opacity: 1;
+  .form-check {
+    display: inline-block;
+    width: 10em;
+  }
+  input[type=radio] + label {
+    background-color: #24D6D6;
+    padding: 2em;
+    display: block;
+    height: 2em;
+    width: 10em;
+    color: white;
+    font-weight: 800;
+    font-size: 0.8em;
+  }
+  input[type=radio]:checked + label {
+    background-color: #E6476D;
+    display: block;
+    height: 2em;
+    width: 10em;
+    color: white;
+    font-weight: 800;
+    font-size: 0.8em;
   }
 }
 

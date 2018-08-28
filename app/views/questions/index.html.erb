@@ -29,10 +29,6 @@
 
           <div class="question-card <%= question.status %>">
             <div class="question-card-content">
-              <span><p class="categorie">
-                <% question.categories.each do |category|%>
-                  <%= category.name %>
-                <% end %></p></span>
               <%=  %>
               <span><p class="deadline"><%= question.deadline%></p></span>
               <h4><%= question.description%></h4>
