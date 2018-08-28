@@ -7,16 +7,16 @@
   text-align: center;
   color: white;
   font-family: $body-font;
-}
-p {
-  margin: 0;
-  text-align: center;
-  color: red;
-  font-family: $body-font;
+  p {
+    margin: 0;
+    text-align: center;
+    font-family: $body-font;
+  }
 }
 .alert-info {
   background:green;
 }
 .alert-warning {
   background:red;
+  color: red;
 }
