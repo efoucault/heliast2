@@ -25,14 +25,14 @@
                 </label>
               <% end %>
              </div>
+             <div class="fields">
+              <%= f.simple_fields_for :options do |builder| %>
+               <%= render "option_fields", :f => builder %>
+             <% end %>
+             <p><%= link_to_add_fields "Add Option", f, :options %></p>
+             </div>
           </div>
-              <%= f.simple_fields_for :options do |p| %>
-                <%= p.input :titre %>
-                <%= p.input :photo %>
-                <%= p.input :photo_cache, as: :hidden %>
-            <% end %>
-
-          <%= f.submit "Créer indécision", class: "btn btn-success" %>
+        <%= f.submit "Créer indécision", class: "btn btn-success" %>
         <% end %>
       </div>
     </div>

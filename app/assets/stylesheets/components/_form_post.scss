@@ -38,8 +38,16 @@
     cursor: pointer;
   }
   &.active {
-  background: $brand-primary;
+  background-image: linear-gradient(to right top, #89c4bb, #90c7be, #96c9c1, #9dccc4, #a3cec7);
   color: white;
   opacity: 1;
   }
+}
+
+.remove {
+  display: flex;
+}
+
+.checkbox {
+  background-color: black;
 }

@@ -39,6 +39,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:description, :deadline, :category_ids, :user_id, :type_resolution, options_attributes: [:titre, :photo, :photo_cache])
+    params.require(:question).permit(:description, :deadline, :category_ids, :user_id, :type_resolution, options_attributes: [:id, :titre, :photo, :photo_cache, :_destroy])
   end
 end

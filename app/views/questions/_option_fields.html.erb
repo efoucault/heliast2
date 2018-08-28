@@ -1,0 +1,11 @@
+<%= f.input :titre %>
+<%= f.input :photo %>
+<%= f.input :photo_cache, as: :hidden %>
+<div class="remove">
+  <div class="checkbox">
+    <%= f.check_box :_destroy %>
+  </div>
+  <div class="label">
+    <%= f.label :_destroy, "Remove Medication" %>
+  </div>
+</div>
