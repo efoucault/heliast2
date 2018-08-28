@@ -26,18 +26,28 @@
         <p class="sortby">Trier par création deadline</p>
         <% @questions.each do |question| %>
         <div class="question-card">
-          <div class="question-card-content">
-            <span><p class="categorie"><%= question.categorie.capitalize%></p></span>
-            <span><p class="deadline"><%= question.deadline%></p></span>
-            <h4><%= question.description%></h4>
+          <div class="question-card <%= question.status %>">
+            <div class="question-card-content">
+              <span><p class="categorie"><%= question.categories.name%></p></span>
+              <%=  %>
+              <span><p class="deadline"><%= question.deadline%></p></span>
+              <h4><%= question.description%></h4>
+              </div>
+            <div class="question-card-status">
+              <% if question.pending?
+                status_message = 'En attente de décision...'
+              elsif question.answered?
+                status_message = 'Décision reçue !'
+              elsif question.closed?
+                status_message = 'Décision close.'
+              end %>
+
+              <p class="info-status">status : <%=status_message%></p>
             </div>
-          <div class="question-card-status">
-            <p>status : En attente de décision</p>
-          </div>
           <%= link_to "", question_path(question), class: 'card-link' %>
         </div>
+        </div>
         <% end %>
-
       </div>
     </div>
 

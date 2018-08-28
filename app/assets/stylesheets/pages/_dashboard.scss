@@ -67,10 +67,23 @@
   background-color: #fff;
   border-radius: 0.3em;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-  border-left: 0.5em solid red;
-  position: relative;
   transition: transform .2s;
+}
 
+.question-card .pending {
+  border-left: 0.5em solid orange;
+  border-radius: 0.3em;
+
+}
+
+.question-card .answered {
+  border-left: 0.5em solid #24d6d6;
+  border-radius: 0.3em;
+}
+
+.question-card .closed {
+  border-left: 0.5em solid gray;
+  border-radius: 0.3em;
 }
 
 .question-card-content {
@@ -84,6 +97,10 @@
   background-color: inherit;
   border-top: 1px solid rgba(160,160,160,0.2);
   padding: 0.5em 0em 0.1em 0.5em;
+}
+
+.info-status {
+  font-size: 0.7em;
 }
 
 .card-link {
