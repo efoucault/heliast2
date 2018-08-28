@@ -3,27 +3,20 @@
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <div class="form-post">
         <h1>Créer Indécision</h1>
-        <%= simple_form_for [@user, @question] do |f| %>
-        <div class="row">
-          <%= f.input :description, placeholder: "Exemple : Que porter aujourd'hui ?" %>
-          <div class="col-xs-6">
+        <div class="padding">
+          <%= simple_form_for [@user, @question] do |f| %>
+            <%= f.input :description, placeholder: "Exemple : Que porter aujourd'hui ?" %>
             <%= f.input :deadline, as: :range %>
-          </div>
-          <div class="col-xs-6">
             <%= f.input :type_resolution, collection: Question::STATUSES, prompt: "Type de Résolution",  label: false %>
-          </div>
         </div>
           <div class="form-group">
-            <label class="control-label">Categories</label>
-            <input name="question[category_ids][]" value="">
-            <div class="category-choices">
-             </div>
              <div class="fields">
               <%= f.simple_fields_for :options do |builder| %>
                <%= render "option_fields", :f => builder %>
              <% end %>
-             <p><%= link_to_add_fields "Add Option", f, :options %></p>
-             </div>
+<!--              <i class="fa fa-plus plus"></i>
+ --><!--              <p id="add-option"><%# link_to_add_fields "Add Option", f, :options %></p>
+ -->             </div>
           </div>
         <%= f.submit "Créer indécision", class: "btn btn-success" %>
         <% end %>

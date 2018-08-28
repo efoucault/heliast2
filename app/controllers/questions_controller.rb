@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    2.times {@question.options.build}
+    4.times {@question.options.build}
   end
 
   def create
