@@ -7,16 +7,13 @@
       <%= f.input :titre, label: false %>
       <div class="column-3">
         <i class="fa fa-camera" data-index="<%= f.index %>"></i>
+        <%= f.input :photo, input_html: { class: 'hide' }, label: false %>
+        <%= f.input :photo_cache, as: :hidden %>
       </div>
       <div class="column-3">
-        <div class="checkbox">
-          <%= f.input :_destroy, as: :boolean, :label => "Supprimer l'option", input_html: { class: 'remove', data: { index: f.index } } %>
-        </div>
+          <i class="fa fa-trash" data-trash="<%= f.index %>"></i>
+          <%= f.input :_destroy, as: :boolean, :label => "Supprimer l'option", input_html: { class: 'hide remove', data: { index: f.index } }, label: false %>
       </div>
     </div>
-  </div>
-  <%= f.input :photo, input_html: { class: 'hide' }, label: false %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <div class="test">
   </div>
 </div>
