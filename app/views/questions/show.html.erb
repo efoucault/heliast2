@@ -1,20 +1,45 @@
 <div class="container">
-  <div class="indecision_form">
-    <h1>Indécision</h1>
-    <p>Description: <%= @question.description %> </p>
-    <p>Deadline: <%= @question.deadline %> </p>
-    <p>Categorie: <% @question.categories.each do |category| %>
-    <%= "#{category.name}" %>
-    <% end %></p>
-    <p>Type de résolution: <%= @question.type_resolution %> </p>
-  </div>
-  <div class="options">
-    <% @question.options.each do |option| %>
-      <%= "#{option.titre}" %></br>
-      <%= cl_image_tag option.photo, height: 300, width: 400, crop: :fill %>
-    <% end %>
+  <div class="indecision-card">
+    <div class="top-card top-<%= @question.status %>">
+      <%= @status_message%>
+      <%= link_to edit_question_path(@question) do %>
+        <i class="fa fa-edit"></i>
+      <% end %>
+      <%= link_to question_path(@question), method: :delete do%>
+        <i class="fa fa-trash"></i>
+      <% end %>
+
+      </div>
+      <div class="indecision-contenu text-center">
+        <p><% @question.categories.each do |category| %>
+        <%= "#{category.name}" %>
+        <% end %></p>
+        <h4><%= @question.description %> </h4>
+        <p class="text-left">Deadline: <%= @question.deadline %> </p>
+
+        <p class="text-left">Résolution: <%= @question.type_resolution %> </p>
+      </div>
+      <div class="options">
+        <% @question.options.each_with_index do |option, index| %>
+          <div class="option">
+            <% if option.photo.present? %>
+              <%= cl_image_tag option.photo, crop: :fill, class: 'option-image' %>
+            <% else %>
+              <div class="option-image-none"></div>
+            <%end%>
+            <div class="option-zoom">
+              <i class="fa fa-search-plus"></i>
+            </div>
+            <div class="option-title">
+              <%= option.titre %>
+            </div>
+            <div class="circle"><p><%=index+1%></p></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
+<br/>
 
-<%= link_to "Edit", edit_question_path(@question) %>
-<%= link_to "Destroy", question_path(@question), method: :delete %>
+
