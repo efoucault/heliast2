@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    status_info
   end
 
   def new
@@ -39,6 +40,17 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:description, :deadline, :category_ids, :user_id, :type_resolution, options_attributes: [:id, :titre, :photo, :photo_cache, :_destroy])
+    params.require(:question).permit(:description, :deadline, :user_id, :type_resolution, options_attributes: [:id, :titre, :photo, :photo_cache, :_destroy], :category_ids => [])
   end
+
+  def status_info
+    if @question.pending?
+      @status_message = 'En attente de décision...'
+    elsif @question.answered?
+      @status_message = 'Décision reçue !'
+    elsif @question.closed?
+      @status_message = 'Décision close.'
+    end
+  end
+
 end

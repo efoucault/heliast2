@@ -1,7 +1,24 @@
-body {
-  background-image: linear-gradient(to right bottom, #e53870, #eb5b6a, #ee786b, #ed9373, #ecab83)!important;
-}
 .form-post {
+  background: white;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    color: #666666;
+    margin-bottom: 50px;
+    margin-top: 0px;
+  }
+  .btn {
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+  }
+}
+
+.form-edit {
   background: white;
   margin-top: 50px;
   padding: 20px;
