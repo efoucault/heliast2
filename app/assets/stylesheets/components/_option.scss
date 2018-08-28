@@ -41,7 +41,7 @@
   }
   .column-3 {
     float: left;
-    width: 40%;
+    width: 50%;
   }
   .fa-camera {
     padding: 0.2em;
@@ -49,6 +49,14 @@
     color: white;
     border-radius: 0.1em;
     font-size: 2em;
+  }
+  .fa-trash {
+  padding: 0.2em;
+  background-color: red;
+  color: white;
+  border-radius: 0.1em;
+  font-size: 2em;
+  float: right;
   }
 }
 
