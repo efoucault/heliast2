@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'questions#index'
   resources :users
+  resources :categories, only: [:index]
   resources :questions do
     resources :options, only: [:new, :create]
   end
