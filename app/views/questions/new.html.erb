@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
       <div class="form-post">
         <h1>Créer Indécision</h1>
         <%= simple_form_for [@user, @question] do |f| %>
@@ -15,22 +15,23 @@
         </div>
           <div class="form-group">
             <label class="control-label check_boxes optional">Categories</label>
-            <input type="hidden" name="post[category_ids][]" value="">
+            <input type="hidden" name="question[category_ids][]" value="">
             <div class="category-choices">
               <% Category.all.each do |category| %>
                 <input type="checkbox" class="hidden" value="<%= category.id %>" name="question[category_ids][]" id="question_category_ids_<%= category.id %>">
-                <label for="question_category_ids_<%= category.id %>">
+                <label class="category-choice" for="question_category_ids_<%= category.id %>">
                   <%= category.name %>
                   <i class="fa fa-check"></i>
                 </label>
               <% end %>
              </div>
+          </div>
               <%= f.simple_fields_for :options do |p| %>
                 <%= p.input :titre %>
                 <%= p.input :photo %>
                 <%= p.input :photo_cache, as: :hidden %>
             <% end %>
-          </div>
+
           <%= f.submit "Créer indécision", class: "btn btn-success" %>
         <% end %>
       </div>
