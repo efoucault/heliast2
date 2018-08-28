@@ -1,5 +1,7 @@
+<<<<<<< HEAD
 import "bootstrap";
 import $ from "jquery"
+import '../components/category_choice';
 
 $("[data-form-prepend]").click(function(e) {
   var obj = $($(this).attr("data-form-prepend"));
