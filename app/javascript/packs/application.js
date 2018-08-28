@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import "bootstrap";
 import $ from "jquery"
 import '../components/category_choice';
