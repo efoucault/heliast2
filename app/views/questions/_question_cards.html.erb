@@ -1,0 +1,61 @@
+<% @questions.each do |question| %>
+  <div class="question-card" data-deadline="<%= question.deadline %>">
+
+    <div class="question-card <%= question.status %>">
+      <div class="question-card-content">
+        <span><p class="categorie">
+          <% question.categories.each do |category|%>
+            <%= category.name %>
+          <% end %></p></span>
+        <%=  %>
+        <span><p class="deadline"><%= question.deadline%></p></span>
+        <h4><%= question.description%></h4>
+        </div>
+      <div class="question-card-status">
+        <% if question.pending?
+          status_message = 'En attente de décision...'
+          status_progress = 35
+        elsif question.answered?
+          status_message = 'Décision reçue !'
+          status_progress = 70
+        elsif question.closed?
+          status_message = 'Décision close.'
+          status_progress = 100
+        end %>
+
+        <div class="wrapper">
+          <div class="line">
+
+          </div>
+          <div class="dots">
+            <% if question.pending? %>
+              <span class="dot orange"><i class="fa fa-question"></i></span>
+              <span class="dot orange"><i class="fa fa-ellipsis-h"></i></span>
+              <span class="dot"><i class="fa fa-exclamation"></i></span>
+              <span class="dot "><i class="fa fa-check"></i></span>
+            <% elsif question.answered? %>
+              <span class="dot turquoise"><i class="fa fa-question"></i></span>
+              <span class="dot turquoise"><i class="fa fa-ellipsis-h"></i></span>
+              <span class="dot turquoise"><i class="fa fa-exclamation"></i></span>
+              <span class="dot "><i class="fa fa-check"></i></span>
+            <% elsif question.closed? %>
+              <span class="dot turquoise"><i class="fa fa-question"></i></span>
+              <span class="dot turquoise"><i class="fa fa-ellipsis-h"></i></span>
+              <span class="dot turquoise"><i class="fa fa-exclamation"></i></span>
+              <span class="dot turquoise"><i class="fa fa-check"></i></span>
+            <%end%>
+          </div>
+
+          <!-- <div class="progress-bar">
+            <span class="progress-bar-fill" style="width: <%=status_progress%>%;"></span>
+          </div> -->
+        </div>
+
+
+        <div class="info-status"><p><%=status_message%></p></div>
+
+      </div>
+    <%= link_to "", question_path(question), class: 'card-link' %>
+  </div>
+  </div>
+<% end %>
