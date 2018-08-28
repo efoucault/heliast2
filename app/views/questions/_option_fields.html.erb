@@ -1,11 +1,22 @@
 <div class="option" id="option_fields_<%= f.index %>">
-  <%= f.input :titre %>
-  <i class="fa fa-camera" data-index="<%= f.index %>"></i>
-  <%= f.input :photo, input_html: { class: 'hide' } %>
+  <div class="title-option">
+    <div class="column-1 index-option">
+      <p><%= (f.index).to_i + 1 %></p>
+    </div>
+    <div class="column-2 titre-option">
+      <%= f.input :titre, label: false %>
+      <div class="column-3">
+        <i class="fa fa-camera" data-index="<%= f.index %>"></i>
+      </div>
+      <div class="column-3">
+        <div class="checkbox">
+          <%= f.input :_destroy, as: :boolean, :label => "Supprimer l'option", input_html: { class: 'remove', data: { index: f.index } } %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= f.input :photo, input_html: { class: 'hide' }, label: false %>
   <%= f.input :photo_cache, as: :hidden %>
   <div class="test">
-    <div class="checkbox">
-      <%= f.input :_destroy, as: :boolean, :label => "Supprimer l'option", input_html: { class: 'remove', data: { index: f.index } } %>
-    </div>
   </div>
 </div>
