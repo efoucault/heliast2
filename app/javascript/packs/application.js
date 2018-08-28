@@ -22,7 +22,6 @@ const pictureIcons = document.querySelectorAll(".fa-camera");
     const index = event.currentTarget.dataset.index;
     console.log(document.getElementById(`question_options_attributes_${index}_photo`));
     document.getElementById(`question_options_attributes_${index}_photo`).click();
-    // console.log(chooseFile);
   });
 });
 
@@ -35,9 +34,7 @@ const deleteIcons = document.querySelectorAll(".fa-trash");
   });
 });
 
-
 const deleteButtons = document.querySelectorAll(".remove");
-
 deleteButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     const index = event.currentTarget.dataset.index;

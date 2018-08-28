@@ -14,36 +14,35 @@
 }
 
 .title-option {
-  // display: flex;
+  display: flex;
   // flex: 1;
   height: 8em;
   // justify-content: center;
   padding-top: 1em;
   margin-left: 0;
   margin-right: 0;
-  .column-1 {
-    float: left;
-    width: 15%;
-    p {
-      width: 2em;
-      margin-left: 1em;
-      margin-right: 0;
-      padding: 0.3em 0.9em;
-      border: 0.1em #24D6D6 solid;
-      font-weight: 800;
-      border-radius: 50%;
-      color: #24D6D6;
-    }
+  p {
+    width: 2em;
+    margin-left: 1em;
+    margin-right: 0;
+    padding: 0.3em 0.9em;
+    border: 0.1em #24D6D6 solid;
+    font-weight: 800;
+    border-radius: 50%;
+    color: #24D6D6;
   }
-  .column-2 {
-    float: left;
-    width: 75%;
-  }
-  .column-3 {
-    float: left;
+  .column-3-left {
     width: 50%;
+    margin-right: 0;
+    float: left;
+  }
+  .column-3-right {
+    width: 50%;
+    margin-right: 0;
+    float: right;
   }
   .fa-camera {
+    float: left;
     padding: 0.2em;
     background-color: #24D6D6;
     color: white;
@@ -51,39 +50,32 @@
     font-size: 2em;
   }
   .fa-trash {
-  padding: 0.2em;
-  background-color: red;
-  color: white;
-  border-radius: 0.1em;
-  font-size: 2em;
-  float: right;
+    padding: 0.2em;
+    background-color: red;
+    color: white;
+    border-radius: 0.1em;
+    font-size: 2em;
+    float: right;
   }
-}
-
-// .index-option {
-//   // flex-grow: 0;
-//   margin: 1em;
-//   padding: 0.3em 0.7em;
-//   text-align: center;
-//   vertical-align: middle;
-//   border: 0.1em #24D6D6 solid;
-//   font-weight: 800;
-//   border-radius: 50%;
-//   color: #24D6D6;
-// }
-
-.titre-option {
-  // flex-grow: 1;
-  margin-right: 0.3em;
-  margin-bottom: none;
-  padding-bottom: none;
-  background-color: rgb(230, 230, 230);
-  border-radius: 0.2em;
-  border: 0.1em rgb(200, 200, 200) solid;
-  height: 2em;
-  .form-control {
+  .index-option {
+    margin-right: 1em;
+  }
+  .titre-option {
+    flex-grow: 1;
+    margin-right: 1em;
     margin-bottom: none;
     padding-bottom: none;
+    background-color: rgb(230, 230, 230);
+    border-radius: 0.2em;
+    border: 0.1em rgb(200, 200, 200) solid;
+    height: 2em;
+  }
+  .form-group {
+    margin-right: 0;
+  }
+  .question_options__destroy {
+    margin-right: 0;
   }
 }
+
 
