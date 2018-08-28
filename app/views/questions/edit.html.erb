@@ -5,6 +5,12 @@
     <%= f.input :deadline %>
     <%= f.input :categorie %>
     <%= f.input :type_resolution %>
+    <div class="fields">
+      <%= f.simple_fields_for :options do |builder| %>
+       <%= render "option_fields", :f => builder %>
+     <% end %>
+     <p><%= link_to_add_fields "Add Option", f, :options %></p>
+     </div>
     <%= f.submit "Update indécision", class: "btn btn-success" %>
   <% end %>
 </div>
