@@ -5,7 +5,8 @@
     </div>
     <div class="info-user">
       <h4>Hey <%= current_user.first_name %>, indécise ?</h4>
-      <p>Tu as <strong style='color: black;'><%= @questions.size%></strong> indécisions en attente</p>
+      <p>Tu as <%= @questions.size%> indécisions<br/>
+      dont <strong style='color: black;'><%= @questions.pending.size%></strong> en attente.</p>
       <p>Heliast niveau XXXXX</p>
     </div>
   </div>
@@ -19,53 +20,16 @@
 
     <div class="row">
       <div class="col-6">
-      <div class='btn btn-add align-center'>
+      <div class='btn btn-add'>
         <%= link_to "Nouvelle indécision", new_question_path %>
        </div>
-
-        <p class="sortby">Trier par création deadline</p>
-        <% @questions.each do |question| %>
-        <div class="question-card">
-
-          <div class="question-card <%= question.status %>">
-            <div class="question-card-content">
-              <%=  %>
-              <span><p class="deadline"><%= question.deadline%></p></span>
-              <h4><%= question.description%></h4>
-              </div>
-            <div class="question-card-status">
-              <% if question.pending?
-                status_message = 'En attente de décision...'
-                status_progress = 35
-              elsif question.answered?
-                status_message = 'Décision reçue !'
-                status_progress = 70
-              elsif question.closed?
-                status_message = 'Décision close.'
-                status_progress = 100
-              end %>
-
-              <div class="wrapper">
-                <div class="dots">
-                  <span class="dot">?</span>
-                  <span class="dot">...</span>
-                  <span class="dot">!</span>
-                  <span class="dot">V</span>
-                </div>
-
-                <div class="progress-bar">
-                  <span class="progress-bar-fill" style="width: <%=status_progress.to_i%>%;"></span>
-                </div>
-              </div>
-
-
-              <p class="info-status"><%=status_message%></p>
-
-            </div>
-          <%= link_to "", question_path(question), class: 'card-link' %>
+        <p class="sortby">Trier par
+          <%= link_to "création", questions_path(query: "created_at") %>
+          <%= link_to "deadline", questions_path(query: "deadline") %>
+        </p>
+        <div class="questions">
+          <%= render "questions/question_cards" %>
         </div>
-        </div>
-        <% end %>
       </div>
     </div>
 

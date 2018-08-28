@@ -1,7 +1,23 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all
+    if params[:query].present?
+      if params[:query] == "deadline"
+        @questions = Question.all.order(deadline: :desc)
+        respond_to do |format|
+          format.html
+          format.js { render 'sortby_deadline' }
+        end
+      elsif params[:query] == "created_at"
+        @questions = Question.all.order(created_at: :asc)
+        respond_to do |format|
+          format.html
+          format.js { render 'sortby_created_at' }
+        end
+      end
+    else
+      @questions = Question.all.order(created_at: :desc)
+    end
   end
 
   def show
@@ -36,6 +52,11 @@ class QuestionsController < ApplicationController
     @question.destroy!
     redirect_to questions_path
   end
+
+  # def naviguation
+  #   @navigation = "add"
+  # end
+
 
   private
 

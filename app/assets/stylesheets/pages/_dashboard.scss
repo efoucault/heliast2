@@ -97,10 +97,14 @@
   background-color: inherit;
   border-top: 1px solid rgba(160,160,160,0.2);
   padding: 0.5em 0em 0.1em 0.5em;
+  display: flex;
+  align-items: center;
 }
 
 .info-status {
+  p {
   font-size: 0.7em;
+  }
 }
 
 .card-link {
@@ -121,39 +125,48 @@
   transform: scale(1.05);
 }
 
-      .wrapper {
-        width: 40%;
-        position: relative;
+.wrapper {
+  margin-right: 1em;
+  position: relative;
+}
 
+// .line {
+//   background-color: #e2dede;
+//   height: 0.5em;
 
-      }
+// }
 
-      .dots {
-        position: absolute;
-        justify-content: space-between;
-      }
-      .dot {
-        height: 1.5em;
-        width: 1.5em;
-        background-color: #bbb;
-        border-radius: 50%;
-        display: inline-block;
-        text-align: center;
-        color: white;
+.dots {
+  justify-content: space-between;
+}
+.dot {
+  height: 1em;
+  width: 1em;
+  background-color: #e2dede;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  i {
+    color: white;
+    font-size: 0.8em;
+  }
+}
 
-      }
+.turquoise {
+  background-color: #24d6d6;
+}
 
-      .progress-bar {
-        width: 100%;
-        background-color: #e0e0e0;
-        margin-right: 1em;
-      }
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  margin-right: 1em;
+}
 
-      .progress-bar-fill {
-        display: block;
-        height: 1em;
-        background-color: #24d6d6;
-        border-radius: 3px;
+.progress-bar-fill {
+  display: block;
+  height: 1em;
+  background-color: #24d6d6;
+  border-radius: 3px;
 
-        transition: width 500ms ease-in-out;
-      }
+  transition: width 500ms ease-in-out;
+}

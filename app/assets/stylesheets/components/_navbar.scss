@@ -15,11 +15,74 @@
   height: 50px;
 }
 
+/* Icones */
+.icones img {
+  color: #d99ea4;
+  margin: 20px;
+}
+
+.icones img a {
+  color: #d99ea4;
+  margin: 20px;
+}
+
+.icones:hover {
+  color: black;
+}
+
+/* Page profil active ou non */
+.pictos li {
+  display:inline-block;
+  margin: 10px;
+  margin-top: 30px;
+}
+
+.pictos .picto-profil a {
+  background-image: image-url('profil.svg');
+  width:35px;
+  height:35px;
+  display: block;
+}
+
+.pictos .picto-profil a.active {
+  background-image: image-url('profil-active.svg');
+  display: block;
+}
+
+/* Page add active ou non */
+.pictos .picto-add a {
+  background-image: image-url('add.svg');
+  width:35px;
+  height:35px;
+  display: block;
+}
+
+.pictos .picto-add a.active{
+  background-image: image-url('add-active.svg');
+  display: block;
+}
+
+/* Page questions active ou non */
+.pictos .picto-questions a {
+  background-image: image-url('questions.svg');
+  width:35px;
+  height:35px;
+  display: block;
+}
+
+.pictos .picto-questions a.active{
+  background-image: image-url('questions-active.svg');
+  display: block;
+}
+
+
+
 /* User Avatar */
 .navbar-wagon .avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  border: solid 2px #d99ea4;
 }
 
 /* Right section */
