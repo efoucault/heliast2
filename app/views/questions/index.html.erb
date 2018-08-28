@@ -26,9 +26,10 @@
         <p class="sortby">Trier par création deadline</p>
         <% @questions.each do |question| %>
         <div class="question-card">
+
           <div class="question-card <%= question.status %>">
             <div class="question-card-content">
-              <span><p class="categorie"><%= question.categories.name%></p></span>
+              <span><p class="categorie"><%= question.categorie%></p></span>
               <%=  %>
               <span><p class="deadline"><%= question.deadline%></p></span>
               <h4><%= question.description%></h4>
@@ -43,6 +44,7 @@
               end %>
 
               <p class="info-status">status : <%=status_message%></p>
+
             </div>
           <%= link_to "", question_path(question), class: 'card-link' %>
         </div>

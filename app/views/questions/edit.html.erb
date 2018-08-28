@@ -1,10 +1,35 @@
 <div class="container">
-  <h1>Indécision</h1>
-  <%= simple_form_for [@user, @question] do |f| %>
-    <%= f.input :description %>
-    <%= f.input :deadline %>
-    <%= f.input :categorie %>
-    <%= f.input :type_resolution %>
-    <%= f.submit "Update indécision", class: "btn btn-success" %>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <div class="form-edit">
+        <h1>Indécision</h1>
+        <%= simple_form_for [@user, @question] do |f| %>
+          <%= f.input :description %>
+          <%= f.input :deadline %>
+          <%= f.input :categorie %>
+          <%= f.input :type_resolution, collection: Question::STATUSES, prompt: "Type de Résolution",  label: false %>
+                <div class="form-group">
+                  <label class="control-label check_boxes optional">Categories</label>
+                  <input type="hidden" name="question[category_ids][]" value="">
+                  <div class="category-choices">
+                    <% Category.all.each do |category| %>
+                      <input type="checkbox" class="hidden" value="<%= category.id %>" name="question[category_ids][]" id="question_category_ids_<%= category.id %>">
+                      <label class="category-choice" for="question_category_ids_<%= category.id %>">
+                        <%= category.name %>
+                        <i class="fa fa-check"></i>
+                      </label>
+                    <% end %>
+                   </div>
+                   <div class="fields">
+                    <%= f.simple_fields_for :options do |builder| %>
+                     <%= render "option_fields", :f => builder %>
+                   <% end %>
+                   <p><%= link_to_add_fields "Add Option", f, :options %></p>
+                   </div>
+                </div>
+          <%= f.submit "Update indécision", class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
