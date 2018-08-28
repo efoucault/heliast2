@@ -1,2 +1,3 @@
-import "bootstrap";
-import "materialize-css"
+import 'bootstrap';
+import '../components/category_choice';
+
