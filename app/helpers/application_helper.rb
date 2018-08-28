@@ -1,4 +1,14 @@
 module ApplicationHelper
+  # def show_svg(path)
+  #   File.open("app/assets/images/#{path}", "rb") do |file|
+  #     raw file.read
+  #   end
+
+    def current_class?(test_path)
+      return 'active' if request.path == test_path
+      ''
+    end
+
   def link_to_add_fields(name = nil, f = nil, association = nil, options = nil, html_options = nil, &block)
     # If a block is provided there is no name attribute and the arguments are
     # shifted with one position to the left. This re-assigns those values.

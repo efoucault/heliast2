@@ -37,6 +37,11 @@ class QuestionsController < ApplicationController
     redirect_to questions_path
   end
 
+  # def naviguation
+  #   @navigation = "add"
+  # end
+
+
   private
 
   def question_params
