@@ -25,7 +25,9 @@
             <div class="option-image-none"></div>
           <%end%>
           <div class="option-zoom">
-            <i class="fa fa-search-plus"></i>
+            <% if option.photo.present? %>
+              <i class="fa fa-search-plus"></i>
+            <% end %>
           </div>
           <div class="option-title">
             <%= option.titre %>
@@ -40,26 +42,38 @@
     <div class="answers">
       <h2>Réponses à l'indécision</h2>
       <% @question.answers.each_with_index do |answer, index| %>
-        <div class="option">
-          <% if answer.option.photo.present? %>
-            <%= cl_image_tag answer.option.photo, crop: :fill, class: 'option-image' %>
+        <div class="answer">
+          <div class="answer-titre">
+          <% if answer.user == @question.user %>
+             <h3>Réponse de l'indécis</h3>
           <% else %>
-            <div class="option-image-none"></div>
-          <%end%>
-          <div class="option-zoom">
-            <i class="fa fa-search-plus"></i>
+            <h3>Réponse de l'Heliaste</h3>
+          <% end %>
+            <h4><%= answer.option.titre %></h4></br>
           </div>
-          <div class="option-title">
-            <%= answer.option.titre %></br>
-            <%= answer.reponse %></br>
+          <div class="asnwer-photo">
+            <% if answer.option.photo.present? %>
+              <%= cl_image_tag answer.option.photo, crop: :fill, class: 'option-image' %>
+            <% else %>
+              <div class="answer-image-none"></div>
+            <%end%>
           </div>
-          <div class="circle"><p><%=index+1%></p></div>
-        </div>
+          <div class="answer-reponse">
+            <p><%= answer.reponse %></p>
+          </div>
       <% end %>
     </div>
-    <div class="create-answer">
-      <h2>Répondre à l'indécision</h2>
-      <%= render "answers/new" %>
-    </div>
+    <% hide_answer_creation = false %>
+    <% @question.answers.each do |answer| %>
+      <% if answer.user == current_user %>
+        <% hide_answer_creation = true %>
+      <% end %>
+    <% end %>
+    <% if hide_answer_creation == false %>
+      <div class="create-answer">
+        <h2>Répondre à l'indécision</h2>
+        <%= render "answers/new" %>
+      </div>
+    <% end %>
   </div>
 </div>
