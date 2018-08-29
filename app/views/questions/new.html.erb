@@ -6,7 +6,7 @@
         <div class="padding">
           <%= simple_form_for [@user, @question] do |f| %>
             <%= f.input :description, placeholder: "Exemple : Que porter aujourd'hui ?" %>
-            <%= f.input :deadline, as: :range %>
+            <%= f.input :attente, as: :range %>
             <div class="category-choices">
               <%= f.association :category, as: :radio_buttons, :required => true, input_html: { class: 'category-choice' }, label: false %>
             </div>
