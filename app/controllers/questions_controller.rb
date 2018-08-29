@@ -14,37 +14,37 @@ class QuestionsController < ApplicationController
           format.html
           format.js { render 'sortby_created_at' }
         end
-        elsif params[:query] == "1"
+        elsif params[:query] == "8"
         @questions = Question.all.where(category: params[:query])
         respond_to do |format|
           format.html
           format.js { render 'showcategory' }
         end
-        elsif params[:query] == "2"
+        elsif params[:query] == "9"
         @questions = Question.all.where(category: params[:query])
         respond_to do |format|
           format.html
           format.js { render 'showcategory' }
         end
-        elsif params[:query] == "3"
+        elsif params[:query] == "10"
         @questions = Question.all.where(category: params[:query])
         respond_to do |format|
           format.html
           format.js { render 'showcategory' }
         end
-        elsif params[:query] == "4"
+        elsif params[:query] == "11"
         @questions = Question.all.where(category: params[:query])
         respond_to do |format|
           format.html
           format.js { render 'showcategory' }
         end
-        elsif params[:query] == "5"
+        elsif params[:query] == "12"
         @questions = Question.all.where(category: params[:query])
         respond_to do |format|
           format.html
           format.js { render 'showcategory' }
         end
-        elsif params[:query] == "6"
+        elsif params[:query] == "13"
         @questions = Question.all.where(category: params[:query])
         respond_to do |format|
           format.html
