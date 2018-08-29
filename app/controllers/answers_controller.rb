@@ -5,12 +5,15 @@ class AnswersController < ApplicationController
   end
 
   def create
+    @question = Question.find(params[:question_id])
     @answer = Answer.new(answer_params)
     @answer.user = current_user
-    @answer.save!
-    redirect_to questions_path
+    if @answer.save
+      redirect_to questions_path
+    else
+      render "questions/show"
+    end
   end
-
   private
 
   def answer_params
