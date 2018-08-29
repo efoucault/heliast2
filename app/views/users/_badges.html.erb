@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-4">
+    <div class="list-badges">
+      <div class="bdge badge-look">
+        <% if @score_look > 1000 %>
+          <%= image_tag "badge-05.png", width: 50 %>
+        <%else%>
+          <%= image_tag "badge-11.png", width: 50, class:'no-badge' %>
+        <%end%>
+        <h6>Look</h6>
+        <p> <%=@score_look%> pts </p>
+      </div>
+      <div class="bdge badge-food">
+        <% if @score_food > 1000 %>
+          <%= image_tag "badge-03.png", width: 50 %>
+        <%else%>
+          <%= image_tag "badge-09.png", width: 50, class:'no-badge' %>
+        <%end%>
+        <h6>Food</h6>
+        <p> <%=@score_food%> pts </p>
+      </div>
+      <div class="bdge badge-culture">
+        <% if @score_culture > 1000 %>
+          <%= image_tag "badge-01.png", width: 50 %>
+        <%else%>
+          <%= image_tag "badge-07.png", width: 50, class:'no-badge' %>
+        <%end%>
+        <h6>Culture</h6>
+        <p> <%=@score_culture%> pts </p>
+      </div>
+    </div>
+    <div class="list-badges">
+      <div class="bdge badge-work">
+        <% if @score_achats > 1000 %>
+          <%= image_tag "badge-02.png", width: 50 %>
+        <%else%>
+          <%= image_tag "badge-08.png", width: 50, class:'no-badge' %>
+        <%end%>
+        <h6>Achats</h6>
+        <p> <%=@score_achats%> pts </p>
+      </div>
+      <div class="bdge badge-work">
+        <% if @score_work > 1000 %>
+          <%= image_tag "badge-04.png", width: 50 %>
+        <%else%>
+          <%= image_tag "badge-10.png", width: 50, class:'no-badge' %>
+        <%end%>
+        <h6>Travail</h6>
+        <p> <%=@score_work%> pts </p>
+      </div>
+      <div class="bdge badge-love">
+        <% if @score_love > 1000 %>
+          <%= image_tag "badge-06.png", width: 50 %>
+        <%else%>
+          <%= image_tag "badge-12.png", width: 50, class:'no-badge' %>
+        <%end%>
+        <h6>Love</h6>
+        <p> <%=@score_love%> pts </p>
+      </div>
+    </div>
+  </div>
+</div>

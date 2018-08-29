@@ -1,0 +1,22 @@
+.list-badges {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em;
+  text-align: center;
+  float: center;
+}
+
+.bdge {
+  h5 {
+    color: white;
+  }
+  p {
+    color: black;
+    font-size: 0.8em;
+  }
+}
+
+.no-badge {
+  opacity: 0.4;
+}
+
