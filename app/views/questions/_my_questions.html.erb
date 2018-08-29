@@ -1,9 +1,9 @@
-<% @questions.each do |question| %>
+<% @questions.current_user.each do |question| %>
   <div class="question-card" data-deadline="<%= question.deadline %>">
 
     <div class="question-card <%= question.status %>">
       <div class="question-card-content">
-        <span><p class="categorie"><%= question.category.name.upcase %></p></span>
+        <span><p class="categorie"><%= question.category %></p></span>
         <%=  %>
         <span><p class="deadline"><%= question.deadline%></p></span>
         <h4><%= question.description%></h4>

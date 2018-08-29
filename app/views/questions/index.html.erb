@@ -1,17 +1,9 @@
-<div class="top-dashboard">
-  <div class="info-dashboard">
-    <div class="photo-user">
-      <%= cl_image_tag current_user.photo, class: 'avatar-bordered' %>
-    </div>
-    <div class="info-user">
-      <h4>Hey <%= current_user.first_name %>, indécise ?</h4>
-      <p>Tu as <%= @questions.size%> indécisions<br/>
-      dont <strong style='color: black;'><%= @questions.pending.size%></strong> en attente.</p>
-      <p>Heliast niveau XXXXX</p>
-    </div>
-  </div>
-  <div class="banner-dashboard">
-  </div>
+ <h4>CECI EST LA FUTUR PAGE PATH POUR LA MARKETPLACE</h4>
+
+<div class="categories-cards">
+  <% Category.all.each do |category| %>
+      <p><i class="fa fa-check"></i><%= category.name %></p>
+  <% end %>
 </div>
 
 <div class="bg-light">
@@ -20,9 +12,6 @@
 
     <div class="row">
       <div class="col-6">
-      <div class='btn btn-add'>
-        <%= link_to "Nouvelle indécision", new_question_path %>
-       </div>
         <p class="sortby">Trier par
           <%= link_to "création", questions_path(query: "created_at") %>
           <%= link_to "deadline", questions_path(query: "deadline") %>

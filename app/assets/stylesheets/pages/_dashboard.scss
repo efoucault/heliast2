@@ -70,6 +70,14 @@
   transition: transform .2s;
 }
 
+// Nom de catégorie en majuscules en haut à gauche des cards
+.categorie {
+  color: #a6a4ae;
+  font-size: 12px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
 .question-card .pending {
   border-left: 0.5em solid orange;
   border-radius: 0.3em;
