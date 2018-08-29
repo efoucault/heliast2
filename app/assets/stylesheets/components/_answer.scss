@@ -1,0 +1,42 @@
+.answers {
+  h2 {
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+}
+
+.answer {
+  padding: 1em 3em;
+  h3 {
+    margin: 0;
+    color: orange;
+    font-weight: 800;
+    font-size: 1.3em;
+    padding: 0.5em;
+
+  }
+  h4 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 800;
+    padding: 0 0.5em;
+  }
+  p {
+    font-size: 0.8em;
+    padding: 0.5em 0.5em;
+  }
+  .answer-titre {
+    border-radius: 0.2em;
+    border-left:   1px solid rgb(200, 200, 200);
+    border-right:  1px solid rgb(200, 200, 200);
+    border-top: 1px solid rgb(200, 200, 200);
+  }
+  .answer-reponse {
+    border-radius: 0.1em;
+    border-left:   1px solid rgb(200, 200, 200);
+    border-right:  1px solid rgb(200, 200, 200);
+    border-bottom: 1px solid rgb(200, 200, 200);
+  }
+}
