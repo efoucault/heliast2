@@ -40,13 +40,13 @@
         <p> <%=@score_achats%> pts </p>
       </div>
       <div class="bdge badge-work">
-        <% if @score_work > 1000 %>
+        <% if @score_travail > 1000 %>
           <%= image_tag "badge-04.png", width: 50 %>
         <%else%>
           <%= image_tag "badge-10.png", width: 50, class:'no-badge' %>
         <%end%>
         <h6>Travail</h6>
-        <p> <%=@score_work%> pts </p>
+        <p> <%=@score_travail%> pts </p>
       </div>
       <div class="bdge badge-love">
         <% if @score_love > 1000 %>

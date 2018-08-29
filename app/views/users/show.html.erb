@@ -1,5 +1,4 @@
 <div class="top-dashboard">
-  <h1>SCORE <%=  @score %></h1>
   <div class="info-dashboard">
     <div class="photo-user">
       <%= cl_image_tag @user.photo, class: 'avatar-bordered' %>
@@ -8,7 +7,7 @@
       <h4>Hey <%= @user.first_name %>, indécise ?</h4>
       <p>Tu as <%= @user.questions.size%> indécisions<br/>
       dont <strong style='color: black;'><%= @user.questions.pending.size%></strong> en attente.</p>
-      <p>Heliast niveau XXXXX</p>
+      <h4 style='color:black;'> Score heliast : <%=  @score %></h4>
     </div>
   </div>
   <div class="banner-dashboard">
