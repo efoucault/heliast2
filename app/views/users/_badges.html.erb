@@ -1,5 +1,11 @@
 <div class="row">
+
   <div class="col-4">
+    <div class="no-score text-center">
+       <% if @score_look && @score_food && @score_culture && @score_achats && @score_travail && @score_love == 0 %>
+        <h5>Tu n'as pas encore de badge ! Réponds à des indécisions pour gagner des points</h5>
+        <%end%>
+        </div>
     <div class="list-badges">
       <div class="bdge badge-look">
         <% if @score_look > 1000 %>
