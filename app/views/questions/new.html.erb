@@ -10,7 +10,7 @@
             <div class="category-choices">
               <%= f.association :category, as: :radio_buttons, :required => true, input_html: { class: 'category-choice' }, label: false %>
             </div>
-            <%= f.input :type_resolution, collection: Question::STATUSES, prompt: "Type de Résolution",  label: false %>
+            <%= f.input :type_resolution, collection: Question::STATUSES, prompt: "Type de Résolution",  label: false, :selected => "Mode héliaste"%>
         </div>
           <div class="form-group">
              <div class="fields">
