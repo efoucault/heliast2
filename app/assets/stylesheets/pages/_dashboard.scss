@@ -70,6 +70,40 @@
   transition: transform .2s;
 }
 
+// Catégories en forme de cards dans marketplace
+
+.categories-cards {
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.category-card {
+  height: 170px !important;
+  width: 85px !important;
+  // background-color: white;
+  border-radius: 12px;
+  opacity: 0.7;
+  text-align: center;
+  margin: 0px 30px;
+  // background-image: url(/assets/background.jpg);
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.category-text {
+  opacity: 1!important;
+  color:white;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  top: 131px;
+}
+
+
 // Nom de catégorie en majuscules en haut à gauche des cards
 .categorie {
   color: #a6a4ae;
