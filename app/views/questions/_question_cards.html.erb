@@ -5,7 +5,16 @@
       <div class="question-card-content">
         <span><p class="categorie"><%= question.category.name.upcase %></p></span>
         <%=  %>
-        <span><p class="deadline"><%= question.deadline%></p></span>
+        <% diff = TimeDifference.between(DateTime.now, question.deadline)%>
+        <% countdown = diff.in_general %>
+        <span><p class="deadline">
+          <% if DateTime.now.in_time_zone < question.deadline %>
+          Plus que
+            <%= compute_countdown(countdown) %>
+          <% else %>
+            OVER
+          <%end%>
+          </p></span>
         <h4><%= question.description%></h4>
         </div>
       <div class="question-card-status">

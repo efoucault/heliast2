@@ -34,6 +34,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.user = current_user
+    @question.deadline = DateTime.now + @question.attente.minutes
     @question.save!
     redirect_to questions_path
   end
@@ -62,7 +63,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:description, :deadline, :category_id, :user_id, :type_resolution, options_attributes: [:id, :titre, :photo, :photo_cache, :_destroy])
+    params.require(:question).permit(:description, :attente, :category_id, :user_id, :type_resolution, options_attributes: [:id, :titre, :photo, :photo_cache, :_destroy])
   end
 
   def status_info
