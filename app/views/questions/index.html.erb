@@ -17,6 +17,13 @@
         <p class="sortby">Trier par
           <%= link_to "création", questions_path(query: "created_at") %>
           <%= link_to "deadline", questions_path(query: "deadline") %>
+          <br>
+          <%= link_to "Look", questions_path(query: "1") %> |
+          <%= link_to "Business", questions_path(query: "2") %> |
+          <%= link_to "Food", questions_path(query: "3") %> |
+          <%= link_to "Culture", questions_path(query: "4") %> |
+          <%= link_to "Shopping", questions_path(query: "5") %> |
+          <%= link_to "Love", questions_path(query: "6") %>
         </p>
         <div class="questions">
           <%= render "questions/question_cards" %>
