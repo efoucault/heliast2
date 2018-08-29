@@ -1,6 +1,18 @@
 import "bootstrap";
 import $ from "jquery"
 import '../components/category_choice';
+import 'slick-carousel';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+$('.categories-cards').slick({
+ // centerMode: true,
+ centerPadding: '5px',
+ slidesToShow: 4,
+ slidesToScroll: 4,
+ infinite: true,
+ arrows: false
+});
 
 
 $("[data-form-prepend]").click(function(e) {
