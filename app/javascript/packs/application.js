@@ -16,6 +16,7 @@ $("[data-form-prepend]").click(function(e) {
   return false;
 });
 
+// click on choose file when clicking on the camera icon
 
 const pictureIcons = document.querySelectorAll(".fa-camera");
   pictureIcons.forEach((icon) => {
@@ -35,6 +36,8 @@ const deleteIcons = document.querySelectorAll(".fa-trash");
   });
 });
 
+// remove-option
+
 const deleteButtons = document.querySelectorAll(".remove");
 deleteButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
@@ -42,3 +45,22 @@ deleteButtons.forEach((button) => {
     document.getElementById(`option_fields_${index}`).style.display = "none";
   });
 });
+
+// Prepopulate-answer when clicking on an option
+
+const options = document.querySelectorAll(".option");
+  options.forEach((option) => {
+    option.addEventListener("click", (event) => {
+      const optionid = event.currentTarget.dataset.optionid;
+      document.getElementById("answer_option_id").value = `${optionid}`;
+      const checks = document.querySelectorAll(".fa-check");
+      checks.forEach((check) => {
+        console.log(check)
+        check.classList.add("hidden");
+      })
+    const check = document.querySelector(`.option${optionid} .fa-check`);
+    check.classList.remove("hidden");
+  })
+});
+
+

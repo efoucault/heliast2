@@ -8,35 +8,59 @@
       <%= link_to question_path(@question), method: :delete do%>
         <i class="fa fa-trash"></i>
       <% end %>
+    </div>
+    <div class="indecision-contenu text-center">
+      <h4><%= @question.description %> </h4>
+      <p class="text-left">Deadline: <%= @question.deadline %> </p>
 
-      </div>
-      <div class="indecision-contenu text-center">
-        <h4><%= @question.description %> </h4>
-        <p class="text-left">Deadline: <%= @question.deadline %> </p>
-
-        <p class="text-left">Résolution: <%= @question.type_resolution %> </p>
-      </div>
-      <div class="options">
-        <% @question.options.each_with_index do |option, index| %>
-          <div class="option">
-            <% if option.photo.present? %>
-              <%= cl_image_tag option.photo, crop: :fill, class: 'option-image' %>
-            <% else %>
-              <div class="option-image-none"></div>
-            <%end%>
-            <div class="option-zoom">
-              <i class="fa fa-search-plus"></i>
-            </div>
-            <div class="option-title">
-              <%= option.titre %>
-            </div>
-            <div class="circle"><p><%=index+1%></p></div>
+      <p class="text-left">Résolution: <%= @question.type_resolution %> </p>
+    </div>
+    <div class="options">
+      <% @question.options.each_with_index do |option, index| %>
+        <div class="option option<%= option.id %>" data-optionid="<%= option.id %>">
+          <% if option.photo.present? %>
+            <%= cl_image_tag option.photo, crop: :fill, class: 'option-image' %>
+          <% else %>
+            <div class="option-image-none"></div>
+          <%end%>
+          <div class="option-zoom">
+            <i class="fa fa-search-plus"></i>
           </div>
-        <% end %>
-      </div>
+          <div class="option-title">
+            <%= option.titre %>
+            <i class="fa fa-check hidden"></i>
+          </div>
+          <div class="circle"><p><%=index+1%></p></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="indecision-card">
+    <div class="answers">
+      <h2>Réponses à l'indécision</h2>
+      <% @question.answers.each_with_index do |answer, index| %>
+        <div class="option">
+          <% if answer.option.photo.present? %>
+            <%= cl_image_tag answer.option.photo, crop: :fill, class: 'option-image' %>
+          <% else %>
+            <div class="option-image-none"></div>
+          <%end%>
+          <div class="option-zoom">
+            <i class="fa fa-search-plus"></i>
+          </div>
+          <div class="option-title">
+            <%= answer.option.titre %></br>
+            <%= answer.reponse %></br>
+          </div>
+          <div class="circle"><p><%=index+1%></p></div>
+        </div>
+      <% end %>
+    </div>
+    <div class="create-answer">
+      <h2>Répondre à l'indécision</h2>
+      <%= render "answers/new" %>
     </div>
   </div>
 </div>
-<br/>
 
 

@@ -5,7 +5,26 @@
 
 .option {
   background-color: rgb(230, 230, 230);
-;
+  z-index: 1;
+  .fa-check {
+    font-size: 1.5em;
+    color: #E9536B;
+    float: right;
+  }
+}
+
+.selected-option {
+  background: #24D6D6;
+  opacity: 1;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.selected-option-old {
+  background: #24D6D6;
+  opacity: 0.8;
+  z-index: 0;
+  overflow: hidden;
 }
 
 .form-post {
