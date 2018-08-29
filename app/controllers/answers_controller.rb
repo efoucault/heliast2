@@ -8,6 +8,9 @@ class AnswersController < ApplicationController
     @question = Question.find(params[:question_id])
     @answer = Answer.new(answer_params)
     @answer.user = current_user
+    time_diff = TimeDifference.between(@question.created_at, DateTime.now).in_minutes
+    scoring = 70 - time_diff.to_i
+    @answer.score = (scoring > 10) ? scoring : 10
     if @answer.save
       redirect_to questions_path
     else
