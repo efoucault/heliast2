@@ -23,6 +23,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     status_info
+    @category = @question.category
   end
 
   def new

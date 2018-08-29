@@ -15,6 +15,7 @@
         <p class="text-left">Deadline: <%= @question.deadline %> </p>
 
         <p class="text-left">Résolution: <%= @question.type_resolution %> </p>
+        <p class="text-left">Catégorie: <%= @question.category.name %> </p>
       </div>
       <div class="options">
         <% @question.options.each_with_index do |option, index| %>
@@ -38,5 +39,3 @@
   </div>
 </div>
 <br/>
-
-
