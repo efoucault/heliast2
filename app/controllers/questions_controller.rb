@@ -14,6 +14,42 @@ class QuestionsController < ApplicationController
           format.html
           format.js { render 'sortby_created_at' }
         end
+        elsif params[:query] == "1"
+        @questions = Question.all.where(category: params[:query])
+        respond_to do |format|
+          format.html
+          format.js { render 'showcategory' }
+        end
+        elsif params[:query] == "2"
+        @questions = Question.all.where(category: params[:query])
+        respond_to do |format|
+          format.html
+          format.js { render 'showcategory' }
+        end
+        elsif params[:query] == "3"
+        @questions = Question.all.where(category: params[:query])
+        respond_to do |format|
+          format.html
+          format.js { render 'showcategory' }
+        end
+        elsif params[:query] == "4"
+        @questions = Question.all.where(category: params[:query])
+        respond_to do |format|
+          format.html
+          format.js { render 'showcategory' }
+        end
+        elsif params[:query] == "5"
+        @questions = Question.all.where(category: params[:query])
+        respond_to do |format|
+          format.html
+          format.js { render 'showcategory' }
+        end
+        elsif params[:query] == "6"
+        @questions = Question.all.where(category: params[:query])
+        respond_to do |format|
+          format.html
+          format.js { render 'showcategory' }
+        end
       end
     else
       @questions = Question.all.order(created_at: :desc)
