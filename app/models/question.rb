@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
   belongs_to :user
-  belongs_to :category, optional: true
+  belongs_to :category
   has_many :options, dependent: :destroy
   has_many :answers, through: :options, dependent: :destroy
   # has_many :question_categories

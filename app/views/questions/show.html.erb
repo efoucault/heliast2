@@ -36,6 +36,9 @@
           <div class="circle"><p><%=index+1%></p></div>
         </div>
       <% end %>
+      <% if @answer && @answer.errors.messages.key?(:option) %>
+        <p class="text-danger">Please select an option above</p>
+      <% end %>
     </div>
   </div>
   <div class="indecision-card">
