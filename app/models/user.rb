@@ -7,4 +7,9 @@ class User < ApplicationRecord
   has_many :answers, dependent: :destroy
   mount_uploader :photo, PhotoUploader
   has_many :questions
+
+
+  def score_by_category(category)
+    self.questions.joins(:category).where(categories: { name: category }).joins(:answers).sum(:score)
+  end
 end
