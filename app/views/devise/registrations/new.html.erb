@@ -1,7 +1,7 @@
 <div class="wrapper-login">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12 col-md-4 col-md-offset-4">
+      <div class="col-sm-12 col-md-8 col-md-offset-2">
         <div class="sign">
           <h2>Sign up</h2>
 
@@ -13,6 +13,7 @@
                           required: true,
                           autofocus: true ,
                           input_html: { autocomplete: "email" }%>
+              <%= f.input :pseudo, required: true %>
               <%= f.input :password,
                           required: true,
                           hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
