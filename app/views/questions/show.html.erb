@@ -82,4 +82,13 @@
       </div>
     <% end %>
   </div>
+  <% if @question.answers.present? && (@question.answers.first.created_at + 24.hours) < DateTime.now %>
+    <div class="indecision-card sat-parent">
+      <h2>Qu'avez-vous pensé de l'option proposée ?</h2>
+      <div class="satisfaction">
+        <div class="satisfied"><i class="fa fa-thumbs-up"></i></div>
+        <div class="not-satisfied"><i class="fa fa-thumbs-down"></i></div>
+      </div>
+    </div>
+  <% end %>
 </div>

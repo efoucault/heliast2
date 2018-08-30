@@ -17,7 +17,8 @@
       <div class="col-6">
         <p class="sortby">Trier par
           <%= link_to "Date de création", questions_path(query: "created_at") %> |
-          <%= link_to "Urgence", questions_path(query: "deadline") %>
+          <%= link_to "Urgence", questions_path(query: "deadline") %> |
+          <%= link_to "Populaire", questions_path(query: "populaire") %>
         </p>
         <div class="questions">
           <%= render "questions/question_cards" %>
@@ -27,6 +28,3 @@
 
   </div>
 </div>
-
-
-
