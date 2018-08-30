@@ -79,7 +79,7 @@ class QuestionsController < ApplicationController
     @question.user = current_user
     @question.deadline = DateTime.now + @question.attente.minutes
     @question.save!
-    redirect_to questions_path
+    redirect_to question_path(@question)
   end
 
   def edit
