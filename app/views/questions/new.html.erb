@@ -6,20 +6,21 @@
         <div class="padding">
           <%= simple_form_for [@user, @question] do |f| %>
             <%= f.input :description, placeholder: "Exemple : Que porter aujourd'hui ?" %>
-            <%= f.input :attente, as: :range %>
+            <p class="ma-reponse hidden">Je veux ma réponse dans : </p>
+            <%= f.input :attente, as: :range, label: false, input_html: { class: 'attente hidden' } %>
             <div class="category-choices">
               <%= f.association :category, as: :radio_buttons, :required => true, input_html: { class: 'category-choice' }, label: false %>
             </div>
-            <%= f.input :type_resolution, collection: Question::STATUSES, prompt: "Type de Résolution",  label: false, :selected => "Mode héliaste"%>
+            <%= f.input :type_resolution, collection: Question::STATUSES, prompt: "Type de Résolution",  label: false, :selected => "Mode héliaste", input_html: { class: 'resolution' }%>
         </div>
           <div class="form-group">
              <div class="fields">
               <%= f.simple_fields_for :options do |builder| %>
                <%= render "option_fields", :f => builder %>
              <% end %>
-<!--              <i class="fa fa-plus plus"></i>
- --><!--              <p id="add-option"><%# link_to_add_fields "Add Option", f, :options %></p>
- -->             </div>
+               <i class="fa fa-plus plus"></i>
+               <p id="add-option" class="hidden"><%= link_to_add_fields "Add Option", f, :options %></p>
+             </div>
           </div>
         <%= f.submit "Créer indécision", class: "btn btn-success" %>
         <% end %>

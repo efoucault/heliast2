@@ -146,12 +146,30 @@ rocco = User.create(password: '123456', admin: false, email: 'rocco@gmail.com')
 p User.all
 
 puts "categories creation"
-look = Category.create!(name: "Look")
+url_look = "https://res.cloudinary.com/offbatt/image/upload/v1535620212/look.jpg"
+look = Category.new(name: "Look")
+look.remote_photo_url = url_look
+look.save
+url_food = "https://res.cloudinary.com/offbatt/image/upload/v1535620213/food.jpg"
 food = Category.create!(name: "Food")
+food.remote_photo_url = url_food
+food.save
+url_culture = "https://res.cloudinary.com/offbatt/image/upload/v1535620212/culture.jpg"
 culture = Category.create!(name: "Culture")
+culture.remote_photo_url = url_culture
+culture.save
+url_achats = "https://res.cloudinary.com/offbatt/image/upload/v1535620212/achats.jpg"
 achats = Category.create!(name: "Achats")
+achats.remote_photo_url = url_achats
+achats.save
+url_love = "https://res.cloudinary.com/offbatt/image/upload/v1535620212/love.jpg"
 love = Category.create!(name: "Love")
+love.remote_photo_url = url_love
+love.save
+url_travail = "https://res.cloudinary.com/offbatt/image/upload/v1535620212/travail.jpg"
 travail = Category.create!(name: "Travail")
+travail.remote_photo_url = url_travail
+travail.save
 
 p Category.all
 puts "questions creation"

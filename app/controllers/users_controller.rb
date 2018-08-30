@@ -6,12 +6,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @score = @user.answers.sum(:score)
-    @score_look = @user.questions.where(:category => 1).joins(:answers).sum(:score)
-    @score_food = @user.questions.where(:category => 2).joins(:answers).sum(:score)
-    @score_culture = @user.questions.where(:category => 3).joins(:answers).sum(:score)
-    @score_achats = @user.questions.where(:category => 4).joins(:answers).sum(:score)
-    @score_love = @user.questions.where(:category => 5).joins(:answers).sum(:score)
-    @score_travail = @user.questions.where(:category => 6).joins(:answers).sum(:score)
+    @score_look = current_user.score_by_category('Look')
+    @score_food = current_user.score_by_category('Food')
+    @score_culture = current_user.score_by_category('Culture')
+    @score_achats = current_user.score_by_category('Achats')
+    @score_love = current_user.score_by_category('Love')
+    @score_travail = current_user.score_by_category('Travail')
     @questions = @user.questions
   end
 end

@@ -14,43 +14,43 @@ class QuestionsController < ApplicationController
           format.html
           format.js { render 'sortby_created_at' }
         end
-        elsif params[:query] == "8"
-        @questions = Question.all.where(category: params[:query])
-        respond_to do |format|
-          format.html
-          format.js { render 'showcategory' }
+        elsif params[:query] == "Look"
+          @questions = Question.all.joins(:category).where(categories: { name: params[:query] })
+          respond_to do |format|
+            format.html
+            format.js { render 'showcategory' }
         end
-        elsif params[:query] == "9"
-        @questions = Question.all.where(category: params[:query])
-        respond_to do |format|
-          format.html
-          format.js { render 'showcategory' }
+        elsif params[:query] == "Food"
+          @questions = Question.all.joins(:category).where(categories: { name: params[:query] })
+          respond_to do |format|
+            format.html
+            format.js { render 'showcategory' }
         end
-        elsif params[:query] == "10"
-        @questions = Question.all.where(category: params[:query])
-        respond_to do |format|
-          format.html
-          format.js { render 'showcategory' }
+        elsif params[:query] == "Culture"
+          @questions = Question.all.joins(:category).where(categories: { name: params[:query] })
+          respond_to do |format|
+            format.html
+            format.js { render 'showcategory' }
         end
-        elsif params[:query] == "11"
-        @questions = Question.all.where(category: params[:query])
-        respond_to do |format|
-          format.html
-          format.js { render 'showcategory' }
+        elsif params[:query] == "Achats"
+          @questions = Question.all.joins(:category).where(categories: { name: params[:query] })
+          respond_to do |format|
+            format.html
+            format.js { render 'showcategory' }
         end
-        elsif params[:query] == "12"
-        @questions = Question.all.where(category: params[:query])
-        respond_to do |format|
-          format.html
-          format.js { render 'showcategory' }
+        elsif params[:query] == "Love"
+          @questions = Question.all.joins(:category).where(categories: { name: params[:query] })
+          respond_to do |format|
+            format.html
+            format.js { render 'showcategory' }
         end
-        elsif params[:query] == "13"
-        @questions = Question.all.where(category: params[:query])
-        respond_to do |format|
-          format.html
-          format.js { render 'showcategory' }
+        elsif params[:query] == "Travail"
+          @questions = Question.all.joins(:category).where(categories: { name: params[:query] })
+          respond_to do |format|
+            format.html
+            format.js { render 'showcategory' }
         end
-      end
+    end
     else
       @questions = Question.all.order(created_at: :desc)
     end
