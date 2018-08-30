@@ -2,9 +2,6 @@
   <div class="indecision-card">
     <div class="top-card top-<%= @question.status %>">
       <%= @status_message%>
-      <%= link_to edit_question_path(@question) do %>
-        <i class="fa fa-edit"></i>
-      <% end %>
       <%= link_to question_path(@question), method: :delete do%>
         <i class="fa fa-trash"></i>
       <% end %>
