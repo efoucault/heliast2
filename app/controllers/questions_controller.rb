@@ -14,6 +14,13 @@ class QuestionsController < ApplicationController
           format.html
           format.js { render 'sortby_created_at' }
         end
+      elsif params[:query] == "populaire"
+          # @questions = Question.all.joins(:answers).group(:question_id).count
+          @questions = Question.where(id: Question.all.joins(:answers).group(:question_id).count.keys)
+          respond_to do |format|
+            format.html
+            format.js { render 'sortby_popularity' }
+          end
         elsif params[:query] == "Look"
           @questions = Question.all.joins(:category).where(categories: { name: params[:query] })
           respond_to do |format|
