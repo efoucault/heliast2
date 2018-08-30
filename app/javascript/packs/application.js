@@ -24,14 +24,26 @@ $('.choice-categories-cards').slick({
  arrows: true
 });
 
-$("[data-form-prepend]").click(function(e) {
-  var obj = $($(this).attr("data-form-prepend"));
-  obj.find("input, select, textarea").each(function() {
-    $(this).attr("name", function() {
-      return $(this)
-        .attr("name")
-        .replace("new_record", new Date().getTime());
-    });
+
+
+//button to display badges trophy
+const buttonTrophy = document.getElementById("trophy");
+console.log(buttonTrophy);
+const trophies = document.getElementById("trophies");
+console.log(trophies);
+buttonTrophy.addEventListener("click", (event) => {
+  trophies.classList.toggle("hidden");
+});
+
+//cross to display badges trophy
+const buttonCross = document.querySelector(".cross");
+console.log(buttonCross);
+const listtrophies = document.getElementById("trophies");
+console.log(listtrophies);
+buttonCross.addEventListener("click", (event) => {
+  listtrophies.classList.toggle("hidden");
+});
+
 
 // IMAGE OPACITY
   Array.from(document.querySelectorAll('.progress-bar')).forEach(function(bar){
@@ -40,6 +52,19 @@ $("[data-form-prepend]").click(function(e) {
       badge.querySelector('img').classList.add('complete');
     };
   });
+
+// $("[data-form-prepend]").click(function(e) {
+//   var obj = $($(this).attr("data-form-prepend"));
+//   obj.find("input, select, textarea").each(function() {
+//     $(this).attr("name", function() {
+//       return $(this)
+//         .attr("name")
+//         .replace("new_record", new Date().getTime());
+//       };
+//     };
+//   });
+
+
 
 
 // click on choose file when clicking on the camera icon
@@ -169,6 +194,7 @@ document.querySelector("#add-option").addEventListener("click", (event) => {
      addIcon.classList.add("hidden");
    }
 });
+
 
 
 
