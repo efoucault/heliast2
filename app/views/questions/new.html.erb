@@ -18,7 +18,9 @@
               <%= f.simple_fields_for :options do |builder| %>
                <%= render "option_fields", :f => builder %>
              <% end %>
-               <i class="fa fa-plus plus"></i>
+              <div class="plus-icon">
+                 <i class="fa fa-plus plus"></i>
+              </div>
                <p id="add-option" class="hidden"><%= link_to_add_fields "Add Option", f, :options %></p>
              </div>
           </div>
