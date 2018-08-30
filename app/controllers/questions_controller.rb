@@ -106,7 +106,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:description, :attente, :category_id, :user_id, :type_resolution, options_attributes: [:id, :titre, :photo, :photo_cache, :_destroy])
+    params.require(:question).permit(:description, :attente, :category_id, :user_id, :type_resolution, :satisfied_by_recommended_option, options_attributes: [:id, :titre, :photo, :photo_cache, :_destroy])
   end
 
   def status_info

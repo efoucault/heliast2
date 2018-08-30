@@ -64,6 +64,7 @@
           <div class="answer-reponse">
             <p><%= answer.reponse %></p>
           </div>
+        </div>
       <% end %>
     </div>
     <% hide_answer_creation = false %>
@@ -82,13 +83,34 @@
       </div>
     <% end %>
   </div>
-  <% if @question.answers.present? && (@question.answers.first.created_at + 24.hours) < DateTime.now %>
-    <div class="indecision-card sat-parent">
-      <h2>Qu'avez-vous pensé de l'option proposée ?</h2>
-      <div class="satisfaction">
-        <div class="satisfied"><i class="fa fa-thumbs-up"></i></div>
-        <div class="not-satisfied"><i class="fa fa-thumbs-down"></i></div>
+  <div class="indecision-card sat-parent">
+    <% if @question.answers.present? && (@question.answers.first.created_at + 0.hours) < DateTime.now %>
+      <% if @question.satisfied_by_recommended_option == nil && current_user == @question.user %>
+        <h2>Qu'avez-vous pensé de l'option proposée ?</h2>
+        <div class="satisfaction">
+          <div class="satisfied"><%= link_to question_path(@question, question: {satisfied_by_recommended_option: true}), method: :patch do %>
+            <i class="fa fa-thumbs-up"></i>
+          <% end %>
+          </div>
+          <div class="not-satisfied">
+            <%= link_to question_path(@question, question: {satisfied_by_recommended_option: false}), method: :patch do %>
+                <i class="fa fa-thumbs-down"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <div class="resultat-sat">
+        <% if @question.satisfied_by_recommended_option != nil %>
+          <h2>Voici le résultat</h2>
+          <% if @question.satisfied_by_recommended_option == true %>
+            <p>Thumbs up</p>
+            <i class="fa fa-thumbs-up"></i>
+          <% end %>
+          <% if @question.satisfied_by_recommended_option == false %>
+            <i class="fa fa-thumbs-down"></i>
+          <% end %>
+        <% end %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
