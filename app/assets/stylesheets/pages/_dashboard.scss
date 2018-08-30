@@ -206,18 +206,3 @@
 .turquoise {
   background-color: #24d6d6;
 }
-
-.progress-bar {
-  width: 100%;
-  background-color: #e0e0e0;
-  margin-right: 1em;
-}
-
-.progress-bar-fill {
-  display: block;
-  height: 1em;
-  background-color: #24d6d6;
-  border-radius: 3px;
-
-  transition: width 500ms ease-in-out;
-}
