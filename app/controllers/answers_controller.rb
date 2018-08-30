@@ -11,6 +11,8 @@ class AnswersController < ApplicationController
     time_diff = TimeDifference.between(@question.created_at, DateTime.now).in_minutes
     scoring = 70 - time_diff.to_i
     @answer.score = (scoring > 10) ? scoring : 10
+    @question.status = 1
+    @question.save
     if @answer.save
       redirect_to questions_path
     else
