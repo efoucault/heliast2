@@ -14,6 +14,14 @@ $('.categories-cards').slick({
  arrows: false
 });
 
+$('.choice-categories-cards').slick({
+ // centerMode: true,
+ centerPadding: '5px',
+ slidesToShow: 3,
+ slidesToScroll: 4,
+ infinite: false,
+ arrows: true
+});
 
 $("[data-form-prepend]").click(function(e) {
   var obj = $($(this).attr("data-form-prepend"));
@@ -90,3 +98,29 @@ typeResolution.addEventListener("blur", (event) => {
     titreAttente.classList.add("hidden");
   }
 });
+
+
+// Pick a category choice dans un new indecision
+const allCategories = document.querySelectorAll(".choice-category-card");
+allCategories.forEach((categorie) => {
+  categorie.addEventListener("click", (event) => {
+    const choice = event.currentTarget.dataset.choice;
+    document.getElementById('question_category_id').value = `${choice}`;
+  });
+});
+
+// Choisir un mode de résolution
+const allTypes = document.querySelectorAll(".mode-listener");
+console.log(allTypes)
+allTypes.forEach((type) => {
+  type.addEventListener("click", (event) => {
+    const mode = event.currentTarget.dataset.mode;
+    console.log(mode)
+    document.getElementById('question_type_resolution').value = `${mode}`;
+  });
+});
+
+
+
+
+

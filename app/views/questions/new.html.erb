@@ -1,17 +1,75 @@
-<div class="container">
+
+
+<div class="container" style="width:100%; margin-right:0; margin-left:0;">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <div class="form-post">
-        <h1>Créer Indécision</h1>
+        <h1>Nouvelle indécision</h1>
         <div class="padding">
           <%= simple_form_for [@user, @question] do |f| %>
-            <%= f.input :description, placeholder: "Exemple : Que porter aujourd'hui ?" %>
+            <p>Décris ton indécision</p>
+            <%= f.input :description, label: false, placeholder: "Exemple : Que porter aujourd'hui ?" %>
             <p class="ma-reponse hidden">Je veux ma réponse dans : </p>
             <%= f.input :attente, as: :range, label: false, input_html: { class: 'attente hidden' } %>
             <div class="category-choices">
-              <%= f.association :category, as: :radio_buttons, :required => true, input_html: { class: 'category-choice' }, label: false %>
+              <p>Choisis ta catégorie*</p>
+
+              <div>
+                <div class="choice-categories-cards">
+                <% Category.all.each do |category| %>
+                    <div class="choice-category-card" data-choice="<%=category.id%>"style="background-image: url(<%= category.photo %>); background-size: cover;">
+                      <span class="category-text"><%= category.name %></span>
+                      <%= link_to "", class: 'category-card-link' %>
+                    </div>
+                <% end %>
+              </div>
+
+            <%= f.input :category_id, as: :hidden, input_html: {:value => ""}%>
+
             </div>
-            <%= f.input :type_resolution, collection: Question::STATUSES, prompt: "Type de Résolution",  label: false, :selected => "Mode héliaste", input_html: { class: 'resolution' }%>
+
+
+            </div>
+
+
+            <p style="margin-bottom: 4em;">Choisis un mode de résolution</p>
+
+            <div class="mode-container" style="width:100%; margin-right:0; margin-left:0;">
+
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="mode text-center mode-listener" data-mode="Mode héliaste">
+                    <div class="mode circle-mode"><%= image_tag "mode-23.png", class: 'mode-img' %></div>
+                    <div class="info-mode" style="padding: 0.3em;">
+                      <h5 style="padding-top: 2em;">Héliaste </h5>
+                      <p style="font-size: 0.7em">Un héliaste prendra la décision pour toi !</p>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="col-xs-6">
+                <div class="mode text-center mode-listener" data-mode="Mode Démocratie">
+                  <div class="circle-mode"><%= image_tag "mode-24.png", class: 'mode-img' %></div>
+                    <div class="info-mode" style="padding: 0.3em;">
+                  <h5 style="padding-top: 1em;">Multi<br/> Héliastes </h5>
+                  <p style="font-size: 0.7em">Plusieurs héliastes voteront pour la décision à prendre</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <%= f.input :type_resolution, as: :string, input_html: {:value => ""}%>
+
+      <!-- j'ai "hidden" ce champs mais il est indspensable pour le moment-->
+          <%= f.input :type_resolution, as: :hidden, collection: Question::STATUSES, prompt: "Type de Résolution",  label: false, :selected => "Mode héliaste", input_html: { class: 'resolution' }%>
+          <!--  -->
+
+
+
+
+
         </div>
           <div class="form-group">
              <div class="fields">
