@@ -82,6 +82,7 @@
 .category-card {
   height: 170px !important;
   width: 85px !important;
+  position:relative;
   // background-color: white;
   border-radius: 12px;
   opacity: 0.7;
@@ -92,6 +93,14 @@
     opacity: 1;
     cursor: pointer;
   }
+}
+
+.category-card-link {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
 
 .category-text {

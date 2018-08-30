@@ -4,6 +4,7 @@
       <!--  Chaque itération est une card et a une classe -->
       <div class="category-card" style="background-image: url(<%= category.photo %>); background-size: cover;">
         <span class="category-text"><%= category.name %></span>
+        <%= link_to "", questions_path(query: "#{category.name}"), class: 'category-card-link' %>
       </div>
   <% end %>
 </div>
@@ -15,15 +16,8 @@
     <div class="row">
       <div class="col-6">
         <p class="sortby">Trier par
-          <%= link_to "création", questions_path(query: "created_at") %>
-          <%= link_to "deadline", questions_path(query: "deadline") %>
-          <br>
-          <%= link_to "Look", questions_path(query: "Look") %> |
-          <%= link_to "Food", questions_path(query: "Food") %> |
-          <%= link_to "Culture", questions_path(query: "Culture") %> |
-          <%= link_to "Achats", questions_path(query: "Achats") %> |
-          <%= link_to "Love", questions_path(query: "Love") %> |
-          <%= link_to "Travail", questions_path(query: "Travail") %>
+          <%= link_to "Date de création", questions_path(query: "created_at") %> |
+          <%= link_to "Urgence", questions_path(query: "deadline") %>
         </p>
         <div class="questions">
           <%= render "questions/question_cards" %>
@@ -33,3 +27,6 @@
 
   </div>
 </div>
+
+
+
