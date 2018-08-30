@@ -18,12 +18,12 @@
           <%= link_to "création", questions_path(query: "created_at") %>
           <%= link_to "deadline", questions_path(query: "deadline") %>
           <br>
-          <%= link_to "Look", questions_path(query: "8") %> |
-          <%= link_to "Business", questions_path(query: "13") %> |
-          <%= link_to "Food", questions_path(query: "9") %> |
-          <%= link_to "Culture", questions_path(query: "10") %> |
-          <%= link_to "Shopping", questions_path(query: "11") %> |
-          <%= link_to "Love", questions_path(query: "12") %>
+          <%= link_to "Look", questions_path(query: "Look") %> |
+          <%= link_to "Food", questions_path(query: "Food") %> |
+          <%= link_to "Culture", questions_path(query: "Culture") %> |
+          <%= link_to "Achats", questions_path(query: "Achats") %> |
+          <%= link_to "Love", questions_path(query: "Love") %> |
+          <%= link_to "Travail", questions_path(query: "Travail") %>
         </p>
         <div class="questions">
           <%= render "questions/question_cards" %>
