@@ -14,6 +14,25 @@ $('.categories-cards').slick({
  arrows: false
 });
 
+
+$('.choice-categories-cards').slick({
+ // centerMode: true,
+ centerPadding: '5px',
+ slidesToShow: 3,
+ slidesToScroll: 4,
+ infinite: false,
+ arrows: true
+});
+
+$("[data-form-prepend]").click(function(e) {
+  var obj = $($(this).attr("data-form-prepend"));
+  obj.find("input, select, textarea").each(function() {
+    $(this).attr("name", function() {
+      return $(this)
+        .attr("name")
+        .replace("new_record", new Date().getTime());
+    });
+
 // IMAGE OPACITY
   Array.from(document.querySelectorAll('.progress-bar')).forEach(function(bar){
     if (bar.getAttribute('aria-valuenow') == 100) {
@@ -89,6 +108,31 @@ typeResolution.addEventListener("blur", (event) => {
   }
 });
 
+
+
+// Pick a category choice dans un new indecision
+const allCategories = document.querySelectorAll(".choice-category-card");
+allCategories.forEach((categorie) => {
+  categorie.addEventListener("click", (event) => {
+    const choice = event.currentTarget.dataset.choice;
+    document.getElementById('question_category_id').value = `${choice}`;
+  });
+});
+
+// Choisir un mode de résolution
+const allTypes = document.querySelectorAll(".mode-listener");
+console.log(allTypes)
+allTypes.forEach((type) => {
+  type.addEventListener("click", (event) => {
+    const mode = event.currentTarget.dataset.mode;
+    console.log(mode)
+    document.getElementById('question_type_resolution').value = `${mode}`;
+  });
+});
+
+
+
+
 // hide option 3 and 4
 
 const optionOne = document.querySelector("#option_fields_0")
@@ -125,5 +169,6 @@ document.querySelector("#add-option").addEventListener("click", (event) => {
      addIcon.classList.add("hidden");
    }
 });
+
 
 
