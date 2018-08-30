@@ -1,0 +1,32 @@
+.sat-parent {
+  h2 {
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+}
+.satisfaction {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 2em;
+  height: 4em;
+  .satisfied {
+    height: 4em;
+    width: 50%;
+    text-align: center;
+    align-items: center;
+  }
+  .not-satisfied {
+    height: 4em;
+    border-left: 1px solid rgb(200, 200, 200);
+    width: 50%;
+    text-align: center;
+  }
+  .fa {
+    padding-top: 0.2em;
+    font-size: 3em;
+    color: rgb(200, 200, 200);
+  }
+}

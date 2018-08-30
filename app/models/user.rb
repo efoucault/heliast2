@@ -10,6 +10,6 @@ class User < ApplicationRecord
 
 
   def score_by_category(category)
-    self.questions.joins(:category).where(categories: { name: category }).joins(:answers).sum(:score)
+    self.answers.joins(option: { question: :category }).where(categories: { name: category}).sum(:score)
   end
 end
