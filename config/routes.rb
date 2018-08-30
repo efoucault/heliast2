@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :options, only: [:new, :create]
     resources :answers, only: [:new, :create]
   end
+  get :classement, to: "pages#classement"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

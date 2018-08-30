@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def classement
+
+  end
 end

@@ -1,0 +1,48 @@
+<!-- ajouter le slider categorie ici -->
+<div class="col-sm-4 col-md-4 col-md-offset-4">
+<div class="title">
+  <h5 style="color: white; text-align: center; padding-top: 1em;">Les meilleurs Héliastes<br/>de la catégorie Love</h5>
+</div>
+
+<div class="podium">
+  <%= render "pages/podium" %>
+</div>
+
+<div class="list-users">
+  <div class="filtres"></div>
+<!-- iterer de ici jusqu'a Y -->
+  <div class="line-user">
+    <h6>1</h6>
+    <%= image_tag ("https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1"), class: 'avatar-bordered avatar-classement' %>
+    <h6>joli_pseudo</h6>
+    <p class="tip"> 345 pts </p>
+  </div>
+  <hr style="background-color: gray; height: 2px; opacity: 0.3;">
+  <!-- Y -->
+
+  <!-- a suppr une fois iterer (jusqu'a X) -->
+  <div class="line-user">
+    <h6>1</h6>
+    <%= image_tag ("https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1"), class: 'avatar-bordered avatar-classement' %>
+    <h6>joli_pseudo</h6>
+    <p class="tip"> 345 pts </p>
+  </div>
+    <hr style="background-color: gray; height: 2px; opacity: 0.3;">
+  <div class="line-user">
+    <h6>1</h6>
+    <%= image_tag ("https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1"), class: 'avatar-bordered avatar-classement' %>
+    <h6>joli_pseudo</h6>
+    <p class="tip"> 345 pts </p>
+  </div>
+    <hr style="background-color: gray; height: 2px; opacity: 0.3;">
+  <div class="line-user">
+    <h6>1</h6>
+    <%= image_tag ("https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1"), class: 'avatar-bordered avatar-classement' %>
+    <h6>joli_pseudo</h6>
+    <p class="tip"> 345 pts </p>
+  </div>
+  <!-- X -->
+
+  <hr style="width: 0%;">
+</div>
+</div>
