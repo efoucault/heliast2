@@ -76,9 +76,11 @@
               <%= f.simple_fields_for :options do |builder| %>
                <%= render "option_fields", :f => builder %>
              <% end %>
-<!--              <i class="fa fa-plus plus"></i>
- --><!--              <p id="add-option"><%# link_to_add_fields "Add Option", f, :options %></p>
- -->             </div>
+              <div class="plus-icon">
+                 <i class="fa fa-plus plus"></i>
+              </div>
+               <p id="add-option" class="hidden"><%= link_to_add_fields "Add Option", f, :options %></p>
+             </div>
           </div>
         <%= f.submit "Créer indécision", class: "btn btn-success" %>
         <% end %>

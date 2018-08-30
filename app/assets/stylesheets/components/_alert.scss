@@ -5,7 +5,7 @@
 .alert {
   margin: 0;
   text-align: center;
-  color: white;
+  // color: white;
   font-family: $body-font;
   p {
     margin: 0;
@@ -14,9 +14,12 @@
   }
 }
 .alert-info {
-  background:green;
+  background-image: linear-gradient(to right top, #8ac3bb, #87cbbb, #87d2b8, #8bd9b4, #92e0ad);
+  color: white;
+  font-size: 12px;
 }
 .alert-warning {
-  background:red;
-  color: red;
+  background-image: linear-gradient(to right, #af244d, #be365d, #cc476e, #da567f, #e86690);
+  color: white;
+  font-size: 12px;
 }

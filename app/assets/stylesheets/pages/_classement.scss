@@ -1,0 +1,84 @@
+.list-users {
+  background-color: #f2f2f2;
+  padding-top: 1em;
+  margin: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.14);
+}
+
+.line-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-top: 1em;
+}
+
+.avatar-classement {
+  width: 3.5em;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 0.15em solid;
+  height: 3.5em;
+}
+
+.tip {
+  background-color: #e0e0e0;
+  padding: 0.5em;
+  border-radius: 1em;
+  box-shadow: 0 0.3em 0.6em 0 rgba(0,0,0,0.14);
+  margin-top: 0.5em;
+}
+
+.podium {
+  display: flex;
+  align-items: flex-end;
+  float: center;
+  padding: 2em 2em 0 2em;
+  justify-content: space-between;
+
+}
+
+
+.winner {
+  text-align: center;
+  z-index: 2;
+  p {
+    font-size: 0.8em;
+    color: white;
+    padding-top: 0.2em;
+  }
+}
+
+.number2 {
+  height:5em;
+  width: 5em;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 0.3em 0.3em 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.number1 {
+  height: 7em;
+  width: 5em;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 0.3em 0.3em 0 0;
+  text-align: center;
+  padding: 1em;
+}
+
+.number3 {
+  height: 3em;
+  width: 5em;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 0.3em 0.3em 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+

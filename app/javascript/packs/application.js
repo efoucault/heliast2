@@ -14,6 +14,7 @@ $('.categories-cards').slick({
  arrows: false
 });
 
+
 $('.choice-categories-cards').slick({
  // centerMode: true,
  centerPadding: '5px',
@@ -31,10 +32,15 @@ $("[data-form-prepend]").click(function(e) {
         .attr("name")
         .replace("new_record", new Date().getTime());
     });
+
+// IMAGE OPACITY
+  Array.from(document.querySelectorAll('.progress-bar')).forEach(function(bar){
+    if (bar.getAttribute('aria-valuenow') == 100) {
+      const badge = bar.parentNode.parentNode.parentNode;
+      badge.querySelector('img').classList.add('complete');
+    };
   });
-  obj.insertBefore(this);
-  return false;
-});
+
 
 // click on choose file when clicking on the camera icon
 
@@ -47,6 +53,8 @@ const pictureIcons = document.querySelectorAll(".fa-camera");
   });
 });
 
+// click on destroy option when clicking on the trash icon
+
 const deleteIcons = document.querySelectorAll(".fa-trash");
   deleteIcons.forEach((icon) => {
   icon.addEventListener("click", (event) => {
@@ -56,13 +64,14 @@ const deleteIcons = document.querySelectorAll(".fa-trash");
   });
 });
 
-// remove-option
+// hide-option
 
 const deleteButtons = document.querySelectorAll(".remove");
 deleteButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     const index = event.currentTarget.dataset.index;
-    document.getElementById(`option_fields_${index}`).style.display = "none";
+    document.getElementById(`option_fields_${index}`).classList.add("hidden");
+    addIcon.classList.remove("hidden");
   });
 });
 
@@ -100,6 +109,7 @@ typeResolution.addEventListener("blur", (event) => {
 });
 
 
+
 // Pick a category choice dans un new indecision
 const allCategories = document.querySelectorAll(".choice-category-card");
 allCategories.forEach((categorie) => {
@@ -121,6 +131,44 @@ allTypes.forEach((type) => {
 });
 
 
+
+
+// hide option 3 and 4
+
+const optionOne = document.querySelector("#option_fields_0")
+const optionTwo = document.querySelector("#option_fields_1")
+const optionThree = document.querySelector("#option_fields_2")
+const optionFour = document.querySelector("#option_fields_3")
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  optionThree.classList.add("hidden");
+  optionFour.classList.add("hidden");
+});
+
+// click on add option when clicking on the plis icon
+
+const addIcon = document.querySelector(".fa-plus");
+  addIcon.addEventListener("click", (event) => {
+    document.querySelector("#add-option").click();
+});
+
+// add button to display option
+document.querySelector("#add-option").addEventListener("click", (event) => {
+  event.preventDefault();
+   if (document.querySelector("#option_fields_0").classList.contains('hidden') === true) {
+     optionOne.classList.remove("hidden");
+   }
+   else if (document.querySelector("#option_fields_1").classList.contains('hidden') === true){
+     optionTwo.classList.remove("hidden");
+   }
+   else if (document.querySelector("#option_fields_2").classList.contains('hidden') === true){
+     optionThree.classList.remove("hidden");
+   }
+   else if (document.querySelector("#option_fields_3").classList.contains('hidden') === true){
+     optionFour.classList.remove("hidden");
+     addIcon.classList.add("hidden");
+   }
+});
 
 
 

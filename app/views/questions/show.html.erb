@@ -2,9 +2,6 @@
   <div class="indecision-card">
     <div class="top-card top-<%= @question.status %>">
       <%= @status_message%>
-      <%= link_to edit_question_path(@question) do %>
-        <i class="fa fa-edit"></i>
-      <% end %>
       <%= link_to question_path(@question), method: :delete do%>
         <i class="fa fa-trash"></i>
       <% end %>
@@ -18,23 +15,25 @@
     </div>
     <div class="options">
       <% @question.options.each_with_index do |option, index| %>
-        <div class="option option<%= option.id %>" data-optionid="<%= option.id %>">
-          <% if option.photo.present? %>
-            <%= cl_image_tag option.photo, crop: :fill, class: 'option-image' %>
-          <% else %>
-            <div class="option-image-none"></div>
-          <%end%>
-          <div class="option-zoom">
+        <% if option.photo.present? || option.titre.present? %>
+          <div class="option option<%= option.id %>" data-optionid="<%= option.id %>">
             <% if option.photo.present? %>
-              <i class="fa fa-search-plus"></i>
-            <% end %>
+              <%= cl_image_tag option.photo, crop: :fill, class: 'option-image' %>
+            <% else %>
+              <div class="option-image-none"></div>
+            <%end%>
+            <div class="option-zoom">
+              <% if option.photo.present? %>
+                <i class="fa fa-search-plus"></i>
+              <% end %>
+            </div>
+            <div class="option-title">
+              <%= option.titre %>
+              <i class="fa fa-check hidden"></i>
+            </div>
+            <div class="circle"><p><%=index+1%></p></div>
           </div>
-          <div class="option-title">
-            <%= option.titre %>
-            <i class="fa fa-check hidden"></i>
-          </div>
-          <div class="circle"><p><%=index+1%></p></div>
-        </div>
+        <% end %>
       <% end %>
       <% if @answer && @answer.errors.messages.key?(:option) %>
         <p class="text-danger">Please select an option above</p>
@@ -64,6 +63,7 @@
           <div class="answer-reponse">
             <p><%= answer.reponse %></p>
           </div>
+        </div>
       <% end %>
     </div>
     <% hide_answer_creation = false %>
@@ -79,6 +79,36 @@
       <div class="create-answer">
         <h2>Répondre à l'indécision</h2>
         <%= render "answers/new" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="indecision-card sat-parent">
+    <% if @question.answers.present? && (@question.answers.first.created_at + 0.hours) < DateTime.now %>
+      <% if @question.satisfied_by_recommended_option == nil && current_user == @question.user %>
+        <h2>Qu'avez-vous pensé de l'option proposée ?</h2>
+        <div class="satisfaction">
+          <div class="satisfied"><%= link_to question_path(@question, question: {satisfied_by_recommended_option: true}), method: :patch do %>
+            <i class="fa fa-thumbs-up"></i>
+          <% end %>
+          </div>
+          <div class="not-satisfied">
+            <%= link_to question_path(@question, question: {satisfied_by_recommended_option: false}), method: :patch do %>
+                <i class="fa fa-thumbs-down"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <div class="resultat-sat">
+        <% if @question.satisfied_by_recommended_option != nil %>
+          <h2>Voici le résultat</h2>
+          <% if @question.satisfied_by_recommended_option == true %>
+            <p>Thumbs up</p>
+            <i class="fa fa-thumbs-up"></i>
+          <% end %>
+          <% if @question.satisfied_by_recommended_option == false %>
+            <i class="fa fa-thumbs-down"></i>
+          <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>

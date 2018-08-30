@@ -14,6 +14,13 @@ class QuestionsController < ApplicationController
           format.html
           format.js { render 'sortby_created_at' }
         end
+      elsif params[:query] == "populaire"
+          # @questions = Question.all.joins(:answers).group(:question_id).count
+          @questions = Question.where(id: Question.all.joins(:answers).group(:question_id).count.keys)
+          respond_to do |format|
+            format.html
+            format.js { render 'sortby_popularity' }
+          end
         elsif params[:query] == "Look"
           @questions = Question.all.joins(:category).where(categories: { name: params[:query] })
           respond_to do |format|
@@ -72,7 +79,7 @@ class QuestionsController < ApplicationController
     @question.user = current_user
     @question.deadline = DateTime.now + @question.attente.minutes
     @question.save!
-    redirect_to questions_path
+    redirect_to question_path(@question)
   end
 
   def edit
@@ -99,7 +106,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:description, :attente, :category_id, :user_id, :type_resolution, options_attributes: [:id, :titre, :photo, :photo_cache, :_destroy])
+    params.require(:question).permit(:description, :attente, :category_id, :user_id, :type_resolution, :satisfied_by_recommended_option, options_attributes: [:id, :titre, :photo, :photo_cache, :_destroy])
   end
 
   def status_info

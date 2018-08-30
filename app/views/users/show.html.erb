@@ -1,7 +1,13 @@
 <div class="top-dashboard">
   <div class="info-dashboard">
     <div class="photo-user">
-      <%= cl_image_tag @user.photo, class: 'avatar-bordered' %>
+      <%= link_to user_path(current_user) do %>
+        <% if current_user.photo.present? %>
+          <%= cl_image_tag @user.photo, class: 'avatar-bordered' %>
+        <% else %>
+          <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "avatar-bordered") %>
+        <%end%>
+      <%end%>
     </div>
     <div class="info-user">
       <h4>Hey <%= @user.first_name %>, indécis(e) ?</h4>
@@ -34,7 +40,7 @@
           <%= link_to "deadline", questions_path(query: "deadline") %>
         </p>
         <div class="questions">
-          <%= render "questions/question_cards" %>
+          <%= render "questions/my_questions" %>
         </div>
       </div>
     </div>
