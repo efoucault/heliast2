@@ -75,4 +75,18 @@ const options = document.querySelectorAll(".option");
   })
 });
 
+// Display attente range when type resolution = Démocratie
 
+const typeResolution = document.querySelector(".resolution");
+typeResolution.addEventListener("blur", (event) => {
+  const attente = document.querySelector(".attente");
+  const titreAttente = document.querySelector(".ma-reponse");
+  if (typeResolution.value === "Mode Démocratie") {
+    attente.classList.remove("hidden");
+    titreAttente.classList.remove("hidden");
+  }
+  else {
+    attente.classList.add("hidden");
+    titreAttente.classList.add("hidden");
+  }
+});
