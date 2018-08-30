@@ -2,7 +2,7 @@
 <div class="categories-cards">
   <% Category.all.each do |category| %>
       <!--  Chaque itération est une card et a une classe -->
-      <div class="category-card" style="background-image: url(<%= asset_path "#{category.name.downcase}.jpeg" %>); background-size: cover;">
+      <div class="category-card" style="background-image: url(<%= category.photo %>); background-size: cover;">
         <span class="category-text"><%= category.name %></span>
       </div>
   <% end %>
