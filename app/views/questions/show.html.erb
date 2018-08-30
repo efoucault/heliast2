@@ -49,7 +49,7 @@
           <% if answer.user == @question.user %>
              <h3>Réponse de l'indécis</h3>
           <% else %>
-            <h3>Réponse de l'Heliaste</h3>
+            <h3>Réponse de <% answer.user.pseudo %></h3>
           <% end %>
             <h4><%= answer.option.titre %></h4></br>
           </div>
