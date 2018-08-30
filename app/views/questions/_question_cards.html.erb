@@ -15,7 +15,7 @@
             OVER
           <%end%>
           </p></span>
-        <h4><%= question.description%></h4>
+        <h4><%= question.description.truncate(140, omission: '...') %></h4>
 
       </div>
     <%= link_to "", question_path(question), class: 'card-link' %>
