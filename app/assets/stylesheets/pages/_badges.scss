@@ -1,3 +1,18 @@
+.badges {
+
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 1em;
+  border-radius: 0.5em;
+  position: relative;
+}
+
+.cross {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+
+}
+
 .list-badges {
   display: flex;
   justify-content: space-between;
@@ -23,4 +38,21 @@
 .no-score {
   padding: 2em;
   color: white;
+}
+
+.btn-trophy {
+  border-radius: 3em 0em 0em 3em;
+  position: absolute;
+  right: 0;
+  top: 12em;
+  height: 4.5em;
+  width: 4em;
+  display: flex;
+  align-items: center;
+  transition: width .1s;
+}
+
+.btn-trophy:hover {
+  width: 20%;
+
 }
