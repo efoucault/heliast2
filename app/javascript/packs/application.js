@@ -14,6 +14,14 @@ $('.categories-cards').slick({
  arrows: false
 });
 
+// IMAGE OPACITY
+  Array.from(document.querySelectorAll('.progress-bar')).forEach(function(bar){
+    if (bar.getAttribute('aria-valuenow') == 100) {
+      const badge = bar.parentNode.parentNode.parentNode;
+      badge.querySelector('img').classList.add('complete');
+    };
+  });
+
 
 // click on choose file when clicking on the camera icon
 
