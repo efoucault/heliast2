@@ -43,9 +43,14 @@
   padding-top: 1em;
 }
 
+.top-col {
+  display: flex;
+  justify-content: center;
+}
+
 .btn-add {
   margin: 2em;
-  border-radius: 0.3em;
+  border-radius: 6em;
   background-color: #24d6d6;
   a {
     text-decoration: none;
@@ -122,7 +127,7 @@
 }
 
 .question-card .pending {
-  border-left: 0.5em solid orange;
+  border-left: 0.5em solid #ee6964;
   border-radius: 0.3em;
 
 }
@@ -201,6 +206,10 @@
     color: white;
     font-size: 0.8em;
   }
+}
+
+.framboise {
+  background-color: #ee6964;
 }
 
 .turquoise {

@@ -26,6 +26,29 @@ $('.choice-categories-cards').slick({
 
 
 
+
+
+// Pick a category choice dans un new indecision
+const allCategories = document.querySelectorAll(".choice-category-card");
+console.log(allCategories)
+allCategories.forEach((categorie) => {
+  categorie.addEventListener("click", (event) => {
+    const choice = event.currentTarget.dataset.choice;
+    document.getElementById('question_category_id').value = `${choice}`;
+  });
+});
+
+// Choisir un mode de résolution
+const allTypes = document.querySelectorAll(".mode-listener");
+console.log(allTypes)
+allTypes.forEach((type) => {
+  type.addEventListener("click", (event) => {
+    const mode = event.currentTarget.dataset.mode;
+    console.log(mode)
+    document.getElementById('question_type_resolution').value = `${mode}`;
+  });
+});
+
 //button to display badges trophy
 const buttonTrophy = document.getElementById("trophy");
 console.log(buttonTrophy);
@@ -43,7 +66,6 @@ console.log(listtrophies);
 buttonCross.addEventListener("click", (event) => {
   listtrophies.classList.toggle("hidden");
 });
-
 
 // IMAGE OPACITY
   Array.from(document.querySelectorAll('.progress-bar')).forEach(function(bar){
@@ -133,27 +155,6 @@ typeResolution.addEventListener("blur", (event) => {
   }
 });
 
-
-
-// Pick a category choice dans un new indecision
-const allCategories = document.querySelectorAll(".choice-category-card");
-allCategories.forEach((categorie) => {
-  categorie.addEventListener("click", (event) => {
-    const choice = event.currentTarget.dataset.choice;
-    document.getElementById('question_category_id').value = `${choice}`;
-  });
-});
-
-// Choisir un mode de résolution
-const allTypes = document.querySelectorAll(".mode-listener");
-console.log(allTypes)
-allTypes.forEach((type) => {
-  type.addEventListener("click", (event) => {
-    const mode = event.currentTarget.dataset.mode;
-    console.log(mode)
-    document.getElementById('question_type_resolution').value = `${mode}`;
-  });
-});
 
 
 

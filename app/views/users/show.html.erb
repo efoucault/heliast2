@@ -32,9 +32,11 @@
 
     <div class="row">
       <div class="col-6">
-      <div class='btn btn-add'>
-        <%= link_to "Nouvelle indécision", new_question_path %>
-       </div>
+        <div class="top-col">
+          <div class='btn btn-add'>
+            <%= link_to "Nouvelle indécision", new_question_path %>
+          </div>
+        </div>
         <p class="sortby">Trier par
           <%= link_to "création", questions_path(query: "created_at") %>
           <%= link_to "deadline", questions_path(query: "deadline") %>
