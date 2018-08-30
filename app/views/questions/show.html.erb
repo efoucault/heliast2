@@ -18,23 +18,25 @@
     </div>
     <div class="options">
       <% @question.options.each_with_index do |option, index| %>
-        <div class="option option<%= option.id %>" data-optionid="<%= option.id %>">
-          <% if option.photo.present? %>
-            <%= cl_image_tag option.photo, crop: :fill, class: 'option-image' %>
-          <% else %>
-            <div class="option-image-none"></div>
-          <%end%>
-          <div class="option-zoom">
+        <% if option.photo.present? || option.titre.present? %>
+          <div class="option option<%= option.id %>" data-optionid="<%= option.id %>">
             <% if option.photo.present? %>
-              <i class="fa fa-search-plus"></i>
-            <% end %>
+              <%= cl_image_tag option.photo, crop: :fill, class: 'option-image' %>
+            <% else %>
+              <div class="option-image-none"></div>
+            <%end%>
+            <div class="option-zoom">
+              <% if option.photo.present? %>
+                <i class="fa fa-search-plus"></i>
+              <% end %>
+            </div>
+            <div class="option-title">
+              <%= option.titre %>
+              <i class="fa fa-check hidden"></i>
+            </div>
+            <div class="circle"><p><%=index+1%></p></div>
           </div>
-          <div class="option-title">
-            <%= option.titre %>
-            <i class="fa fa-check hidden"></i>
-          </div>
-          <div class="circle"><p><%=index+1%></p></div>
-        </div>
+        <% end %>
       <% end %>
       <% if @answer && @answer.errors.messages.key?(:option) %>
         <p class="text-danger">Please select an option above</p>
