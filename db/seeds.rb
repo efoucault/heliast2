@@ -15,6 +15,12 @@ User.destroy_all
 
 puts "users creation"
 ahmed = User.create(password: '123456', admin: false, email: 'ahmed@gmail.com', pseudo: 'ahmed', remote_photo_url:"https://rednugget.fr/wp-content/uploads/2017/10/bitmoji-Louis-220x220.png")
+
+url_photo_pierre = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/lucas.jpg"
+pierre = User.new(password: '123456', admin: false, email: 'pierre@gmail.com', pseudo: 'pierre')
+pierre.remote_photo_url = url_photo_pierre
+pierre.save
+
 pierre = User.create(password: '123456', admin: false, email: 'pierre@gmail.com', pseudo: 'pierre')
 eric = User.create(password: '123456', admin: false, email: 'eric@gmail.com', pseudo: 'eric')
 ophelie = User.create(password: '123456', admin: false, email: 'ophelie@gmail.com', pseudo: 'ophelie')
@@ -259,6 +265,20 @@ option54 = Option.create!(titre: "non", question: question21)
 option53 = Option.create!(titre: "oui", question: question22)
 option54 = Option.create!(titre: "non", question: question22)
 
+option55 = Option.create!(titre: "Oui, préciseé lequel", question: question23)
+option56= Option.create!(titre: "Non, merci pour la reponse", question: question23)
+option57 = Option.create!(titre: "Le matin", question: question24)
+option58 = Option.create!(titre: "le soir", question: question24)
+option59 = Option.create!(titre: "Oui", question: question25)
+option60 = Option.create!(titre: "Non", question: question25)
+option61 = Option.create!(titre: "Oui", question: question26)
+option62 = Option.create!(titre: "Non", question: question26)
+option63 = Option.create!(titre: "je ne sais pas, desole", question: question26)
+option64 = Option.create!(titre: "Oui", question: question27)
+option65 = Option.create!(titre: "Non", question: question27)
+option66 = Option.create!(titre: "Rester et pleurer pendant quelques temps", question: question28)
+option67 = Option.create!(titre: "Rester et pleurer pendant quelques temps", question: question28)
+
 
 p Option.all
 puts 'answer all'
@@ -285,18 +305,6 @@ answer20 = Answer.create!(user: manon , option: option21 , reponse: 'blablabla2'
 answer21 = Answer.create!(user: gabriel , option: option20 , reponse: 'au revoir et a bientot', score: 300)
 answer22 = Answer.create!(user: manon , option: option21 , reponse: 'blablabla2', score: 200)
 
-# option1 = Option.create!(titre: "Le bleu", question: question1)
-# option2 = Option.create!(titre: "Le rouge", question: question1)
-# option3 = Option.create!(titre: "Le rose", question: question1)
-# option4 = Option.create!(titre: "Un papillon", question: question2)
-# option5 = Option.create!(titre: "Un guépard", question: question2)
-# option6 = Option.create!(titre: "Ou plus classique: Maman je t'aime", question: question2)
-# option7 = Option.create!(titre: "Boire et confier sa voiture a Sam", question: question3)
-# option8 = Option.create!(titre: "Boire un seul verre et rentrer en voiture", question: question3)
-# option9 = Option.create!(titre: "Conduire et ramener ses potes bourrés qui vont être relous... super la vie de Sam!!", question: question3)
-# option10 = Option.create!(titre: "Le suivre et sacrifier ma vie en abandonnant tout ce que j'ai construit ici: amis, travail..", question: question4)
-# option11 = Option.create!(titre: "Le suivre,c'est avec lui que je veux etre", question: question4)
-# option12 = Option.create!(titre: "Rester et pleurer pendant quelques temps", question: question4)
 
 p Answer.all
 
