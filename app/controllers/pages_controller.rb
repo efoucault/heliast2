@@ -5,9 +5,13 @@ class PagesController < ApplicationController
   end
 
   def classement
-    @scores = User.joins(:answers).group(:user_id).order("sum_score DESC").sum(:score)
+    if params[:query].present?
+      @scores = User.joins(answers: { option: { question: :category }}).where(categories: { name: params[:query] }).group("answers.user_id").order("sum_score DESC").sum(:score)
+    else
+      @scores = User.joins(:answers).group(:user_id).order("sum_score DESC").sum(:score)
+    end
+    @scores_by_category = User.joins(:answers).group(:user_id).order("sum_score DESC").sum(:score)
     @users = User.where(id: @scores.keys)
-    @users_all = User.all
     @category = Category.find_by_name(params[:query])
   end
 end
