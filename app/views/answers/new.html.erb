@@ -3,6 +3,6 @@
   <%= simple_form_for [@question, @answer] do |f| %>
     <%= f.association :option, :label_method => lambda { |option| "#{option.titre}" } %>
     <%= f.input :reponse %>
-    <%= f.submit "enregistrer la réponse", class: "btn btn-success" %>
+    <%= f.submit "enregistrer la réponse", class: "btn btn-success btn-add" %>
   <% end %>
 </div>

@@ -1,57 +1,86 @@
 <div class="container">
   <div class="indecision-card">
-    <div class="top-card top-<%= @question.status %>">
-      <%= @status_message%>
-      <%= link_to question_path(@question), method: :delete do%>
-        <i class="fa fa-trash"></i>
-      <% end %>
-    </div>
-    <div class="indecision-contenu text-center">
-      <h4><%= @question.description %> </h4>
-      <p class="text-left">Deadline: <%= @question.deadline %> </p>
 
-      <p class="text-left">Résolution: <%= @question.type_resolution %> </p>
-      <p class="text-left">Catégorie: <%= @question.category.name %> </p>
-    </div>
-    <div class="options">
-      <% @question.options.each_with_index do |option, index| %>
-        <% if option.photo.present? || option.titre.present? %>
-          <div class="option option<%= option.id %>" data-optionid="<%= option.id %>">
-            <% if option.photo.present? %>
-              <%= cl_image_tag option.photo, crop: :fill, class: 'option-image' %>
-            <% else %>
-              <div class="option-image-none"></div>
-            <%end%>
-            <div class="option-zoom">
-              <% if option.photo.present? %>
-                <i class="fa fa-search-plus"></i>
-              <% end %>
-            </div>
-            <div class="option-title">
-              <%= option.titre %>
-              <i class="fa fa-check hidden"></i>
-            </div>
-            <div class="circle"><p><%=index+1%></p></div>
-          </div>
+    <div class="top-card top-<%= @question.status %> text-center">
+      <%if @question.user == current_user %>
+        <%= @status_message%>
+        <%= link_to question_path(@question), method: :delete do%>
+          <i class="fa fa-trash" style="color: white;"></i>
         <% end %>
-      <% end %>
-      <% if @answer && @answer.errors.messages.key?(:option) %>
-        <p class="text-danger">Please select an option above</p>
-      <% end %>
+      <%else%>
+        <%= @status_heliast%> <%= @question.user.pseudo%> !
+      <%end%>
     </div>
+
+    <div class="indecision-contenu text-center">
+
+      <span><p class="categorie"><%= @question.category.name.upcase %></p></span>
+      <h4 style="padding: 0.5em;"><%= @question.description %> </h4>
+      <%if @question.user == current_user && @question.pending?%>
+        <p style="color: gray; margin-bottom: 2em; ">Voici tes hésitations :</p>
+      <%elsif @question.user != current_user && @question.pending?%>
+        <p style="color: gray; margin-bottom: 2em; ">Choisis parmi ces options :</p>
+      <%elsif @question.answered?%>
+        <p style="color: gray; margin-bottom: 2em; "> Un héliaste a fait ce choix pour <%= @question.user.pseudo%> : </p>
+      <%end%>
+
+    </div>
+
+
+    <!-- Ceci est l'affichage des options -->
+
+    <% if @question.pending? %>
+      <div class="options">
+        <% @question.options.each_with_index do |option, index| %>
+          <% if option.photo.present? || option.titre.present? %>
+            <div class="option option<%= option.id %>" data-optionid="<%= option.id %>">
+              <% if option.photo.present? %>
+                <%= cl_image_tag option.photo, crop: :fill, class: 'option-image' %>
+              <% else %>
+                <div class="option-image-none"></div>
+              <%end%>
+
+              <div class="option-title">
+                <%= option.titre %>
+                <i class="fa fa-check hidden"></i>
+              </div>
+              <div class="circle"><p><%=index+1%></p></div>
+            </div>
+          <% end %>
+        <% end %>
+        <% if @answer && @answer.errors.messages.key?(:option) %>
+          <p class="text-danger">Please select an option above</p>
+        <% end %>
+      </div>
+    <%end%>
+
+    <% if @question.answered? %>
+
+
+
+
+      <%end%>
+
+    <!-- end -->
+    <%if @question.user == current_user && @question.pending? %>
+      <p class="text-center" style="color: gray; margin-bottom: 2em; ">Un Héliaste va décider pour toi...</p>
+    <%end%>
+
   </div>
+
+
   <div class="indecision-card">
     <div class="answers">
-      <h2>Réponses à l'indécision</h2>
+      <!-- <h7>Réponses à l'indécision</h7> -->
       <% @question.answers.each_with_index do |answer, index| %>
         <div class="answer">
           <div class="answer-titre">
           <% if answer.user == @question.user %>
-             <h3>Réponse de l'indécis</h3>
+             <h4>Réponse de l'indécis</h3>
           <% else %>
-            <h3>Réponse de <% answer.user.pseudo %></h3>
+            <h4>Réponse de <%= answer.user.pseudo %></h3>
           <% end %>
-            <h4><%= answer.option.titre %></h4></br>
+            <h3><%= answer.option.titre %></h4></br>
           </div>
           <div class="asnwer-photo">
             <% if answer.option.photo.present? %>
@@ -60,6 +89,7 @@
               <div class="answer-image-none"></div>
             <%end%>
           </div>
+          <p style="color: #a5a5a5; margin-top: 1em;"> Commentaire :</p>
           <div class="answer-reponse">
             <p><%= answer.reponse %></p>
           </div>
@@ -77,15 +107,17 @@
     <% end %>
     <% if hide_answer_creation == false %>
       <div class="create-answer">
-        <h2>Répondre à l'indécision</h2>
-        <%= render "answers/new" %>
+        <p class="text-center" style="color: gray; padding-top: 1em; ">Ajoute un commentaire :</p>
+        <div class="form-commentaire text-center" style="padding: 1em;">
+          <%= render "answers/new" %>
+        </div>
       </div>
     <% end %>
   </div>
-  <div class="indecision-card sat-parent">
+  <div class="indecision-card sat-parent" style="margin-bottom: 1em; text-align: center;">
     <% if @question.answers.present? && (@question.answers.first.created_at + 0.hours) < DateTime.now %>
       <% if @question.satisfied_by_recommended_option == nil && current_user == @question.user %>
-        <h2>Qu'avez-vous pensé de l'option proposée ?</h2>
+        <h6 style="color:#24d6d6; padding-top: 1em;">Alors, c'était un bon choix ?</h6>
         <div class="satisfaction">
           <div class="satisfied"><%= link_to question_path(@question, question: {satisfied_by_recommended_option: true}), method: :patch do %>
             <i class="fa fa-thumbs-up"></i>
@@ -98,11 +130,10 @@
           </div>
         </div>
       <% end %>
-      <div class="resultat-sat">
+      <div class="resultat-sat" style="text-align: center;">
         <% if @question.satisfied_by_recommended_option != nil %>
-          <h2>Voici le résultat</h2>
+          <h6 style="color:#24d6d6; padding-top: 1em;">Ce que <%=@question.user.pseudo %> en a pensé :</h6>
           <% if @question.satisfied_by_recommended_option == true %>
-            <p>Thumbs up</p>
             <i class="fa fa-thumbs-up"></i>
           <% end %>
           <% if @question.satisfied_by_recommended_option == false %>
@@ -113,3 +144,4 @@
     <% end %>
   </div>
 </div>
+

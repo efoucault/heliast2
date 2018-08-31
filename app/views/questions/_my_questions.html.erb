@@ -20,12 +20,15 @@
       <div class="question-card-status">
         <% if question.pending?
           status_message = 'En attente de décision...'
+          status_heliast = 'A toi de décider pour'
           status_progress = 35
         elsif question.answered?
           status_message = 'Décision reçue !'
+          status_heliast = 'Tu as déjà fais un choix pour'
           status_progress = 70
         elsif question.closed?
           status_message = 'Décision close.'
+          status_heliast = 'Décision close !'
           status_progress = 100
         end %>
 
