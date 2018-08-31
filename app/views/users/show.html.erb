@@ -44,9 +44,13 @@
         </p>
         <div class="questions">
           <%= render "questions/my_questions" %>
+          <p class="log-out"><%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Se déconnecter") %>
+                <% end %></p>
         </div>
       </div>
     </div>
 
   </div>
+
 </div>

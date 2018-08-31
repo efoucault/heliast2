@@ -15,6 +15,15 @@
   height: 50px;
 }
 
+/* nouvel avatar */
+.avatar-nav {
+  display: block;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: solid 2px #d99ea4;
+}
+
 /* Icones */
 .icones img {
   color: #d99ea4;
@@ -30,12 +39,14 @@
   color: black;
 }
 
-/* Page profil active ou non */
+/* Pictos */
 .pictos li {
   display:inline-block;
   margin: 4px;
   margin-top: 25px
 }
+
+/* Page profil active ou non */
 
 .pictos .picto-profil a {
   background-image: image-url('profil.svg');
@@ -48,6 +59,22 @@
   background-image: image-url('profil-active.svg');
   display: block;
 }
+
+/* Page classement active ou non */
+
+.pictos .picto-classement a {
+  background-image: image-url('classement.svg');
+  width:35px;
+  height:35px;
+  display: block;
+}
+
+.pictos .picto-classement a.active {
+  background-image: image-url('classement-active.svg');
+  display: block;
+}
+
+
 
 /* Page add active ou non */
 .pictos .picto-add a {
