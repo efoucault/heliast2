@@ -184,6 +184,13 @@ question20 = Question.create!(user: manon , description: 'Plutôt baby-sitting o
 question21 = Question.create!(user: manon , description: 'Je trouve Meghan Markle trop classe! Vous pensez que cette robe m irais?', category: look, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
 question22 = Question.create!(user: manon , description: 'Je me met au régime sans sucre pendant un an! A votre avis je vais tenir?', category: food, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
 
+question23 = Question.create!(user: lucas , description: 'Connaissez-vous un bon site pour trouver des petits boulots?', category: travail, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
+question24 = Question.create!(user: arthur , description: 'Vous êtes plus efficaces le matin ou le soir?', category: travail, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
+question25 = Question.create!(user: louise , description: 'On me propose un travail en 3 x 8, est-ce adapté à une vie de famille?', category: travail, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
+question26 = Question.create!(user: ophelie , description: 'puis-je cumuler 2 temps partiel? ?', category: travail, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now  )
+question27 = Question.create!(user: jules , description: 'Je peux avoir 2 temps pleins comme les politiques?', category: travail, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
+question28 = Question.create!(user: gabriel , description: 'Au travail on fais plutôt la bise ou on sert la main?', category: travail, type_resolution: "Mode héliaste", deadline: DateTime.now )
+
 
 
 
@@ -277,6 +284,19 @@ answer19 = Answer.create!(user: gabriel , option: option20 , reponse: 'au revoir
 answer20 = Answer.create!(user: manon , option: option21 , reponse: 'blablabla2', score: 200)
 answer21 = Answer.create!(user: gabriel , option: option20 , reponse: 'au revoir et a bientot', score: 300)
 answer22 = Answer.create!(user: manon , option: option21 , reponse: 'blablabla2', score: 200)
+
+# option1 = Option.create!(titre: "Le bleu", question: question1)
+# option2 = Option.create!(titre: "Le rouge", question: question1)
+# option3 = Option.create!(titre: "Le rose", question: question1)
+# option4 = Option.create!(titre: "Un papillon", question: question2)
+# option5 = Option.create!(titre: "Un guépard", question: question2)
+# option6 = Option.create!(titre: "Ou plus classique: Maman je t'aime", question: question2)
+# option7 = Option.create!(titre: "Boire et confier sa voiture a Sam", question: question3)
+# option8 = Option.create!(titre: "Boire un seul verre et rentrer en voiture", question: question3)
+# option9 = Option.create!(titre: "Conduire et ramener ses potes bourrés qui vont être relous... super la vie de Sam!!", question: question3)
+# option10 = Option.create!(titre: "Le suivre et sacrifier ma vie en abandonnant tout ce que j'ai construit ici: amis, travail..", question: question4)
+# option11 = Option.create!(titre: "Le suivre,c'est avec lui que je veux etre", question: question4)
+# option12 = Option.create!(titre: "Rester et pleurer pendant quelques temps", question: question4)
 
 p Answer.all
 
