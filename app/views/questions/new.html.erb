@@ -60,10 +60,10 @@
 
           </div>
 
-          <%= f.input :type_resolution, as: :string, input_html: {:value => ""}%>
+          <%= f.input :type_resolution, as: :string, input_html: { class: 'resolution' }%>
 
       <!-- j'ai "hidden" ce champs mais il est indspensable pour le moment-->
-          <%= f.input :type_resolution, as: :hidden, collection: Question::STATUSES, prompt: "Type de Résolution",  label: false, :selected => "Mode héliaste", input_html: { class: 'resolution' }%>
+
           <!--  -->
 
 

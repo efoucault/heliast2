@@ -32,7 +32,9 @@ allCategories.forEach((categorie) => {
   categorie.addEventListener("click", (event) => {
     const choice = event.currentTarget.dataset.choice;
     document.getElementById('question_category_id').value = `${choice}`;
+    categorie.classList.add("blue-selected");
   });
+
 });
 
 // Choisir un mode de résolution
