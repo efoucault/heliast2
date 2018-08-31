@@ -25,9 +25,6 @@ $('.choice-categories-cards').slick({
 });
 
 
-
-
-
 // Pick a category choice dans un new indecision
 const allCategories = document.querySelectorAll(".choice-category-card");
 console.log(allCategories)
@@ -40,32 +37,43 @@ allCategories.forEach((categorie) => {
 
 // Choisir un mode de résolution
 const allTypes = document.querySelectorAll(".mode-listener");
-console.log(allTypes)
-allTypes.forEach((type) => {
-  type.addEventListener("click", (event) => {
-    const mode = event.currentTarget.dataset.mode;
-    console.log(mode)
-    document.getElementById('question_type_resolution').value = `${mode}`;
+if (allTypes !== null) {
+  console.log(allTypes)
+  allTypes.forEach((type) => {
+    type.addEventListener("click", (event) => {
+      const mode = event.currentTarget.dataset.mode;
+      console.log(mode)
+      document.getElementById('question_type_resolution').value = `${mode}`;
+    });
   });
-});
+};
+
 
 //button to display badges trophy
 const buttonTrophy = document.getElementById("trophy");
-console.log(buttonTrophy);
-const trophies = document.getElementById("trophies");
-console.log(trophies);
-buttonTrophy.addEventListener("click", (event) => {
+if (buttonTrophy !== null) {
+  const trophies = document.getElementById("trophies");
+  if (trophies !== null) {
+    buttonTrophy.addEventListener("click", (event) => {
   trophies.classList.toggle("hidden");
-});
+    });
+  };
+};
+
 
 //cross to display badges trophy
 const buttonCross = document.querySelector(".cross");
-console.log(buttonCross);
-const listtrophies = document.getElementById("trophies");
-console.log(listtrophies);
-buttonCross.addEventListener("click", (event) => {
-  listtrophies.classList.toggle("hidden");
-});
+
+if (buttonCross !== null){
+  const listtrophies = document.getElementById("trophies");
+  if (listtrophies !== null){
+    buttonCross.addEventListener("click", (event) => {
+    listtrophies.classList.toggle("hidden");
+    });
+  };
+};
+
+
 
 // IMAGE OPACITY
   Array.from(document.querySelectorAll('.progress-bar')).forEach(function(bar){
@@ -74,18 +82,6 @@ buttonCross.addEventListener("click", (event) => {
       badge.querySelector('img').classList.add('complete');
     };
   });
-
-// $("[data-form-prepend]").click(function(e) {
-//   var obj = $($(this).attr("data-form-prepend"));
-//   obj.find("input, select, textarea").each(function() {
-//     $(this).attr("name", function() {
-//       return $(this)
-//         .attr("name")
-//         .replace("new_record", new Date().getTime());
-//       };
-//     };
-//   });
-
 
 
 
@@ -97,28 +93,6 @@ const pictureIcons = document.querySelectorAll(".fa-camera");
     const index = event.currentTarget.dataset.index;
     console.log(document.getElementById(`question_options_attributes_${index}_photo`));
     document.getElementById(`question_options_attributes_${index}_photo`).click();
-  });
-});
-
-// click on destroy option when clicking on the trash icon
-
-const deleteIcons = document.querySelectorAll(".fa-trash");
-  deleteIcons.forEach((icon) => {
-  icon.addEventListener("click", (event) => {
-    const index = event.currentTarget.dataset.trash;
-    console.log(document.getElementById(`question_options_attributes_${index}_photo`));
-    document.getElementById(`question_options_attributes_${index}__destroy`).click();
-  });
-});
-
-// hide-option
-
-const deleteButtons = document.querySelectorAll(".remove");
-deleteButtons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    const index = event.currentTarget.dataset.index;
-    document.getElementById(`option_fields_${index}`).classList.add("hidden");
-    addIcon.classList.remove("hidden");
   });
 });
 
@@ -194,6 +168,28 @@ document.querySelector("#add-option").addEventListener("click", (event) => {
      optionFour.classList.remove("hidden");
      addIcon.classList.add("hidden");
    }
+});
+
+// click on destroy option when clicking on the trash icon
+
+const deleteIcons = document.querySelectorAll(".fa-trash");
+  deleteIcons.forEach((icon) => {
+  icon.addEventListener("click", (event) => {
+    const index = event.currentTarget.dataset.trash;
+    console.log(document.getElementById(`question_options_attributes_${index}_photo`));
+    document.getElementById(`question_options_attributes_${index}__destroy`).click();
+  });
+});
+
+// hide-option
+
+const deleteButtons = document.querySelectorAll(".remove");
+deleteButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const index = event.currentTarget.dataset.index;
+    document.getElementById(`option_fields_${index}`).classList.add("hidden");
+    addIcon.classList.remove("hidden");
+  });
 });
 
 
