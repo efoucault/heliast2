@@ -1,46 +1,65 @@
 <!-- ajouter le slider categorie ici -->
+<div class="categories-cards">
+  <% Category.all.each do |category| %>
+      <!--  Chaque itération est une card et a une classe -->
+      <div class="category-card" style="background-image: url(<%= category.photo %>); background-size: cover;">
+        <span class="category-text"><%= category.name %></span>
+        <%= link_to "", classement_path(query: "#{category.name}"), class: 'category-card-link' %>
+      </div>
+  <% end %>
+</div>
 <div class="col-sm-4 col-md-4 col-md-offset-4">
 <div class="title">
-  <h5 style="color: white; text-align: center; padding-top: 1em;">Les meilleurs Héliastes<br/>de la catégorie Love</h5>
+  <% if @category.present? %>
+  <h5 style="color: white; text-align: center; padding-top: 1em;">Les meilleurs Héliastes<br/>de la catégorie <%= @category.name %></h5>
+  <% else %>
+    <h5 style="color: white; text-align: center; padding-top: 1em;">Les meilleurs Héliastes<br/>toutes catégories confondues</h5>
+  <% end %>
 </div>
-
-<div class="podium">
-  <%= render "pages/podium" %>
-</div>
-
-<div class="list-users">
-  <div class="filtres"></div>
-<!-- iterer de ici jusqu'a Y -->
-  <div class="line-user">
-    <h6>1</h6>
-    <%= image_tag ("https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1"), class: 'avatar-bordered avatar-classement' %>
-    <h6>joli_pseudo</h6>
-    <p class="tip"> 345 pts </p>
+<% if @category.present? %>
+  <div class="podium">
+    <%= render "pages/podium" %>
   </div>
-  <hr style="background-color: gray; height: 2px; opacity: 0.3;">
+  <div class="list-users">
+    <div class="filtres"></div>
+  <!-- iterer de ici jusqu'a Y -->
+    <% classement = 1 %>
+    <% @users_all.each do |user| %>
+      <div class="line-user">
+        <h6><%= classement %></h6>
+        <% classement += 1 %>
+        <p class= 'avatar-bordered avatar-classement' style="background-image: url(<%= user.photo %>); background-size: cover;"></p>
+        <h6><%= user.pseudo %></h6>
+        <p class="tip"> <%= user.score_by_category('Food') %> pts </p>
+      </div>
+      <hr style="background-color: gray; height: 2px; opacity: 0.3;">
+    <% end %>
+    <hr style="width: 0%;">
+  </div>
+<% else %>
+  <div class="podium">
+    <%= render "pages/podium" %>
+  </div>
+  <div class="list-users">
+    <div class="filtres"></div>
+  <!-- iterer de ici jusqu'a Y -->
+    <% classement = 1 %>
+    <% @users.limit(10).each do |user| %>
+      <div class="line-user">
+        <h6><%= classement %></h6>
+        <% classement += 1 %>
+        <p class= 'avatar-bordered avatar-classement' style="background-image: url(<%= user.photo %>); background-size: cover;"></p>
+        <h6><%= user.pseudo %></h6>
+        <p class="tip"> <%= @scores[user.id] %> pts </p>
+      </div>
+      <hr style="background-color: gray; height: 2px; opacity: 0.3;">
+    <% end %>
+    <hr style="width: 0%;">
+<% end %>
+
   <!-- Y -->
 
-  <!-- a suppr une fois iterer (jusqu'a X) -->
-  <div class="line-user">
-    <h6>1</h6>
-    <%= image_tag ("https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1"), class: 'avatar-bordered avatar-classement' %>
-    <h6>joli_pseudo</h6>
-    <p class="tip"> 345 pts </p>
-  </div>
-    <hr style="background-color: gray; height: 2px; opacity: 0.3;">
-  <div class="line-user">
-    <h6>1</h6>
-    <%= image_tag ("https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1"), class: 'avatar-bordered avatar-classement' %>
-    <h6>joli_pseudo</h6>
-    <p class="tip"> 345 pts </p>
-  </div>
-    <hr style="background-color: gray; height: 2px; opacity: 0.3;">
-  <div class="line-user">
-    <h6>1</h6>
-    <%= image_tag ("https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1"), class: 'avatar-bordered avatar-classement' %>
-    <h6>joli_pseudo</h6>
-    <p class="tip"> 345 pts </p>
-  </div>
+
   <!-- X -->
 
   <hr style="width: 0%;">

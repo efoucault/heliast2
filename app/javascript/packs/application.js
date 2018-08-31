@@ -118,18 +118,20 @@ const options = document.querySelectorAll(".option");
 // Display attente range when type resolution = Démocratie
 
 const typeResolution = document.querySelector(".resolution");
-typeResolution.addEventListener("blur", (event) => {
-  const attente = document.querySelector(".attente");
-  const titreAttente = document.querySelector(".ma-reponse");
-  if (typeResolution.value === "Mode Démocratie") {
-    attente.classList.remove("hidden");
-    titreAttente.classList.remove("hidden");
-  }
-  else {
-    attente.classList.add("hidden");
-    titreAttente.classList.add("hidden");
-  }
-});
+if (typeResolution !== null){
+  typeResolution.addEventListener("blur", (event) => {
+    const attente = document.querySelector(".attente");
+    const titreAttente = document.querySelector(".ma-reponse");
+    if (typeResolution.value === "Mode Démocratie") {
+      attente.classList.remove("hidden");
+      titreAttente.classList.remove("hidden");
+    }
+    else {
+      attente.classList.add("hidden");
+      titreAttente.classList.add("hidden");
+    }
+  });
+}
 
 
 
@@ -150,9 +152,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 // click on add option when clicking on the plis icon
 
 const addIcon = document.querySelector(".fa-plus");
-  addIcon.addEventListener("click", (event) => {
-    document.querySelector("#add-option").click();
-});
+if (addIcon !== null){
+    addIcon.addEventListener("click", (event) => {
+      document.querySelector("#add-option").click();
+  });
+}
 
 // add button to display option
 document.querySelector("#add-option").addEventListener("click", (event) => {
