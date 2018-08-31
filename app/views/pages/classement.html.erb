@@ -16,46 +16,22 @@
     <h5 style="color: white; text-align: center; padding-top: 1em;">Les meilleurs Héliastes<br/>toutes catégories confondues</h5>
   <% end %>
 </div>
-<% if @category.present? %>
-  <div class="podium">
-    <%= render "pages/podium" %>
-  </div>
-  <div class="list-users">
-    <div class="filtres"></div>
-  <!-- iterer de ici jusqu'a Y -->
-    <% classement = 1 %>
-    <% @users_all.each do |user| %>
-      <div class="line-user">
-        <h6><%= classement %></h6>
-        <% classement += 1 %>
-        <p class= 'avatar-bordered avatar-classement' style="background-image: url(<%= user.photo %>); background-size: cover;"></p>
-        <h6><%= user.pseudo %></h6>
-        <p class="tip"> <%= user.score_by_category('Food') %> pts </p>
-      </div>
-      <hr style="background-color: gray; height: 2px; opacity: 0.3;">
-    <% end %>
-    <hr style="width: 0%;">
-  </div>
-<% else %>
-  <div class="podium">
-    <%= render "pages/podium" %>
-  </div>
-  <div class="list-users">
-    <div class="filtres"></div>
-  <!-- iterer de ici jusqu'a Y -->
-    <% classement = 1 %>
-    <% @users.limit(10).each do |user| %>
-      <div class="line-user">
-        <h6><%= classement %></h6>
-        <% classement += 1 %>
-        <p class= 'avatar-bordered avatar-classement' style="background-image: url(<%= user.photo %>); background-size: cover;"></p>
-        <h6><%= user.pseudo %></h6>
-        <p class="tip"> <%= @scores[user.id] %> pts </p>
-      </div>
-      <hr style="background-color: gray; height: 2px; opacity: 0.3;">
-    <% end %>
-    <hr style="width: 0%;">
-<% end %>
+<div class="podium">
+  <%= render "pages/podium" %>
+</div>
+<div class="list-users">
+  <div class="filtres"></div>
+<!-- iterer de ici jusqu'a Y -->
+  <% @users.each_with_index do |user, index| %>
+    <div class="line-user">
+      <h6><%= index + 1 %></h6>
+      <p class= 'avatar-bordered avatar-classement' style="background-image: url(<%= user.photo %>); background-size: cover;"></p>
+      <h6><%= user.pseudo %></h6>
+      <p class="tip"> <%= @scores.values[index] %> pts </p>
+    </div>
+    <hr style="background-color: gray; height: 2px; opacity: 0.3;">
+  <% end %>
+  <hr style="width: 0%;">
 
   <!-- Y -->
 
