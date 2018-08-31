@@ -14,7 +14,7 @@ Category.destroy_all
 User.destroy_all
 
 puts "users creation"
-ahmed = User.create(password: '123456', admin: false, email: 'ahmed@gmail.com', pseudo: 'ahmed')
+ahmed = User.create(password: '123456', admin: false, email: 'ahmed@gmail.com', pseudo: 'ahmed', remote_photo_url:"https://rednugget.fr/wp-content/uploads/2017/10/bitmoji-Louis-220x220.png")
 pierre = User.create(password: '123456', admin: false, email: 'pierre@gmail.com', pseudo: 'pierre')
 eric = User.create(password: '123456', admin: false, email: 'eric@gmail.com', pseudo: 'eric')
 ophelie = User.create(password: '123456', admin: false, email: 'ophelie@gmail.com', pseudo: 'ophelie')
@@ -160,24 +160,33 @@ travail.save
 
 p Category.all
 puts "questions creation"
-question1 = Question.create!(user: ahmed , description: 'Quelle couleur me va le mieux ?', category: look, type_resolution: "Mode héliaste", deadline: DateTime.now  )
-question2 = Question.create!(user: pierre , description: 'Quel tatouage choisir ?', category: food, type_resolution: "Mode héliaste", deadline: DateTime.now )
-question3 = Question.create!(user: eric , description: 'Boire ou conduire ?', category: culture, type_resolution: "Mode héliaste", deadline: DateTime.now  )
-question4 = Question.create!(user: ophelie , description: 'Le suivre ou rester ?', category: achats, type_resolution: "Mode héliaste", deadline: DateTime.now  )
-question5 = Question.create!(user: loig , description: 'Passion ou Raison ?', category: love, type_resolution: "Mode héliaste", deadline: DateTime.now  )
-question6 = Question.create!(user: louis , description: 'Payer un loyer à son partenaire ?', category: love, type_resolution: "Mode héliaste", deadline: DateTime.now )
-question7 = Question.create!(user: rose , description: 'Sauver son couple ou suivre un autre homme ?', category: love, type_resolution: "Mode héliaste", deadline: DateTime.now  )
-question8 = Question.create!(user: eva , description: 'Je me pose la question suivante: pour les hommes c est quoi tromper ?', category: love, type_resolution: "Mode héliaste", deadline: DateTime.now )
-question9 = Question.create!(user: ines , description: 'Quel livre me conseiller vous sachant que je suis plutôt fan de science-fiction', category: culture, type_resolution: "Mode héliaste", deadline: DateTime.now  )
-question10 = Question.create!(user: lou , description: 'j hesite entre le robot Philips HD4749/77 ou le Philips HD3167/77, lequel choisir?', category: achats, type_resolution: "Mode héliaste", deadline: DateTime.now  )
+question1 = Question.create!(user: ahmed , description: 'Quelle couleur me va le mieux ?', category: look, type_resolution: "Mode héliaste", status: 1, deadline: DateTime.now  )
+question2 = Question.create!(user: manon , description: 'Quel tatouage choisir ?', category: food, type_resolution: "Mode héliaste", status: 1, deadline: DateTime.now )
+question3 = Question.create!(user: eric , description: 'Boire ou conduire ?', category: culture, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
+question4 = Question.create!(user: ophelie , description: 'Le suivre ou rester ?', category: achats, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
+question5 = Question.create!(user: manon , description: 'Passion ou Raison ?', category: love, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
+question6 = Question.create!(user: louis , description: 'Payer un loyer à son partenaire ?', category: love, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
+question7 = Question.create!(user: manon , description: 'Sauver son couple ou suivre un autre homme ?', category: love, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
+question8 = Question.create!(user: eva , description: 'Je me pose la question suivante: pour les hommes c est quoi tromper ?', category: love, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
+question9 = Question.create!(user: ines , description: 'Quel livre me conseiller vous sachant que je suis plutôt fan de science-fiction', category: culture, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
+question10 = Question.create!(user: lou , description: 'j hesite entre le robot Philips HD4749/77 ou le Philips HD3167/77, lequel choisir?', category: achats, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
 question11 = Question.create!(user: julia , description: 'Passer de sexfriend a en couple s est possible?', category: love, type_resolution: "Mode héliaste", deadline: DateTime.now  )
-question12 = Question.create!(user: lucie , description: 'Je suis en CDI mais la boite est pas géniale, une amie me propose un cdd dans un cadre de travail magnifique avec des gens ultra competents qui en plus me feront progresser, que faire ? je suis agée de 32 ans et je souhaites encore avancer...', category: travail, type_resolution: "Mode héliaste", deadline: DateTime.now )
-question13 = Question.create!(user: lucas , description: 'Avec un jeans plutôt des baskets ou des chaussures de ville ?', category: look, type_resolution: "Mode héliaste", deadline: DateTime.now  )
-question14 = Question.create!(user: arthur , description: 'Pour le petit déjeuner, plutôt céréales ou croissant ?', category: food, type_resolution: "Mode héliaste", deadline: DateTime.now )
-question15 = Question.create!(user: louise , description: 'Le dernier Mission impossible vaut-il le coup ?', category: culture, type_resolution: "Mode héliaste", deadline: DateTime.now  )
-question16 = Question.create!(user: ophelie , description: 'Je dois changer d ordinateur et j hésite entre un mac et un ordinateur ?', category: achats, type_resolution: "Mode héliaste", deadline: DateTime.now  )
-question17 = Question.create!(user: jules , description: 'Je dois vraiment lui offrir un cadeau pour la saint-valentin ?', category: love, type_resolution: "Mode héliaste", deadline: DateTime.now  )
+question12 = Question.create!(user: lucie , description: 'Je suis en CDI mais la boite est pas géniale, une amie me propose un cdd dans un cadre de travail magnifique avec des gens ultra competents qui en plus me feront progresser, que faire ? je suis agée de 32 ans et je souhaites encore avancer...', category: travail, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
+question13 = Question.create!(user: lucas , description: 'Avec un jeans plutôt des baskets ou des chaussures de ville ?', category: look, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
+question14 = Question.create!(user: arthur , description: 'Pour le petit déjeuner, plutôt céréales ou croissant ?', category: food, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
+question15 = Question.create!(user: louise , description: 'Le dernier Mission impossible vaut-il le coup ?', category: culture, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
+question16 = Question.create!(user: ophelie , description: 'Je dois changer d ordinateur et j hésite entre un mac et un ordinateur ?', category: achats, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
+question17 = Question.create!(user: jules , description: 'Je dois vraiment lui offrir un cadeau pour la saint-valentin ?', category: love, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
 question18 = Question.create!(user: gabriel , description: 'Je met plutôt un t-shirt ou une chemise avec ce pantalon?', category: travail, type_resolution: "Mode héliaste", deadline: DateTime.now )
+
+question19 = Question.create!(user: manon , description: 'Je met plutôt un t-shirt ou une chemise avec ce pantalon?', category: look, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
+question20 = Question.create!(user: manon , description: 'Plutôt baby-sitting ou monop à coté de mes cours?', category: travail, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
+question21 = Question.create!(user: manon , description: 'Je trouve Meghan Markle trop classe! Vous pensez que cette robe m irais?', category: look, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
+question22 = Question.create!(user: manon , description: 'Je me met au régime sans sucre pendant un an! A votre avis je vais tenir?', category: food, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
+
+
+
+
 
 
 p Question.all
@@ -231,17 +240,43 @@ option45 = Option.create!(titre: "Non", question: question17)
 option46 = Option.create!(titre: "T-shirt", question: question18)
 option47 = Option.create!(titre: "Chemise", question: question18)
 
+# Réponses Manon
+
+option48 = Option.create!(titre: "T-shirt", question: question19)
+option49 = Option.create!(titre: "Chemise", question: question19)
+option50 = Option.create!(titre: "Baby_sitting", question: question20)
+option51 = Option.create!(titre: "Monop", question: question20)
+option52 = Option.create!(titre: "Rien, les études et rien d autres", question: question20)
+option53 = Option.create!(titre: "oui", question: question21)
+option54 = Option.create!(titre: "non", question: question21)
+option53 = Option.create!(titre: "oui", question: question22)
+option54 = Option.create!(titre: "non", question: question22)
+
+
 p Option.all
 puts 'answer all'
-answer1 = Answer.create!(user: lucie , option: option12 ,reponse: 'blablabla', score: 900)
-answer2 =  Answer.create!(user: ahmed , option: option13 , reponse: 'ma premiere reponse', score: 800)
-answer2 = Answer.create!(user: lea , option: option14 , reponse: 'j espere que ça marche', score: 700)
-answer4 = Answer.create!(user: ines , option: option15 , reponse: 'en esperant t aider', score: 650)
-answer5 = Answer.create!(user: lou , option: option16 , reponse: 'en cours', score: 990)
-answer6 = Answer.create!(user: lea , option: option17 , reponse: 'bonne chance', score: 1100)
-answer7 = Answer.create!(user: leo , option: option18 , reponse: 'ravie de t avoir aide', score: 750)
-answer8 = Answer.create!(user: jules , option: option19 , reponse: 'sans rancune mais je ne peux rien de plus', score: 900)
+answer1 = Answer.create!(user: manon , option: option1 ,reponse: 'le bleu te va si bien ^^', score: 695)
+answer2 =  Answer.create!(user: ahmed , option: option13 , reponse: 'comme toi, tellement léger et agréable a regarder', score: 800)
+answer2 = Answer.create!(user: lea , option: option14 , reponse: 'ne fait pas de bétises, on ne rigole pas avec ça...', score: 700)
+answer4 = Answer.create!(user: manon , option: option15 , reponse: 'en esperant t aider, bon courage!', score: 650)
+answer5 = Answer.create!(user: lou , option: option16 , reponse: 'jamais d exces, faites pas comme moi!!!', score: 620)
+answer6 = Answer.create!(user: manon , option: option17 , reponse: 'si tu veux passer pour un pigeon, va-s-y, bonne chance!!', score: 11)
+answer7 = Answer.create!(user: leo , option: option18 , reponse: 'lâche l affaire ton couple est mort (manon en mode deprime!!)', score: 350)
+answer8 = Answer.create!(user: manon , option: option19 , reponse: 'moi je suis trop jalouse, un regard et c est fini !!', score: 90)
 answer9 = Answer.create!(user: gabriel , option: option20 , reponse: 'au revoir et a bientot', score: 300)
-answer10 = Answer.create!(user: arthur , option: option21 , reponse: 'blablabla2', score: 200)
+answer10 = Answer.create!(user: manon , option: option21 , reponse: 'blablabla2', score: 200)
+answer11 = Answer.create!(user: manon , option: option12 ,reponse: 'bonne chance', score: 900)
+answer12 =  Answer.create!(user: ahmed , option: option13 , reponse: 'en esperant avoir ete utile', score: 800)
+answer13 = Answer.create!(user: lea , option: option14 , reponse: 'j espere que ça marche', score: 700)
+answer14 = Answer.create!(user: manon , option: option15 , reponse: 'en esperant t aider', score: 650)
+answer15 = Answer.create!(user: lou , option: option16 , reponse: 'en cours', score: 990)
+answer16 = Answer.create!(user: lea , option: option17 , reponse: 'bonne chance', score: 1100)
+answer17 = Answer.create!(user: leo , option: option18 , reponse: 'ravie de t avoir aide', score: 750)
+answer18 = Answer.create!(user: manon , option: option19 , reponse: 'sans rancune mais je ne peux rien de plus', score: 900)
+answer19 = Answer.create!(user: gabriel , option: option20 , reponse: 'au revoir et a bientot', score: 300)
+answer20 = Answer.create!(user: manon , option: option21 , reponse: 'blablabla2', score: 200)
+answer21 = Answer.create!(user: gabriel , option: option20 , reponse: 'au revoir et a bientot', score: 300)
+answer22 = Answer.create!(user: manon , option: option21 , reponse: 'blablabla2', score: 200)
+
 p Answer.all
 
