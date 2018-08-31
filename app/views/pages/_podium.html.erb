@@ -1,5 +1,6 @@
   <div class="winner">
-    <img class= 'avatar-bordered avatar-classement'><%= @users[1].photo %></img>
+<% if @user.present? %>
+    <p><%= @users[1].photo %></p>
     <p><%= @users[1].pseudo %></p>
     <div class="number2">
       <h5 style="color: white; text-align: center;">2</h5>
@@ -7,7 +8,8 @@
   </div>
 
   <div class="winner">
-    <img class= 'avatar-bordered avatar-classement'><%= @users[0].photo %></img>
+
+    <p><%= @users[0].photo %></p>
     <p><%= @users[0].pseudo %></p>
     <div class="number1">
       <h5 style="color: white; text-align: center;">1</h5>
@@ -30,9 +32,12 @@
   </div>
 
   <div class="winner">
+    <p><%= @users[2].photo %></p>
     <img class= 'avatar-bordered avatar-classement'><%= @users[2].photo %></img>
     <p><%= @users[2].pseudo %></p>
     <div class="number3">
       <h5 style="color: white; text-align: center;">3</h5>
     </div>
+<% end %>
   </div>
+
