@@ -10,8 +10,22 @@
     <%= image_tag ("https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1"), class: 'avatar-bordered avatar-classement' %>
     <p>joli_pseudo</p>
     <div class="number1">
-      <%= image_tag "badge-06.png", width: 50 %>
       <h5 style="color: white; text-align: center;">1</h5>
+      <% if @category != nil %>
+        <% if @category.name == "Culture" %>
+          <%= image_tag "badge-01.png", width: 40 %>
+        <% elsif @category.name == "Achats" %>
+          <%= image_tag "badge-02.png", width: 40 %>
+        <% elsif @category.name == "Food" %>
+          <%= image_tag "badge-03.png", width: 40 %>
+        <% elsif @category.name == "Travail" %>
+          <%= image_tag "badge-04.png", width: 40 %>
+        <% elsif @category.name == "Look" %>
+          <%= image_tag "badge-05.png", width: 40 %>
+        <% elsif @category.name == "Love" %>
+          <%= image_tag "badge-06.png", width: 40 %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 
