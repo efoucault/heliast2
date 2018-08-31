@@ -112,10 +112,14 @@ class QuestionsController < ApplicationController
   def status_info
     if @question.pending?
       @status_message = 'En attente de décision...'
+      @status_heliast = 'A toi de décider pour'
     elsif @question.answered?
       @status_message = 'Décision reçue !'
+      @status_heliast = 'Tu as déjà fais un choix pour'
+
     elsif @question.closed?
       @status_message = 'Décision close.'
+      @status_heliast = 'Décision close !'
     end
   end
 
