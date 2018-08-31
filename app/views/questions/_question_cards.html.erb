@@ -7,7 +7,7 @@
         <%=  %>
         <% diff = TimeDifference.between(DateTime.now, question.deadline)%>
         <% countdown = diff.in_general %>
-        <span><p class="deadline">
+        <span><p class="deadline hidden">
           <% if DateTime.now.in_time_zone < question.deadline %>
           Plus que
             <%= compute_countdown(countdown) %>
@@ -15,7 +15,47 @@
             OVER
           <%end%>
           </p></span>
-        <h4><%= question.description.truncate(140, omission: '...') %></h4>
+        <h4><%= question.description.truncate(140, omission: '...')%></h4>
+        </div>
+      <div class="question-card-status">
+        <% if question.pending?
+          status_message = 'En attente de décision...'
+          status_progress = 35
+        elsif question.answered?
+          status_message = 'Décision reçue !'
+          status_progress = 70
+        elsif question.closed?
+          status_message = 'Décision close.'
+          status_progress = 100
+        end %>
+
+        <div class="wrapper">
+          <div class="line">
+
+          </div>
+          <div class="dots">
+            <% if question.pending? %>
+              <span class="dot framboise"><i class="fa fa-question"></i></span>
+              <span class="dot"><i class="fa fa-exclamation"></i></span>
+              <span class="dot "><i class="fa fa-check"></i></span>
+            <% elsif question.answered? %>
+              <span class="dot turquoise"><i class="fa fa-question"></i></span>
+              <span class="dot turquoise"><i class="fa fa-exclamation"></i></span>
+              <span class="dot "><i class="fa fa-check"></i></span>
+            <% elsif question.closed? %>
+              <span class="dot turquoise"><i class="fa fa-question"></i></span>
+              <span class="dot turquoise"><i class="fa fa-exclamation"></i></span>
+              <span class="dot turquoise"><i class="fa fa-check"></i></span>
+            <%end%>
+          </div>
+
+          <!-- <div class="progress-bar">
+            <span class="progress-bar-fill" style="width: <%=status_progress%>%;"></span>
+          </div> -->
+        </div>
+
+
+        <div class="info-status"><p><%=status_message%></p></div>
 
       </div>
     <%= link_to "", question_path(question), class: 'card-link' %>
