@@ -40,4 +40,9 @@
 
   <hr style="width: 0%;">
 </div>
+  <div>
+    <% if @category != nil  %>
+      <%= link_to "Classement global", classement_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>

@@ -1,6 +1,6 @@
   <div class="winner">
-<% if @user.present? %>
-    <p><%= @users[1].photo %></p>
+<% if @users.present? %>
+    <%= cl_image_tag @users[1].photo, class: "avatar-bordered avatar-classement" %>
     <p><%= @users[1].pseudo %></p>
     <div class="number2">
       <h5 style="color: white; text-align: center;">2</h5>
@@ -9,7 +9,7 @@
 
   <div class="winner">
 
-    <p><%= @users[0].photo %></p>
+    <%= cl_image_tag @users[0].photo, class: "avatar-bordered avatar-classement" %>
     <p><%= @users[0].pseudo %></p>
     <div class="number1">
       <h5 style="color: white; text-align: center;">1</h5>
@@ -32,8 +32,7 @@
   </div>
 
   <div class="winner">
-    <p><%= @users[2].photo %></p>
-    <img class= 'avatar-bordered avatar-classement'><%= @users[2].photo %></img>
+    <%= cl_image_tag @users[2].photo, class: "avatar-bordered avatar-classement" %>
     <p><%= @users[2].pseudo %></p>
     <div class="number3">
       <h5 style="color: white; text-align: center;">3</h5>
