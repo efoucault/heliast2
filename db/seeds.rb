@@ -14,31 +14,75 @@ Category.destroy_all
 User.destroy_all
 
 puts "users creation"
-ahmed = User.create(password: '123456', admin: false, email: 'ahmed@gmail.com', pseudo: 'ahmed', remote_photo_url:"https://rednugget.fr/wp-content/uploads/2017/10/bitmoji-Louis-220x220.png")
 
-url_photo_pierre = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/lucas.jpg"
-pierre = User.new(password: '123456', admin: false, email: 'pierre@gmail.com', pseudo: 'pierre')
-pierre.remote_photo_url = url_photo_pierre
-pierre.save
 
+
+url_photo_ahmed = "https://res.cloudinary.com/offbatt/image/upload/v1535715187/ahmed.png"
+ahmed = User.new(password: '123456', admin: false, email: 'ahmed@gmail.com', pseudo: 'ahmed')
+ahmed.remote_photo_url = url_photo_ahmed
+ahmed.save
+url_photo_lucas = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/lucas.jpg"
+lucas = User.new(password: '123456', admin: false, email: 'lucas@gmail.com', pseudo: 'lucas')
+lucas.remote_photo_url = url_photo_lucas
+lucas.save
 pierre = User.create(password: '123456', admin: false, email: 'pierre@gmail.com', pseudo: 'pierre')
-eric = User.create(password: '123456', admin: false, email: 'eric@gmail.com', pseudo: 'eric')
-ophelie = User.create(password: '123456', admin: false, email: 'ophelie@gmail.com', pseudo: 'ophelie')
+url_photo_eric = "https://res.cloudinary.com/offbatt/image/upload/v1535715187/eric.jpg"
+eric = User.new(password: '123456', admin: false, email: 'eric@gmail.com', pseudo: 'eric')
+eric.remote_photo_url = url_photo_eric
+eric.save
+url_photo_ophelie = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/ophelie.jpg"
+ophelie = User.new(password: '123456', admin: false, email: 'ophelie@gmail.com', pseudo: 'ophelie')
+ophelie.remote_photo_url = url_photo_ophelie
+ophelie.save
+
 loig = User.create(password: '123456', admin: false, email: 'loig@gmail.com', pseudo: 'loig')
 sami = User.create(password: '123456', admin: false, email: 'sami@gmail.com', pseudo: 'sami')
-louis = User.create(password: '123456', admin: false, email: 'louis@gmail.com', pseudo: 'louis')
-jules = User.create(password: '123456', admin: false, email: 'jules@gmail.com', pseudo: 'jules')
-gabriel = User.create(password: '123456', admin: false, email: 'gabriel@gmail.com', pseudo: 'gabriel')
+
+url_photo_louis = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/louis.png"
+louis = User.new(password: '123456', admin: false, email: 'louis@gmail.com', pseudo: 'louis')
+louis.remote_photo_url = url_photo_louis
+louis.save
+
+url_photo_jules = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/jules.png"
+jules = User.new(password: '123456', admin: false, email: 'jules@gmail.com', pseudo: 'jules')
+jules.remote_photo_url = url_photo_jules
+jules.save
+
+
+url_photo_gabriel = "https://res.cloudinary.com/offbatt/image/upload/v1535715187/gabriel.png"
+gabriel = User.new(password: '123456', admin: false, email: 'gabriel@gmail.com', pseudo: 'gabriel')
+gabriel.remote_photo_url = url_photo_gabriel
+gabriel.save
+
 raphael = User.create(password: '123456', admin: false, email: 'raphael@gmail.com', pseudo: 'raphael')
 mael = User.create(password: '123456', admin: false, email: 'mael@gmail.com', pseudo: 'mael')
-leo = User.create(password: '123456', admin: false, email: 'leo@gmail.com', pseudo: 'leo')
+
+url_photo_leo = "https://res.cloudinary.com/offbatt/image/upload/v1535715187/leo.png"
+leo = User.new(password: '123456', admin: false, email: 'leo@gmail.com', pseudo: 'leo')
+leo.remote_photo_url = url_photo_leo
+leo.save
 lucas = User.create(password: '123456', admin: false, email: 'lucas@gmail.com', pseudo: 'lucas')
-arthur = User.create(password: '123456', admin: false, email: 'arthur@gmail.com', pseudo: 'arthur')
-louise = User.create(password: '123456', admin: false, email: 'louise@gmail.com', pseudo: 'louise')
+
+
+url_photo_arthur = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/louise.jpg"
+arthur = User.new(password: '123456', admin: false, email: 'arthur@gmail.com', pseudo: 'arthur')
+arthur.remote_photo_url = url_photo_arthur
+arthur.save
+
+url_photo_louise = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/louise.jpg"
+louise = User.new(password: '123456', admin: false, email: 'louise@gmail.com', pseudo: 'louise')
+louise.remote_photo_url = url_photo_louise
+louise.save
+
+
 jade = User.create(password: '123456', admin: false, email: 'jade@gmail.com', pseudo: 'jade')
 emma = User.create(password: '123456', admin: false, email: 'emma@gmail.com', pseudo: 'emma')
 alice = User.create(password: '123456', admin: false, email: 'alice@gmail.com', pseudo: 'alice')
-lea = User.create(password: '123456', admin: false, email: 'lea@gmail.com', pseudo: 'lea')
+
+url_photo_lea = "https://res.cloudinary.com/offbatt/image/upload/v1535715187/lea.png"
+lea = User.new(password: '123456', admin: false, email: 'louise@gmail.com', pseudo: 'lea')
+lea.remote_photo_url = url_photo_lea
+lea.save
 camille = User.create(password: '123456', admin: false, email: 'camille@gmail.com', pseudo: 'camille')
 lena = User.create(password: '123456', admin: false, email: 'lena@gmail.com', pseudo: 'lena')
 chloe = User.create(password: '123456', admin: false, email: 'chloe@gmail.com', pseudo: 'chloe')
@@ -49,23 +93,42 @@ ambre = User.create(password: '123456', admin: false, email: 'ambre@gmail.com', 
 paul = User.create(password: '123456', admin: false, email: 'paul@gmail.com', pseudo: 'paul')
 anna = User.create(password: '123456', admin: false, email: 'anna@gmail.com', pseudo: 'anna')
 ethan = User.create(password: '123456', admin: false, email: 'ethan@gmail.com', pseudo: 'ethan')
-manon = User.create(password: '123456', admin: false, email: 'manon@gmail.com', pseudo: 'manon')
+
+url_photo_manon = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/manon.png"
+manon = User.new(password: '123456', admin: false, email: 'manon@gmail.com', pseudo: 'manon')
+manon.remote_photo_url = url_photo_manon
+manon.save
 clement = User.create(password: '123456', admin: false, email: 'clement@gmail.com', pseudo: 'clement')
 rose = User.create(password: '123456', admin: false, email: 'rose@gmail.com', pseudo: 'rose')
 theo = User.create(password: '123456', admin: false, email: 'theo@gmail.com', pseudo: 'theo')
-eva = User.create(password: '123456', admin: false, email: 'eva@gmail.com', pseudo: 'eva')
+url_photo_eva = "https://res.cloudinary.com/offbatt/image/upload/v1535715187/eva.png"
+eva = User.new(password: '123456', admin: false, email: 'eva@gmail.com', pseudo: 'eva')
+eva.remote_photo_url = url_photo_eva
+eva.save
 tom = User.create(password: '123456', admin: false, email: 'tom@gmail.com', pseudo: 'tom')
 rose = User.create(password: '123456', admin: false, email: 'rosed@gmail.com', pseudo: 'rose')
 clement = User.create(password: '123456', admin: false, email: 'clement@gmail.com', pseudo: 'clement')
 romane = User.create(password: '123456', admin: false, email: 'romane@gmail.com', pseudo: 'romane')
 gabin = User.create(password: '123456', admin: false, email: 'gabin@gmail.com', pseudo: 'gabin')
-ines = User.create(password: '123456', admin: false, email: 'ines@gmail.com', pseudo: 'ines')
+url_photo_ines = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/ines.jpg"
+ines = User.new(password: '123456', admin: false, email: 'ines@gmail.com', pseudo: 'ines')
+ines.remote_photo_url = url_photo_ines
+ines.save
 noe = User.create(password: '123456', admin: false, email: 'noe@gmail.com', pseudo: 'noe')
-lou = User.create(password: '123456', admin: false, email: 'lou@gmail.com', pseudo: 'lou')
+url_photo_lou = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/lou.jpg"
+lou = User.new(password: '123456', admin: false, email: 'ines@gmail.com', pseudo: 'lou')
+lou.remote_photo_url = url_photo_lou
+lou.save
 antoine = User.create(password: '123456', admin: false, email: 'antoine@gmail.com', pseudo: 'antoine')
-julia = User.create(password: '123456', admin: false, email: 'julia@gmail.com', pseudo: 'julia')
+url_photo_julia = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/julia.jpg"
+julia = User.new(password: '123456', admin: false, email: 'julia@gmail.com', pseudo: 'julia')
+julia.remote_photo_url = url_photo_julia
+julia.save
 valentin = User.create(password: '123456', admin: false, email: 'valentin@gmail.com', pseudo: 'valentin')
-lucie = User.create(password: '123456', admin: false, email: 'lucie@gmail.com', pseudo: 'lucie')
+url_photo_lucie = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/lucie.jpg"
+lucie = User.new(password: '123456', admin: false, email: 'lucie@gmail.com', pseudo: 'lucie')
+lucie.remote_photo_url = url_photo_lucie
+lucie.save
 noe = User.create(password: '123456', admin: false, email: 'noe@gmail.com', pseudo: 'noe')
 margaux = User.create(password: '123456', admin: false, email: 'margauxgmail.com', pseudo: 'margaux')
 sacha = User.create(password: '123456', admin: false, email: 'sacha@gmail.com', pseudo: 'sacha')
@@ -107,11 +170,20 @@ giulia = User.create(password: '123456', admin: false, email: 'giulia@gmail.com'
 matheo = User.create(password: '123456', admin: false, email: 'matheo@gmail.com', pseudo: 'matheo')
 mathilde = User.create(password: '123456', admin: false, email: 'mathilde@gmail.com', pseudo: 'mathilde')
 leon = User.create(password: '123456', admin: false, email: 'leon@gmail.com', pseudo: 'leon')
-elina = User.create(password: '123456', admin: false, email: 'elina@gmail.com', pseudo: 'elina')
-aaron = User.create(password: '123456', admin: false, email: 'aaron@gmail.com', pseudo: 'aaron')
+
+url_photo_elina = "https://res.cloudinary.com/offbatt/image/upload/v1535715188/lucie.jpg"
+elina = User.new(password: '123456', admin: false, email: 'elina@gmail.com', pseudo: 'elina')
+elina.remote_photo_url = url_photo_elina
+elina.save
+url_photo_aaron = "https://res.cloudinary.com/offbatt/image/upload/v1535715187/aaron.png"
+aaron = User.new(password: '123456', admin: false, email: 'aaron@gmail.com', pseudo: 'aaron')
+aaron.remote_photo_url = url_photo_aaron
+aaron.save
 sami = User.create(password: '123456', admin: false, email: 'sami@gmail.com', pseudo: 'sami')
-adam = User.create(password: '123456', admin: false, email: 'adam@gmail.com', pseudo: 'adam')
-ahmed = User.create(password: '123456', admin: false, email: 'ahmed@gmail.com', pseudo: 'ahmed')
+url_photo_adam = "https://res.cloudinary.com/offbatt/image/upload/v1535715187/adam.png"
+adam = User.new(password: '123456', admin: false, email: 'adam@gmail.com', pseudo: 'adam')
+adam.remote_photo_url = url_photo_adam
+adam.save
 alexandre = User.create(password: '123456', admin: false, email: 'alexandre@gmail.com', pseudo: 'alexandre')
 eric = User.create(password: '123456', admin: false, email: 'eric@gmail.com', pseudo: 'eric')
 mathys = User.create(password: '123456', admin: false, email: 'mathys@gmail.com', pseudo: 'mathys')
@@ -185,15 +257,14 @@ question16 = Question.create!(user: ophelie , description: 'Je dois changer d or
 question17 = Question.create!(user: jules , description: 'Je dois vraiment lui offrir un cadeau pour la saint-valentin ?', category: love, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
 question18 = Question.create!(user: gabriel , description: 'Je met plutôt un t-shirt ou une chemise avec ce pantalon?', category: travail, type_resolution: "Mode héliaste", deadline: DateTime.now )
 
-question19 = Question.create!(user: manon , description: 'Je met plutôt un t-shirt ou une chemise avec ce pantalon?', category: look, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
-question20 = Question.create!(user: manon , description: 'Plutôt baby-sitting ou monop à coté de mes cours?', category: travail, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
-question21 = Question.create!(user: manon , description: 'Je trouve Meghan Markle trop classe! Vous pensez que cette robe m irais?', category: look, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
-question22 = Question.create!(user: manon , description: 'Je me met au régime sans sucre pendant un an! A votre avis je vais tenir?', category: food, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
+question19 = Question.create!(user: manon , description: 'Je met plutôt un t-shirt ou une chemise avec ce pantalon?', category: look, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
+question20 = Question.create!(user: manon , description: 'Plutôt baby-sitting ou monop à coté de mes cours?', category: travail, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
+question21 = Question.create!(user: manon , description: 'Je trouve Meghan Markle trop classe! Vous pensez que cette robe m irais?', category: look, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
 
 question23 = Question.create!(user: lucas , description: 'Connaissez-vous un bon site pour trouver des petits boulots?', category: travail, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
-question24 = Question.create!(user: arthur , description: 'Vous êtes plus efficaces le matin ou le soir?', category: travail, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
+question24 = Question.create!(user: arthur , description: 'Vous êtes plus efficaces le matin ou le soir?', category: travail, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
 question25 = Question.create!(user: louise , description: 'On me propose un travail en 3 x 8, est-ce adapté à une vie de famille?', category: travail, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
-question26 = Question.create!(user: ophelie , description: 'puis-je cumuler 2 temps partiel? ?', category: travail, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now  )
+question26 = Question.create!(user: ophelie , description: 'puis-je cumuler 2 temps partiel? ?', category: travail, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
 question27 = Question.create!(user: jules , description: 'Je peux avoir 2 temps pleins comme les politiques?', category: travail, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
 question28 = Question.create!(user: gabriel , description: 'Au travail on fais plutôt la bise ou on sert la main?', category: travail, type_resolution: "Mode héliaste", deadline: DateTime.now )
 
@@ -262,8 +333,7 @@ option51 = Option.create!(titre: "Monop", question: question20)
 option52 = Option.create!(titre: "Rien, les études et rien d autres", question: question20)
 option53 = Option.create!(titre: "oui", question: question21)
 option54 = Option.create!(titre: "non", question: question21)
-option53 = Option.create!(titre: "oui", question: question22)
-option54 = Option.create!(titre: "non", question: question22)
+
 
 option55 = Option.create!(titre: "Oui, préciseé lequel", question: question23)
 option56= Option.create!(titre: "Non, merci pour la reponse", question: question23)
@@ -276,13 +346,13 @@ option62 = Option.create!(titre: "Non", question: question26)
 option63 = Option.create!(titre: "je ne sais pas, desole", question: question26)
 option64 = Option.create!(titre: "Oui", question: question27)
 option65 = Option.create!(titre: "Non", question: question27)
-option66 = Option.create!(titre: "Rester et pleurer pendant quelques temps", question: question28)
-option67 = Option.create!(titre: "Rester et pleurer pendant quelques temps", question: question28)
+option66 = Option.create!(titre: "La bise", question: question28)
+option67 = Option.create!(titre: "On sert la main", question: question28)
 
 
 p Option.all
 puts 'answer all'
-answer1 = Answer.create!(user: manon , option: option1 ,reponse: 'le bleu te va si bien ^^', score: 695)
+answer1 = Answer.create!(user: manon , option: option1 ,reponse: 'le bleu te va si bien ^^', score: 895)
 answer2 =  Answer.create!(user: ahmed , option: option13 , reponse: 'comme toi, tellement léger et agréable a regarder', score: 800)
 answer2 = Answer.create!(user: lea , option: option14 , reponse: 'ne fait pas de bétises, on ne rigole pas avec ça...', score: 700)
 answer4 = Answer.create!(user: manon , option: option15 , reponse: 'en esperant t aider, bon courage!', score: 650)
@@ -300,7 +370,7 @@ answer15 = Answer.create!(user: lou , option: option16 , reponse: 'en cours', sc
 answer16 = Answer.create!(user: lea , option: option17 , reponse: 'bonne chance', score: 1100)
 answer17 = Answer.create!(user: leo , option: option18 , reponse: 'ravie de t avoir aide', score: 750)
 answer18 = Answer.create!(user: manon , option: option19 , reponse: 'sans rancune mais je ne peux rien de plus', score: 900)
-answer19 = Answer.create!(user: gabriel , option: option20 , reponse: 'au revoir et a bientot', score: 300)
+answer19 = Answer.create!(user: gabriel , option: option20 , reponse: 'au revoir et a bientot', score: 395)
 answer20 = Answer.create!(user: manon , option: option21 , reponse: 'blablabla2', score: 200)
 answer21 = Answer.create!(user: gabriel , option: option20 , reponse: 'au revoir et a bientot', score: 300)
 answer22 = Answer.create!(user: manon , option: option21 , reponse: 'blablabla2', score: 200)
