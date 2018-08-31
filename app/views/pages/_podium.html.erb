@@ -1,14 +1,14 @@
   <div class="winner">
-    <%= image_tag ("https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1"), class: 'avatar-bordered avatar-classement' %>
-    <p>joli_pseudo</p>
+    <img class= 'avatar-bordered avatar-classement'><%= @users[1].photo %></img>
+    <p><%= @users[1].pseudo %></p>
     <div class="number2">
       <h5 style="color: white; text-align: center;">2</h5>
     </div>
   </div>
 
   <div class="winner">
-    <%= image_tag ("https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1"), class: 'avatar-bordered avatar-classement' %>
-    <p>joli_pseudo</p>
+    <img class= 'avatar-bordered avatar-classement'><%= @users[0].photo %></img>
+    <p><%= @users[0].pseudo %></p>
     <div class="number1">
       <h5 style="color: white; text-align: center;">1</h5>
       <% if @category != nil %>
@@ -30,8 +30,8 @@
   </div>
 
   <div class="winner">
-    <%= image_tag ("https://i2.wp.com/myaeon.com.au/wp-content/uploads/2017/04/avatar-round-1.png?zoom=2&fit=300%2C300&ssl=1"), class: 'avatar-bordered avatar-classement' %>
-    <p>joli_pseudo</p>
+    <img class= 'avatar-bordered avatar-classement'><%= @users[2].photo %></img>
+    <p><%= @users[2].pseudo %></p>
     <div class="number3">
       <h5 style="color: white; text-align: center;">3</h5>
     </div>
