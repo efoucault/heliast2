@@ -7,12 +7,12 @@
         <h1>Nouvelle indécision</h1>
         <div class="padding">
           <%= simple_form_for [@user, @question] do |f| %>
-            <p>Décris ton indécision</p>
+            <p>1. Décris ton indécision*</p>
             <%= f.input :description, label: false, placeholder: "Exemple : Que porter aujourd'hui ?" %>
             <p class="ma-reponse hidden">Je veux ma réponse dans : </p>
             <%= f.input :attente, as: :range, label: false, input_html: { class: 'attente hidden' } %>
             <div class="category-choices">
-              <p>Choisis ta catégorie*</p>
+              <p>2. Choisis ta catégorie*</p>
 
               <div>
                 <div class="choice-categories-cards">
@@ -24,7 +24,7 @@
                 <% end %>
               </div>
 
-            <%= f.input :category_id, as: :string, input_html: {:value => ""}%>
+            <%= f.input :category_id, as: :hidden, input_html: {:value => ""}%>
 
             </div>
 
@@ -32,7 +32,7 @@
             </div>
 
 
-            <p style="margin-bottom: 4em;">Choisis un mode de résolution</p>
+            <p style="margin-bottom: 4em;">3. Choisis le mode de résolution*</p>
 
             <div class="mode-container" style="width:100%; margin-right:0; margin-left:0;">
 
@@ -60,14 +60,10 @@
 
           </div>
 
-          <%= f.input :type_resolution, as: :string, input_html: { class: 'resolution' }%>
-
-      <!-- j'ai "hidden" ce champs mais il est indspensable pour le moment-->
-
-          <!--  -->
+          <%= f.input :type_resolution, as: :hidden, input_html: { class: 'resolution' }%>
 
 
-
+          <p>4. Liste tes options possibles*</p>
 
 
         </div>
@@ -82,7 +78,9 @@
                <p id="add-option" class="hidden"><%= link_to_add_fields "Add Option", f, :options %></p>
              </div>
           </div>
-        <%= f.submit "Créer indécision", class: "btn btn-success" %>
+          <div class="envoie" style="width: 80%;">
+            <%= f.submit "J'envoie !", class: "btn btn-success btn-envoie" %>
+          </div>
         <% end %>
       </div>
     </div>
