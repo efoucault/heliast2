@@ -1,5 +1,5 @@
+<% if @users[2].present? %>
   <div class="winner">
-<% if @users.present? %>
     <%= cl_image_tag @users[1].photo, class: "avatar-bordered avatar-classement" %>
     <p><%= @users[1].pseudo %></p>
     <div class="number2">
@@ -8,7 +8,6 @@
   </div>
 
   <div class="winner">
-
     <%= cl_image_tag @users[0].photo, class: "avatar-bordered avatar-classement" %>
     <p><%= @users[0].pseudo %></p>
     <div class="number1">
@@ -37,6 +36,6 @@
     <div class="number3">
       <h5 style="color: white; text-align: center;">3</h5>
     </div>
-<% end %>
   </div>
+<% end %>
 
