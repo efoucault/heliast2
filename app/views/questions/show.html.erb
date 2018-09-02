@@ -119,12 +119,12 @@
       <% if @question.satisfied_by_recommended_option == nil && current_user == @question.user %>
         <h6 style="color:#24d6d6; padding-top: 1em;">Alors, c'était un bon choix ?</h6>
         <div class="satisfaction">
-          <div class="satisfied"><%= link_to question_path(@question, question: {satisfied_by_recommended_option: true}), method: :patch do %>
+          <div class="satisfied"><%= link_to question_path(@question, question: {satisfied_by_recommended_option: true, status: :closed}), method: :patch do %>
             <i class="fa fa-thumbs-up"></i>
           <% end %>
           </div>
           <div class="not-satisfied">
-            <%= link_to question_path(@question, question: {satisfied_by_recommended_option: false}), method: :patch do %>
+            <%= link_to question_path(@question, question: {satisfied_by_recommended_option: false, status: :closed}), method: :patch do %>
                 <i class="fa fa-thumbs-down"></i>
             <% end %>
           </div>
