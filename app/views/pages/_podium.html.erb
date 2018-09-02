@@ -1,15 +1,15 @@
-<% if @users[2].present? %>
+<% if @scores.keys[2].present? %>
   <div class="winner">
-    <%= cl_image_tag @users[1].photo, class: "avatar-bordered avatar-classement" %>
-    <p><%= @users[1].pseudo %></p>
+    <%= cl_image_tag User.find(@scores.keys[1]).photo, class: "avatar-bordered avatar-classement" %>
+    <p><%= User.find(@scores.keys[1]).pseudo %></p>
     <div class="number2">
       <h5 style="color: white; text-align: center;">2</h5>
     </div>
   </div>
 
   <div class="winner">
-    <%= cl_image_tag @users[0].photo, class: "avatar-bordered avatar-classement" %>
-    <p><%= @users[0].pseudo %></p>
+    <%= cl_image_tag User.find(@scores.keys[0]).photo, class: "avatar-bordered avatar-classement" %>
+    <p><%= User.find(@scores.keys[0]).pseudo %></p>
     <div class="number1">
       <h5 style="color: white; text-align: center;">1</h5>
       <% if @category != nil %>
@@ -31,8 +31,8 @@
   </div>
 
   <div class="winner">
-    <%= cl_image_tag @users[2].photo, class: "avatar-bordered avatar-classement" %>
-    <p><%= @users[2].pseudo %></p>
+    <%= cl_image_tag User.find(@scores.keys[2]).photo, class: "avatar-bordered avatar-classement" %>
+    <p><%= User.find(@scores.keys[2]).pseudo %></p>
     <div class="number3">
       <h5 style="color: white; text-align: center;">3</h5>
     </div>
