@@ -14,4 +14,7 @@ class PagesController < ApplicationController
     @users = User.where(id: @scores.keys)
     @category = Category.find_by_name(params[:query])
   end
+
+  def notification
+  end
 end
