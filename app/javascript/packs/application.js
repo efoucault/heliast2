@@ -127,7 +127,9 @@ var urlParams = new URLSearchParams(window.location.search);
 console.log(urlParams.get('query'));
 if (urlParams.get('query') === null) {
   const all = document.querySelector("#all");
-  all.classList.add("active");
+  if (all !== null) {
+    all.classList.add("active");
+  }
 }
 else {
   document.querySelectorAll(".tab").forEach((tab) => {
