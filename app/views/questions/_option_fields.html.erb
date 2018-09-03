@@ -2,15 +2,18 @@
   <div class="title-option">
     <div class="index-option">
       <p><%= (f.index).to_i + 1 %></p>
+      <i class="fa fa-trash" data-trash="<%= f.index %>"></i>
     </div>
     <div class="titre-option">
       <%= f.input :titre, label: false %>
+
       <div class="column-3-left">
+
         <i class="fa fa-camera" data-index="<%= f.index %>"></i>
         <img id="img_prev_<%= f.index %>" width=60 height=60 src="#" alt="your image" class="img-thumbnail hidden thumbnail"/> <br/>
       </div>
       <div class="column-3-right">
-          <i class="fa fa-trash" data-trash="<%= f.index %>"></i>
+
       </div>
         <%= f.input :photo, input_html: { class: 'picture hidden', :data => { indeximg: f.index } }, label: false %>
         <%= f.input :photo_cache, as: :hidden, input_html: { class: 'photocache' } %>

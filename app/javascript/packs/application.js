@@ -45,11 +45,8 @@ if (buttonNextOne !== null) {
 };
 const buttonNextTwo = document.getElementById("bouton-parttwo");
 if (buttonNextTwo !== null) {
-  console.log(buttonNextTwo)
   const divTwo = document.querySelector(".part-two");
-  console.log(divTwo)
   const divThree = document.querySelector(".part-three");
-  console.log(divThree)
   if (divThree !== null) {
     buttonNextTwo.addEventListener("click", (event) => {
   divTwo.classList.toggle("hidden");
@@ -222,7 +219,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 // click on add option when clicking on the plis icon
 
-const addIcon = document.querySelector(".fa-plus");
+const addIcon = document.querySelector(".plus-icon");
 if (addIcon !== null){
     addIcon.addEventListener("click", (event) => {
       document.querySelector("#add-option").click();

@@ -19,10 +19,6 @@
 
             <div class="part-one">
 
-
-
-
-
               <div class="padding">
                 <p>Décris ton indécision*</p>
                 <%= f.input :description, label: false, placeholder: "Exemple : Que porter aujourd'hui ?", :input_html => { class: 'text-area', :rows => 4 } %>
@@ -57,7 +53,7 @@
 
 
           <div class="part-two hidden">
-            <p>Liste tes options possibles*</p>
+            <p class="padding">Liste tes options possibles*</p>
             <div class="form-group">
                <div class="fields">
                 <%= f.simple_fields_for :options do |builder| %>
@@ -65,6 +61,7 @@
                <% end %>
                 <div class="plus-icon">
                    <i class="fa fa-plus plus"></i>
+                   <span class="plus-ajouter">Ajouter une option</span>
                 </div>
                  <p id="add-option" class="hidden"><%= link_to_add_fields "Add Option", f, :options %></p>
                </div>
@@ -77,7 +74,7 @@
           </div>
 
           <div class="part-three hidden">
-            <p style="margin-bottom: 4em;">Choisis le mode de résolution*</p>
+            <p class="padding" style="margin-bottom: 4em;">Choisis le mode de résolution*</p>
 
             <div class="mode-container" style="width:100%; margin-right:0; margin-left:0;">
               <div class="row">
