@@ -305,3 +305,21 @@ deleteButtons.forEach((button) => {
   });
 });
 
+// Histogram
+$(document).ready(function() {
+  // $('.bar span').hide();
+  // $('#option1').animate({
+  //    const optionOne = document.querySelector("#option1");
+  //    width: '75%'}, 1000);
+  // $('#option2').animate({
+  //    width: '35%'}, 1000);
+  // $('#option3').animate({
+  //    width: '20%'}, 1000);
+  // $('#option4').animate({
+  //    width: '15%'}, 1000);
+
+  setTimeout(function() {
+    $('.bar span').fadeIn('slow');
+  }, 1000);
+
+});
