@@ -1,41 +1,85 @@
 
-
-<div class="container" style="width:100%; margin-right:0; margin-left:0;">
+<h5 style="color: white; text-align: center; margin-top: 1em;">Nouvelle indécision</h5>
+<div class="no-container">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <div class="form-post">
-        <h1>Nouvelle indécision</h1>
-        <div class="padding">
-          <%= simple_form_for [@user, @question] do |f| %>
-            <p>1. Décris ton indécision*</p>
-            <%= f.input :description, label: false, placeholder: "Exemple : Que porter aujourd'hui ?" %>
-            <p class="ma-reponse hidden">Je veux ma réponse dans : </p>
-            <%= f.input :attente, as: :range, label: false, input_html: { class: 'attente hidden' } %>
-            <div class="category-choices">
-              <p>2. Choisis ta catégorie*</p>
 
-              <div>
-                <div class="choice-categories-cards">
-                <% Category.all.each do |category| %>
-                    <div class="choice-category-card" data-choice="<%=category.id%>"style="background-image: url(<%= category.photo %>); background-size: cover;">
-                      <span class="category-text"><%= category.name %></span>
-                      <%= link_to "", class: 'category-card-link' %>
-                    </div>
-                <% end %>
+
+              <div class="progression-form text-center" style="margin-bottom: 1em;">
+                <div class="dots">
+                  <span class="dot-form turquoise" id="progress-partone"><i class="fa fa-pencil"></i></span>
+                  <span class="dot-form" id="progress-parttwo"><i class="fa fa-th-list"></i></span>
+                  <span class="dot-form" id="progress-partthree"><i class="fa fa-check"></i></span>
+                </div>
               </div>
 
-            <%= f.input :category_id, as: :hidden, input_html: {:value => ""}%>
 
+          <%= simple_form_for [@user, @question] do |f| %>
+
+            <div class="part-one">
+
+
+
+
+
+              <div class="padding">
+                <p>Décris ton indécision*</p>
+                <%= f.input :description, label: false, placeholder: "Exemple : Que porter aujourd'hui ?", :input_html => { class: 'text-area', :rows => 4 } %>
+                <p class="ma-reponse hidden">Je veux ma réponse dans : </p>
+                <%= f.input :attente, as: :range, label: false, input_html: { class: 'attente hidden' } %>
+              </div>
+                <div class="category-choices">
+                  <p class="padding">Choisis ta catégorie*</p>
+                <div>
+                  <div class="choice-categories-cards">
+                  <% Category.all.each do |category| %>
+                      <div class="choice-category-card" data-choice="<%=category.id%>"style="background-image: url(<%= category.photo %>); background-size: cover;">
+                        <span class="category-text"><%= category.name %></span>
+                        <%= link_to "", class: 'category-card-link' %>
+                      </div>
+                  <% end %>
+                </div>
+
+              <%= f.input :category_id, as: :hidden, input_html: {:value => ""}%>
+              </div>
+            </div>
+          <div class="text-center">
+            <div class='btn btn-add btn-partone' id="bouton-partone">
+              Suivant
+            </div>
+          </div>
             </div>
 
 
+
+
+
+
+          <div class="part-two hidden">
+            <p>Liste tes options possibles*</p>
+            <div class="form-group">
+               <div class="fields">
+                <%= f.simple_fields_for :options do |builder| %>
+                 <%= render "option_fields", :f => builder %>
+               <% end %>
+                <div class="plus-icon">
+                   <i class="fa fa-plus plus"></i>
+                </div>
+                 <p id="add-option" class="hidden"><%= link_to_add_fields "Add Option", f, :options %></p>
+               </div>
             </div>
+            <div class="text-center">
+              <div class='btn btn-add btn-parttwo' id='bouton-parttwo'>
+                Suivant
+              </div>
+            </div>
+          </div>
 
-
-            <p style="margin-bottom: 4em;">3. Choisis le mode de résolution*</p>
+          <div class="part-three hidden">
+            <p style="margin-bottom: 4em;">Choisis le mode de résolution*</p>
 
             <div class="mode-container" style="width:100%; margin-right:0; margin-left:0;">
-
               <div class="row">
                 <div class="col-xs-6">
                   <div class="mode text-center mode-listener" data-mode="Mode héliaste">
@@ -46,43 +90,31 @@
                     </div>
                   </div>
               </div>
-
               <div class="col-xs-6">
-                <div class="mode text-center mode-listener" data-mode="Mode Démocratie">
-                  <div class="circle-mode"><%= image_tag "mode-24.png", class: 'mode-img' %></div>
-                    <div class="info-mode" style="padding: 0.3em;">
-                  <h5 style="padding-top: 1em;">Multi<br/> Héliastes </h5>
-                  <p style="font-size: 0.7em">Plusieurs héliastes voteront pour la décision à prendre</p>
+                  <div class="mode text-center mode-listener" data-mode="Mode Démocratie">
+                    <div class="circle-mode"><%= image_tag "mode-24.png", class: 'mode-img' %></div>
+                      <div class="info-mode" style="padding: 0.3em;">
+                    <h5 style="padding-top: 1em;">Multi<br/> Héliastes </h5>
+                    <p style="font-size: 0.7em">Plusieurs héliastes voteront pour la décision à prendre</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-          </div>
-
-          <%= f.input :type_resolution, as: :hidden, input_html: { class: 'resolution' }%>
+            <%= f.input :type_resolution, as: :hidden, input_html: { class: 'resolution' }%>
 
 
-          <p>4. Liste tes options possibles*</p>
-
-
-        </div>
-          <div class="form-group">
-             <div class="fields">
-              <%= f.simple_fields_for :options do |builder| %>
-               <%= render "option_fields", :f => builder %>
-             <% end %>
-              <div class="plus-icon">
-                 <i class="fa fa-plus plus"></i>
-              </div>
-               <p id="add-option" class="hidden"><%= link_to_add_fields "Add Option", f, :options %></p>
-             </div>
-          </div>
-          <div class="envoie" style="width: 80%;">
-            <%= f.submit "J'envoie !", class: "btn btn-success btn-envoie" %>
+                      <div class="envoie" style="width: 80%;">
+            <%= f.submit "J'envoie !", class: "btn btn-add" %>
           </div>
         <% end %>
       </div>
+
+          </div>
+
+        </div>
+
+
     </div>
-  </div>
 </div>

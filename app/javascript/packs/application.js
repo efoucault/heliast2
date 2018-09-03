@@ -18,12 +18,88 @@ $('.categories-cards').slick({
 $('.choice-categories-cards').slick({
  // centerMode: true,
  centerPadding: '5px',
- slidesToShow: 3,
+ slidesToShow: 4,
  slidesToScroll: 4,
  infinite: false,
- arrows: true
+ arrows: false
 });
 
+
+//formulaire new indecision : bouton next et progression
+const buttonProgressOne = document.getElementById("progress-partone");
+const buttonProgressTwo = document.getElementById("progress-parttwo");
+const buttonProgressThree = document.getElementById("progress-partthree");
+
+const buttonNextOne = document.getElementById("bouton-partone");
+if (buttonNextOne !== null) {
+  const divOne = document.querySelector(".part-one");
+  const divTwo = document.querySelector(".part-two");
+  if (divTwo !== null) {
+    buttonNextOne.addEventListener("click", (event) => {
+  divOne.classList.toggle("hidden");
+  divTwo.classList.toggle("hidden");
+  buttonProgressTwo.classList.toggle("turquoise");
+  buttonProgressThree.classList.remove("turquoise");
+    });
+  };
+};
+const buttonNextTwo = document.getElementById("bouton-parttwo");
+if (buttonNextTwo !== null) {
+  console.log(buttonNextTwo)
+  const divTwo = document.querySelector(".part-two");
+  console.log(divTwo)
+  const divThree = document.querySelector(".part-three");
+  console.log(divThree)
+  if (divThree !== null) {
+    buttonNextTwo.addEventListener("click", (event) => {
+  divTwo.classList.toggle("hidden");
+  divThree.classList.toggle("hidden");
+  buttonProgressThree.classList.toggle("turquoise");
+    });
+  };
+};
+
+if (buttonProgressOne !== null) {
+  const divOne = document.querySelector(".part-one");
+  const divTwo = document.querySelector(".part-two");
+  const divThree = document.querySelector(".part-three");
+  if (divOne !== null) {
+    buttonProgressOne.addEventListener("click", (event) => {
+  divOne.classList.remove("hidden");
+  divTwo.classList.add("hidden");
+  divThree.classList.add("hidden");
+  buttonProgressTwo.classList.remove("turquoise");
+  buttonProgressThree.classList.remove("turquoise");
+    });
+  };
+};
+if (buttonProgressTwo !== null) {
+  const divOne = document.querySelector(".part-one");
+  const divTwo = document.querySelector(".part-two");
+  const divThree = document.querySelector(".part-three");
+  if (divTwo !== null) {
+    buttonProgressTwo.addEventListener("click", (event) => {
+  divOne.classList.add("hidden");
+  divTwo.classList.toggle("hidden");
+  divThree.classList.add("hidden");
+  buttonProgressTwo.classList.add("turquoise");
+  buttonProgressThree.classList.remove("turquoise");
+    });
+  };
+};
+if (buttonProgressThree !== null) {
+  const divOne = document.querySelector(".part-one");
+  const divTwo = document.querySelector(".part-two");
+  const divThree = document.querySelector(".part-three");
+  if (divThree !== null) {
+    buttonProgressThree.addEventListener("click", (event) => {
+  divOne.classList.add("hidden");
+  divTwo.classList.add("hidden");
+  divThree.classList.toggle("hidden");
+  buttonProgressThree.classList.toggle("turquoise");
+    });
+  };
+};
 
 // Pick a category choice dans un new indecision
 const allCategories = document.querySelectorAll(".choice-category-card");
