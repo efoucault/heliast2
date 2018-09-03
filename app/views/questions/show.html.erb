@@ -143,5 +143,71 @@
       </div>
     <% end %>
   </div>
+  <div class="indecision-card">
+    <div class="inner">
+      <div class="histo">
+        <% total_answers = @question.answers.count %>
+        <% if @question.options[0].titre.present? %>
+          <div class="four histo-rate">
+            <div class="bar-block">
+              <div class="row">
+                <div class="col-xs-2"><%= @question.options[0].titre %></div>
+                <div class="col-xs-2"><%= cl_image_tag @question.options[0].photo, class: "mini-picture" %></div>
+                <div class="col-xs-8">
+                  <div id="bar" class= "option1" style="width: <%= @question.options[0].answers.count.fdiv(total_answers) * 100 %>%">
+                    <%= @question.options[0].answers.count.fdiv(total_answers) *100 %>%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <% if @question.options[1].titre.present? %>
+          <div class="four histo-rate">
+            <div class="bar-block">
+              <div class="row">
+                <div class="col-xs-2"><%= @question.options[1].titre %></div>
+                <div class="col-xs-2"><%= cl_image_tag @question.options[1].photo, class: "mini-picture" %></div>
+                <div class="col-xs-8">
+                  <div id="bar" class="option2" style="width: <%= @question.options[1].answers.count.fdiv(total_answers) * 100 %>%">
+                    <%= @question.options[1].answers.count.fdiv(total_answers) *100 %>%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <% if @question.options[2].titre.present? %>
+          <div class="four histo-rate">
+            <div class="bar-block">
+              <div class="row">
+                <div class="col-xs-2"><%= @question.options[1].titre %></div>
+                <div class="col-xs-2"><%= cl_image_tag @question.options[1].photo, class: "mini-picture" %></div>
+                <div class="col-xs-8">
+                  <div id="bar" class="option3" style="width: <%= @question.options[2].answers.count.fdiv(total_answers) * 100 %>%">
+                    <%= @question.options[2].answers.count.fdiv(total_answers) *100 %>%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <% if @question.options[3].titre.present? %>
+          <div class="four histo-rate">
+            <div class="bar-block">
+              <div class="row">
+                <div class="col-xs-2"><%= @question.options[3].titre %></div>
+                <div class="col-xs-2"><%= cl_image_tag @question.options[3].photo, class: "mini-picture" %></div>
+                <div class="col-xs-8">
+                  <div id="bar" class="option4" style="width: <%= @question.options[3].answers.count.fdiv(total_answers) * 100 %>%">
+                    <%= @question.options[3].answers.count.fdiv(total_answers) *100 %>%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-
