@@ -15,6 +15,6 @@ class PagesController < ApplicationController
     @category = Category.find_by_name(params[:query])
   end
 
-  # def notification
-  # end
+  def historique
+  end
 end

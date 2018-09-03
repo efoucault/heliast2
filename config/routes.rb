@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get :classement, to: "pages#classement"
   get :home, to: "pages#home"
 
-  # get :notification, to: "pages#notification"
+  get :historique, to: "pages#historique"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
