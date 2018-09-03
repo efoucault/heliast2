@@ -22,8 +22,7 @@
               <div class="padding">
                 <p>Décris ton indécision*</p>
                 <%= f.input :description, label: false, placeholder: "Exemple : Que porter aujourd'hui ?", :input_html => { class: 'text-area', :rows => 4 } %>
-                <p class="ma-reponse hidden">Je veux ma réponse dans : </p>
-                <%= f.input :attente, as: :range, label: false, input_html: { class: 'attente hidden' } %>
+
               </div>
                 <div class="category-choices">
                   <p class="padding">Choisis ta catégorie*</p>
@@ -74,38 +73,40 @@
           </div>
 
           <div class="part-three hidden">
-            <p class="padding" style="margin-bottom: 4em;">Choisis le mode de résolution*</p>
+            <p class="padding">Choisis le mode de résolution*</p>
 
-            <div class="mode-container" style="width:100%; margin-right:0; margin-left:0;">
-              <div class="row">
-                <div class="col-xs-6">
+
+
                   <div class="mode text-center mode-listener" data-mode="Mode héliaste">
-                    <div class="mode circle-mode"><%= image_tag "mode-23.png", class: 'mode-img' %></div>
-                    <div class="info-mode" style="padding: 0.3em;">
-                      <h5 style="padding-top: 2em;">Héliaste </h5>
-                      <p style="font-size: 0.7em">Un héliaste prendra la décision pour toi !</p>
+                    <div class="circle-mode"><%= image_tag "mode-23.png", class: 'mode-img' %></div>
+                    <div class="info-mode">
+                      <h5>Un Héliaste </h5>
+                      <p>Un seul membre d'Heliast prendra la décision pour toi !</p>
                     </div>
                   </div>
-              </div>
-              <div class="col-xs-6">
+
+
                   <div class="mode text-center mode-listener" data-mode="Mode Démocratie">
                     <div class="circle-mode"><%= image_tag "mode-24.png", class: 'mode-img' %></div>
-                      <div class="info-mode" style="padding: 0.3em;">
-                    <h5 style="padding-top: 1em;">Multi<br/> Héliastes </h5>
-                    <p style="font-size: 0.7em">Plusieurs héliastes voteront pour la décision à prendre</p>
+                      <div class="info-mode">
+                    <h5>Multi Héliastes </h5>
+                    <p>Tous les membres pourront voter pour la décision à prendre.</p>
                     </div>
                   </div>
+
+                <div class="range-attente">
+                  <p class="ma-reponse hidden">Je veux ma réponse dans : </p>
+                  <%= f.input :attente, as: :range, label: false, input_html: { class: 'attente slider-attente hidden' } %>
                 </div>
-              </div>
-            </div>
+
 
             <%= f.input :type_resolution, as: :hidden, input_html: { class: 'resolution' }%>
 
+              <div class="envoie">
+              <%= f.submit "J'envoie !", class: "btn btn-add" %>
+            </div>
+          <% end %>
 
-                      <div class="envoie" style="width: 80%;">
-            <%= f.submit "J'envoie !", class: "btn btn-add" %>
-          </div>
-        <% end %>
       </div>
 
           </div>
