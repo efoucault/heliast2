@@ -1,6 +1,6 @@
 .form-post {
   background: white;
-  margin-top: 2.5em;
+  margin-top: 1em;
   padding: 0.8em;
   border-radius: 0.5em;
   box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.14);
@@ -17,8 +17,9 @@
     opacity: 0.7;
   }
   .btn {
-    width: 100%;
-    padding: 10px;
+    width: auto;
+    padding-left: 3em;
+    padding-right: 3em;
     font-weight: bold;
   }
 }
@@ -38,14 +39,13 @@
     margin-top: 0px;
   }
   .btn {
-    width: 100%;
+    width: auto;
     padding: 10px;
     font-weight: bold;
   }
 }
 
 .btn-envoie {
-  width: 4em;
   margin: 2em;
   border-radius: 6em;
   background-color: #24d6d6;
@@ -59,7 +59,8 @@
   display:flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 2em 0;
+  margin: 0;
+  padding: 0;
 }
 
 .choice-category-card {
@@ -70,7 +71,9 @@
   border-radius: 12px;
   opacity: 0.7;
   text-align: center;
-  margin: 0px 30px;
+  margin-left: 1em;
+
+
   // background-image: url(/assets/background.jpg);
   &:hover {
     opacity: 1;
@@ -93,10 +96,10 @@
 .category-text {
   opacity: 1!important;
   color:white;
-  font-size: 14px;
+  font-size: 1em;
   font-weight: bold;
   position: relative;
-  top: 131px;
+  top: 1em;
 }
 
 .blue-selected {
@@ -201,3 +204,24 @@ opacity: 0.1;
   padding-left: 1em;
   padding-right: 1em;
 }
+
+.text-area {
+  width: 100%;
+  height: auto;
+}
+
+.dot-form {
+  height: 2em;
+  width: 2em;
+  background-color: #e2dede;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  padding: 0.3em;
+  i {
+    color: white;
+    font-size: 0.8em;
+
+  }
+}
+
