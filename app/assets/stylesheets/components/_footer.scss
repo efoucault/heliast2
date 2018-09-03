@@ -1,0 +1,218 @@
+/* footer menu */
+
+body {
+  margin:0; /*gets rid of white space around body*/
+  height: calc(100vh + 70px);
+  position:relative; /*REQUIRED Sets up positioning for your footer*/
+}
+
+/* div global du menu footer */
+.menu-footer {
+ text-align: center
+}
+
+.nbre-notif {
+  text-align: center;
+  background-color: #fa3e3e;
+  border-radius: 2px;
+  color: white;
+
+  padding: 1px 3px;
+  font-size: 10px;
+
+  position: absolute; /* Position the badge within the relatively positioned button */
+  top: 4px;
+  right: 66px;
+}
+
+
+#sticky {
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 70px;
+  // padding: 0px 30px;
+  // display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  /* height: 220px; */
+  padding-bottom: 16px;
+  border-top: 1px solid rgba(180, 174, 174, 0.2);
+  background: white;
+  color: #60636c;
+  // font-weight: bold;
+  // font-size: 18px;
+  position:fixed;    /*Here's what sticks it*/
+  bottom:0;          /*to the bottom of the body*/
+  left:0;            /*and to the left of the body.*/
+
+
+  /*EFFECTS*/
+  // animation:jump .5s linear;
+  // animation-iteration-count:2;
+  // animation-delay:1s;
+}
+
+@keyframes jump {
+  50% {
+    bottom:32px;
+  }
+}
+
+/* DropUP menu */
+.footer-wagon-dropdown-menu {
+  text-align: center;
+  margin-top: 15px;
+  box-shadow: 1px 1px 4px #E6E6E6;
+  border-color: #E6E6E6;
+}
+.footer-wagon-dropdown-menu li > a {
+  text-align: center;
+  transition: color 0.3s ease;
+  font-weight: lighter !important;
+  color: #999999 !important;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  padding: 10px 20px;
+}
+.footer-wagon-dropdown-menu li > a:hover {
+  text-align: center;
+  background: transparent !important;
+  color: black !important;
+}
+.footer-wagon-dropdown-menu:before {
+  text-align: center;
+  content: ' ';
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  right: 10px;
+  top: -6px;
+  background-color: white;
+  transform: rotate(45deg);
+  border-left: 1px solid #E6E6E6;
+  border-top: 1px solid #E6E6E6;
+}
+
+/* Pictos footer */
+
+.footer-pictos {
+  text-align: center;
+  display: inline-block; /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
+  position: relative; /* All 'absolute'ly positioned elements are relative to this one */
+}
+
+.footer-pictos ul {
+  padding: 2px 10px; /* Add some padding so it looks nice */
+}
+
+.footer-pictos ul .dropup{
+  top: 0;
+}
+
+
+.footer-pictos li {
+  display:inline-block;
+  padding: 0px 11px;
+}
+
+/* add active ou non */
+
+.footer-pictos .picto-new a {
+  background-image: image-url('new.svg');
+  width:37px;
+  height:37px;
+  display: block;
+}
+
+.footer-pictos .picto-new a.active {
+  background-image: image-url('new-active.svg');
+  display: block;
+}
+
+/* Page social active ou non */
+
+.footer-pictos .picto-social a {
+  background-image: image-url('social.svg');
+  width:37px;
+  height:37px;
+  display: block;
+}
+
+.footer-pictos .picto-social a.active {
+  background-image: image-url('social-active.svg');
+  display: block;
+}
+
+
+
+/* Page trophe active ou non */
+.footer-pictos .picto-trophe a {
+  background-image: image-url('trophe.svg');
+  width:37px;
+  height:37px;
+  display: block;
+}
+
+.footer-pictos .picto-trophe a.active{
+  background-image: image-url('trophe-active.svg');
+  display: block;
+}
+
+/* Page alarme active ou non */
+.footer-pictos .picto-alarme a {
+  background-image: image-url('alarme.svg');
+  width:37px;
+  height:37px;
+  display: block;
+}
+
+.footer-pictos .picto-alarme a.active{
+  background-image: image-url('alarme-active.svg');
+  display: block;
+}
+
+/* avatar footer */
+.avatar-footer {
+  display: block;
+  height: 33px;
+  width: 33px;
+  border-radius: 50%;
+  border: solid 2px #d99ea4;
+}
+
+.dropup {
+   padding-top: 0!important;
+   padding-bottom: 0!important;
+   margin-top: 0px!important;
+}
+
+.fa {
+   padding-top: 0!important;
+   padding-bottom: 0!important;
+   margin-top: 0px!important;
+}
+
+.dropdown-menu-right {
+   padding-top: 0!important;
+   padding-bottom: 0!important;
+   margin-top: 0px!important;
+}
+
+.dropdown-menu-right {
+   padding-top: 0!important;
+   padding-bottom: 0!important;
+}
+.dropdown-menu-right > li:first-child {
+   margin-top: 0px!important;
+}
+.dropdown-menu-right > li:last-child {
+   margin-bottom: 0px!important;
+}
+
+i.fa.fa-bars.dropdown-toggle {
+   padding-top: 0!important;
+   padding-bottom: 0!important;
+   margin-top: 0px!important;
+}
+

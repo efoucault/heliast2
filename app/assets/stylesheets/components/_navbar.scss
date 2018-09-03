@@ -40,11 +40,19 @@
 }
 
 /* Pictos */
-.pictos li {
+.pictos ul {
+  display:inline-block;
+}
+
+.pictos ul li {
   display:inline-block;
   margin: 4px;
   margin-top: 25px
 }
+
+// .pictos ul li a {
+//   color: white!important;
+// }
 
 /* Page profil active ou non */
 
