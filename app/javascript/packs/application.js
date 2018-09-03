@@ -33,8 +33,39 @@ allCategories.forEach((categorie) => {
     document.getElementById('question_category_id').value = `${choice}`;
     categorie.classList.add("blue-selected");
   });
-
 });
+
+// set active class on category filters
+// const categories = document.querySelectorAll(".category-card-link");
+// if (categories !== null){
+//   const tabs = document.querySelectorAll(".tab");
+//   categories.forEach((category) => {
+//     category.addEventListener("click", (event) => {
+//       console.log("salut");
+//         tabs.forEach((tab) => {
+//           tab.classList.remove("active");
+//         });
+//       category.classList.add("active");
+//       console.log(category);
+//     });
+//   });
+// }
+var urlParams = new URLSearchParams(window.location.search);
+console.log(urlParams.get('query'));
+if (urlParams.get('query') === null) {
+  const all = document.querySelector("#all");
+  all.classList.add("active");
+}
+else {
+  document.querySelectorAll(".tab").forEach((tab) => {
+    const categoryType = tab.dataset.type;
+    if (urlParams.get('query') === String(categoryType)) {
+      console.log(categoryType)
+      tab.classList.add("active");
+    }
+  });
+}
+
 
 // Choisir un mode de résolution et afficher ou non le range
 const allTypes = document.querySelectorAll(".mode-listener");
@@ -192,3 +223,4 @@ deleteButtons.forEach((button) => {
     addIcon.classList.remove("hidden");
   });
 });
+
