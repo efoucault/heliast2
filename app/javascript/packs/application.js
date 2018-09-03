@@ -212,10 +212,12 @@ const optionTwo = document.querySelector("#option_fields_1")
 const optionThree = document.querySelector("#option_fields_2")
 const optionFour = document.querySelector("#option_fields_3")
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  optionThree.classList.add("hidden");
-  optionFour.classList.add("hidden");
-});
+if (optionThree !== null){
+  document.addEventListener("DOMContentLoaded", (event) => {
+    optionThree.classList.add("hidden");
+    optionFour.classList.add("hidden");
+  });
+ }
 
 // click on add option when clicking on the plis icon
 
@@ -227,22 +229,25 @@ if (addIcon !== null){
 }
 
 // add button to display option
-document.querySelector("#add-option").addEventListener("click", (event) => {
-  event.preventDefault();
-   if (document.querySelector("#option_fields_0").classList.contains('hidden') === true) {
-     optionOne.classList.remove("hidden");
-   }
-   else if (document.querySelector("#option_fields_1").classList.contains('hidden') === true){
-     optionTwo.classList.remove("hidden");
-   }
-   else if (document.querySelector("#option_fields_2").classList.contains('hidden') === true){
-     optionThree.classList.remove("hidden");
-   }
-   else if (document.querySelector("#option_fields_3").classList.contains('hidden') === true){
-     optionFour.classList.remove("hidden");
-     addIcon.classList.add("hidden");
-   }
-});
+const addOption = document.querySelector("#add-option");
+if (addOption !== null){
+  document.querySelector("#add-option").addEventListener("click", (event) => {
+    event.preventDefault();
+     if (document.querySelector("#option_fields_0").classList.contains('hidden') === true) {
+       optionOne.classList.remove("hidden");
+     }
+     else if (document.querySelector("#option_fields_1").classList.contains('hidden') === true){
+       optionTwo.classList.remove("hidden");
+     }
+     else if (document.querySelector("#option_fields_2").classList.contains('hidden') === true){
+       optionThree.classList.remove("hidden");
+     }
+     else if (document.querySelector("#option_fields_3").classList.contains('hidden') === true){
+       optionFour.classList.remove("hidden");
+       addIcon.classList.add("hidden");
+     }
+  });
+}
 
 // click on destroy option when clicking on the trash icon
 
