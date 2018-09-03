@@ -5,4 +5,5 @@ class Notification < ApplicationRecord
 
   # retrieve all unread notifications from the database.
   scope :unread, -> { where(read_at: nil) }
+  scope :recent, ->{ order(created_at: :desc).limit(10) }
 end

@@ -2,7 +2,7 @@ class NotificationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-      @notifications = Notification.where(recipient: current_user).order(created_at: :desc).limit(10)
+      @notifications = Notification.where(recipient: current_user).recent
       # à décommenter si on veut afficher que les unread, et activer la limite dans le js
       # @notifications = Notification.where(recipient: current_user).unread.order(created_at: :desc)
       # respond_to do |format|

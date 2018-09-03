@@ -11,7 +11,7 @@ Notifications = class Notifications {
       this.getNewNotifications();
       setInterval((() => {
         return this.getNewNotifications();
-      }), 5000);
+      }), 7000);
     }
   }
 
@@ -40,7 +40,9 @@ Notifications = class Notifications {
 
     var items, unread_count;
     items = $.map(data, function(notification) {
-      return `<li><a class="dropdown-item" href="${notification.url}">${notification.actor} ${notification.action} ${notification.notifiable.type}</a></li>`;
+      return notification.template;
+      // a decommenter si on ne fait pas de partial via notification/answers/answer
+      // return `<li><a class="dropdown-item" href="${notification.url}">${notification.actor} ${notification.action} ${notification.notifiable.type}</a></li>`;
     });
     unread_count = 0;
     $.each(data, function(i, notification) {
