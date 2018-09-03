@@ -1,0 +1,49 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 40vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 2em;
+  }
+  p {
+    font-size: 1em;
+  }
+}
+
+.tabs {
+  background: #F2F2F2;
+  display: flex;
+  justify-content: space-between;
+  // padding: 10px 10px 0 10px;
+  width: 100%;
+  height: 4em;
+}
+
+.responsive-tab {
+  background: #F2F2F2;
+  flex: 0 0 13%;
+  text-align: center;
+  height: 2.5em !important;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  span {
+    color: black;
+  }
+}
+
+.tab:first-child {
+  border-radius: 10px 0 0 0;
+}
+.tab:last-child {
+  border-radius: 0 10px 0 0;
+}
+
+.tab.active {
+  border-bottom: 0.3em black solid;
+  color: black;
+}

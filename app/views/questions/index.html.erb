@@ -3,27 +3,43 @@
 
 
 <!--  On itere sur les différentes catégorie -->
-<div class="categories-cards">
-  <% Category.all.each do |category| %>
-      <!--  Chaque itération est une card et a une classe -->
-      <div class="category-card" style="background-image: url(<%= category.photo %>); background-size: cover;">
-        <span class="category-text"><%= category.name %></span>
-        <%= link_to "", questions_path(query: "#{category.name}"), class: 'category-card-link' %>
-      </div>
-  <% end %>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1532356884227-66d7c0e9e4c2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bf58c9f10337e3cc2a4b8b3305944748&auto=format&fit=crop&w=1350&q=80');">
+  <div class="banner-content">
+    <h1>Prenez des décisions pour des inconnus... </h1>
+    <p>Et devenez l'Héliaste ultime</p>
+  </div>
 </div>
-
 <div class="bg-light">
   <div class="container">
-
-
+    <div class="tabs">
+      <div class="category-card responsive-tab">
+        <span id="all" class="tab">Tout</span>
+        <%= link_to "", questions_path, class: 'category-card-link' %>
+      </div>
+      <% Category.all.each do |category| %>
+          <!--  Chaque itération est une card et a une classe -->
+          <div class="category-card responsive-tab">
+            <% if category != nil %>
+              <% if category.name == "Culture" %>
+                <%= image_tag "badge-13.png", width: 40, class: 'tab', data: { type: category.name } %>
+              <% elsif category.name == "Achats" %>
+                <%= image_tag "badge-14.png", width: 40, class: "tab", data: { type: category.name }  %>
+              <% elsif category.name == "Food" %>
+                <%= image_tag "badge-15.png", width: 40, class: "tab", data: { type: category.name }  %>
+              <% elsif category.name == "Travail" %>
+                <%= image_tag "badge-16.png", width: 40, class: "tab", data: { type: category.name }  %>
+              <% elsif category.name == "Look" %>
+                <%= image_tag "badge-17.png", width: 40, class: "tab", data: { type: category.name }  %>
+              <% elsif category.name == "Love" %>
+                <%= image_tag "badge-18.png", width: 40, class: "tab", data: { type: category.name }  %>
+              <% end %>
+            <% end %>
+            <%= link_to "", questions_path(query: "#{category.name}"), class: 'category-card-link' %>
+          </div>
+      <% end %>
+    </div>
     <div class="row">
       <div class="col-6">
-        <p class="sortby">Trier par
-          <%= link_to "Date de création", questions_path(query: "created_at") %> |
-          <%= link_to "Urgence", questions_path(query: "deadline") %> |
-          <%= link_to "Populaire", questions_path(query: "populaire") %>
-        </p>
         <div class="questions">
           <%= render "questions/question_cards" %>
         </div>
