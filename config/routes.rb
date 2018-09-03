@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/ecrire', as: 'rails_admin'
   devise_for :users
+  resources :notifications do
+    collection do
+      post :mark_as_read
+    end
+  end
+  # resources :notifications, defaults: {format: :json}, only: [:index]
   root to: 'questions#index'
   resources :users
   resources :categories, only: [:index]
@@ -11,8 +17,7 @@ Rails.application.routes.draw do
   get :classement, to: "pages#classement"
   get :home, to: "pages#home"
 
-  get :notification, to: "pages#notification"
-
+  # get :notification, to: "pages#notification"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

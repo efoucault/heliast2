@@ -8,7 +8,7 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   has_many :questions
 
-  has_many :notifications, as: :recipient
+  has_many :notifications, foreign_key: :recipient_id
 
 
   def score_by_category(category)
