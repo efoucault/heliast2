@@ -9,4 +9,10 @@ class Question < ApplicationRecord
   STATUSES = ["Mode héliaste", "Mode Démocratie"]
   validates :type_resolution, inclusion: {in: STATUSES}
   enum status: [:pending, :answered, :closed]
+
+  # create the association to get all the users in the thread.
+  # We have one user, and if I post, I'll be another user,
+  # so we need some association on the question/answers thread to get all the users
+  has_many :users, through: :answers
+
 end

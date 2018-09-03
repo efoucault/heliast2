@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400);
+@import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+body {
+  font-family: 'Roboto', Helvetica;
+  color: #737373;
+  font-weight: 300;
+}
+
+.container-histo {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 3em;
+  background-color: #EFEFEF;
+  padding: 4px;
+}
+
+.inner {
+  padding: 1em;
+  overflow: hidden;
+  position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.histo {
+  float: left;
+  width: 100%;
+  font-size: 13px;
+}
+
+.histo-star {
+  float: left;
+  padding: 3px;
+
+}
+
+.histo-rate {
+  width: 100%;
+  display: block;
+  clear: both;
+}
+
+.bar-block {
+  color: black;
+  margin-bottom: 0.5em;
+}
+
+#bar {
+  background-color: #24d6d6;
+  border-radius: 0.1em;
+}
+
+.mini-picture {
+  width: 3em;
+  height: 3em;
+}

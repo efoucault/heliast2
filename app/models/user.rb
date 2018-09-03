@@ -8,6 +8,8 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   has_many :questions
 
+  has_many :notifications, foreign_key: :recipient_id
+
 
   def score_by_category(category)
     self.answers.joins(option: { question: :category }).where(categories: { name: category}).sum(:score)

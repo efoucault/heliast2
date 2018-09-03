@@ -1,0 +1,4 @@
+<li><%= link_to question_path(notification.notifiable.option.question), class: "dropdown-item #{"unread" if !notification.read_at?}" do %>
+  <%= notification.actor.pseudo %>
+  <%= notification.action %> à ta question
+<% end %></li>
