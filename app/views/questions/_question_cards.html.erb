@@ -1,4 +1,4 @@
-<% @questions.each do |question| %>
+<% @questions.where(status: :pending).each do |question| %>
   <div class="question-card" data-deadline="<%= question.deadline %>">
 
     <div class="question-card <%= question.status %>">
