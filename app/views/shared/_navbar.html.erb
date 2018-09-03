@@ -25,8 +25,8 @@
                </div>
              </li>
            <li class="picto-add"><%= link_to "", new_question_path, :class => current_class?(new_question_path)  %></li>
-           <li class="picto-questions"><%= link_to "", root_path, :class => current_class?(root_path) %></li>
-           <li class="picto-classement"><%= link_to "", classement_path, :class => current_class?(classement_path)  %></li>
+           <!-- <li class="picto-questions"><%= link_to "", root_path, :class => current_class?(root_path) %></li>
+           <li class="picto-classement"><%= link_to "", classement_path, :class => current_class?(classement_path)  %></li> -->
            <li>
              <% if current_user.photo.present? %>
              <%= link_to user_path(current_user) do %>

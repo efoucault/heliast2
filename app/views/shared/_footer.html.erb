@@ -1,0 +1,80 @@
+<div class="menu-footer">
+
+  <!-- Logo -->
+
+  <% if user_signed_in? %>
+
+  <!-- Pictos -->
+  <footer id="sticky">
+    <div class="footer-pictos">
+         <ul>
+          <li class="picto-new"><%= link_to "", new_question_path, :class => current_class?(new_question_path)  %>
+
+          </li>
+          <li class="picto-social"><%= link_to "", root_path, :class => current_class?(root_path) %></li>
+          <li class="picto-trophe"><%= link_to "", classement_path, :class => current_class?(classement_path)  %></li>
+          <li>
+              <!-- Si l'user a une photo -->
+             <% if current_user.photo.present? %>
+             <%= link_to user_path(current_user) do %>
+               <%= cl_image_tag current_user.photo, class: "avatar-footer" %>
+               <% end %>
+             <% else %>
+              <!-- image par défaut si l'user n'a pas de photo -->
+             <%= link_to user_path(current_user), class: "avatar-footer" do %>
+               <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "avatar-footer") %>
+              <% end %>
+            <% end %>
+
+          </li>
+          <li class="picto-alarme"><%= link_to "", root_path, :class => current_class?(root_path) %><span class="nbre-notif" data-behavior="unread-count"></span>
+          </li>
+
+          <li>
+            <div class="dropup">
+              <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+              <ul class="dropdown-menu dropdown-menu-right dropdown-menu footer-wagon-dropdown-menu" aria-labelledby="dLabel">
+                <li><a href="#">A propos de Heliast</a></li>
+                <li><a href="#">Aide</a></li>
+                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="#">Paramètres</a></li>
+                <li><%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Se déconnecter") %>
+                <% end %></li>
+              </ul>
+            </div>
+          </li>
+         </ul>
+      </div>
+  </footer>
+
+
+  <% else %>
+      <!-- Login link (when logged out) -->
+      <footer id="sticky">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-xs-6">
+              <%- if controller_name != 'sessions' %>
+                <%= link_to "Se connecter", new_session_path(resource_name), class: "navbar-wagon-item navbar-wagon-link" %><br />
+              <% end -%>
+
+              <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+                <%= link_to "S'enregistrer", new_registration_path(resource_name), class: "navbar-wagon-item navbar-wagon-link" %><br />
+              <% end -%>
+            </div>
+
+            <div class="col-xs-6">
+              <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                <%= link_to "Mot de passe oublié?", new_password_path(resource_name), class: "navbar-wagon-item navbar-wagon-link" %><br />
+              <% end -%>
+            </div>
+
+          </div>
+        </div>
+
+      </footer>
+
+    <% end %>
+</div>
