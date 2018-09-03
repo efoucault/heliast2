@@ -55,11 +55,7 @@
     <%end%>
 
     <% if @question.answered? %>
-
-
-
-
-      <%end%>
+    <%end%>
 
     <!-- end -->
     <%if @question.user == current_user && @question.pending? %>
@@ -67,43 +63,33 @@
     <%end%>
 
   </div>
+  <!-- Partial : affichage de l'histogramme des réponses pour un mode de résolution "Multi Héliastes-->
+  <% if @question.type_resolution == "Mode Démocratie" %>
+    <% if @question.answers.present? %>
+      <%= render "answers/multiheliast" %>
+    <% end %>
+  <% end %>
+  <!-- Partial : affichage de la réponse pour un mode de résolution "Mono Héliastes-->
+  <% if @question.type_resolution == "Mode héliaste" %>
+    <%= render "answers/monoheliast" %>
+  <% end %>
 
-
+  <!-- Création d'une réponse -->
   <div class="indecision-card">
-    <div class="answers">
-      <!-- <h7>Réponses à l'indécision</h7> -->
-      <% @question.answers.each_with_index do |answer, index| %>
-        <div class="answer">
-          <div class="answer-titre">
-          <% if answer.user == @question.user %>
-             <h4>Réponse de l'indécis</h3>
-          <% else %>
-            <h4>Réponse de <%= answer.user.pseudo %></h3>
-          <% end %>
-            <h3><%= answer.option.titre %></h4></br>
-          </div>
-          <div class="asnwer-photo">
-            <% if answer.option.photo.present? %>
-              <%= cl_image_tag answer.option.photo, crop: :fill, class: 'option-image' %>
-            <% else %>
-              <div class="answer-image-none"></div>
-            <%end%>
-          </div>
-          <p style="color: #a5a5a5; margin-top: 1em;"> Commentaire :</p>
-          <div class="answer-reponse">
-            <p><%= answer.reponse %></p>
-          </div>
-        </div>
-      <% end %>
-    </div>
     <% hide_answer_creation = false %>
+    <!-- Création d'une réponse cachée pour l'indécis -->
     <% if current_user == @question.user %>
         <% hide_answer_creation = true %>
     <% end %>
+    <!-- Création d'une réponse cachée pour un héliaste ayant déjà répondu -->
     <% @question.answers.each do |answer| %>
       <% if answer.user == current_user %>
         <% hide_answer_creation = true %>
       <% end %>
+    <% end %>
+    <!-- Création d'une réponse cachée si type résolution = mono héliaste et qu'il y a déjà une réponse -->
+    <% if @question.type_resolution == "Mode héliaste" && @question.answers.present? %>
+        <% hide_answer_creation = true %>
     <% end %>
     <% if hide_answer_creation == false %>
       <div class="create-answer">
@@ -114,6 +100,7 @@
       </div>
     <% end %>
   </div>
+
   <div class="indecision-card sat-parent" style="margin-bottom: 1em; text-align: center;">
     <% if @question.answers.present? && (@question.answers.first.created_at + 0.hours) < DateTime.now %>
       <% if @question.satisfied_by_recommended_option == nil && current_user == @question.user %>
@@ -142,72 +129,5 @@
         <% end %>
       </div>
     <% end %>
-  </div>
-  <div class="indecision-card">
-    <div class="inner">
-      <div class="histo">
-        <% total_answers = @question.answers.count %>
-        <% if @question.options[0].titre.present? %>
-          <div class="four histo-rate">
-            <div class="bar-block">
-              <div class="row">
-                <div class="col-xs-2"><%= @question.options[0].titre %></div>
-                <div class="col-xs-2"><%= cl_image_tag @question.options[0].photo, class: "mini-picture" %></div>
-                <div class="col-xs-8">
-                  <div id="bar" class= "option1" style="width: <%= @question.options[0].answers.count.fdiv(total_answers) * 100 %>%">
-                    <%= @question.options[0].answers.count.fdiv(total_answers) *100 %>%
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-        <% if @question.options[1].titre.present? %>
-          <div class="four histo-rate">
-            <div class="bar-block">
-              <div class="row">
-                <div class="col-xs-2"><%= @question.options[1].titre %></div>
-                <div class="col-xs-2"><%= cl_image_tag @question.options[1].photo, class: "mini-picture" %></div>
-                <div class="col-xs-8">
-                  <div id="bar" class="option2" style="width: <%= @question.options[1].answers.count.fdiv(total_answers) * 100 %>%">
-                    <%= @question.options[1].answers.count.fdiv(total_answers) *100 %>%
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-        <% if @question.options[2].titre.present? %>
-          <div class="four histo-rate">
-            <div class="bar-block">
-              <div class="row">
-                <div class="col-xs-2"><%= @question.options[1].titre %></div>
-                <div class="col-xs-2"><%= cl_image_tag @question.options[1].photo, class: "mini-picture" %></div>
-                <div class="col-xs-8">
-                  <div id="bar" class="option3" style="width: <%= @question.options[2].answers.count.fdiv(total_answers) * 100 %>%">
-                    <%= @question.options[2].answers.count.fdiv(total_answers) *100 %>%
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-        <% if @question.options[3].titre.present? %>
-          <div class="four histo-rate">
-            <div class="bar-block">
-              <div class="row">
-                <div class="col-xs-2"><%= @question.options[3].titre %></div>
-                <div class="col-xs-2"><%= cl_image_tag @question.options[3].photo, class: "mini-picture" %></div>
-                <div class="col-xs-8">
-                  <div id="bar" class="option4" style="width: <%= @question.options[3].answers.count.fdiv(total_answers) * 100 %>%">
-                    <%= @question.options[3].answers.count.fdiv(total_answers) *100 %>%
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
   </div>
 </div>
