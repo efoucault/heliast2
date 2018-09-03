@@ -27,7 +27,6 @@ $('.choice-categories-cards').slick({
 
 // Pick a category choice dans un new indecision
 const allCategories = document.querySelectorAll(".choice-category-card");
-console.log(allCategories)
 allCategories.forEach((categorie) => {
   categorie.addEventListener("click", (event) => {
     const choice = event.currentTarget.dataset.choice;
@@ -40,7 +39,6 @@ allCategories.forEach((categorie) => {
 // Choisir un mode de résolution
 const allTypes = document.querySelectorAll(".mode-listener");
 if (allTypes !== null) {
-  console.log(allTypes)
   allTypes.forEach((type) => {
     type.addEventListener("click", (event) => {
       const mode = event.currentTarget.dataset.mode;
@@ -86,15 +84,29 @@ if (buttonCross !== null){
   });
 
 
-
 // click on choose file when clicking on the camera icon
 
 const pictureIcons = document.querySelectorAll(".fa-camera");
   pictureIcons.forEach((icon) => {
   icon.addEventListener("click", (event) => {
     const index = event.currentTarget.dataset.index;
-    console.log(document.getElementById(`question_options_attributes_${index}_photo`));
     document.getElementById(`question_options_attributes_${index}_photo`).click();
+  });
+});
+
+// Afficher les images en preview
+
+const photoCachee = document.querySelectorAll(".picture");
+photoCachee.forEach((photo) => {
+  photo.addEventListener("change", (event) => {
+    const id = event.currentTarget.dataset.indeximg;
+    const img = document.getElementById(`img_prev_${id}`);
+    img.classList.remove("hidden");
+    let reader = new FileReader();
+    reader.onload = function (e) {
+        $(`#img_prev_${id}`).attr('src', e.target.result);
+      }
+      reader.readAsDataURL(photo.files[0]);
   });
 });
 
@@ -197,7 +209,3 @@ deleteButtons.forEach((button) => {
     addIcon.classList.remove("hidden");
   });
 });
-
-
-
-
