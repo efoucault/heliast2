@@ -95,8 +95,13 @@
                   </div>
 
                 <div class="range-attente">
-                  <p class="ma-reponse hidden">Je veux ma réponse dans : </p>
-                  <%= f.input :attente, as: :range, label: false, input_html: { class: 'attente slider-attente hidden' } %>
+                  <p class="ma-reponse hidden" style="text-align: center;">Dans combien d'heure(s) veux-tu la décision ?</p>
+
+
+
+                  <div class="slider-attente">
+                    <%= f.input :attente, as: :range, label: false, input_html: { min: '1', max: '24', class: 'attente hidden' } %>
+                  </div>
                 </div>
 
 
