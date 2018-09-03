@@ -36,14 +36,24 @@ allCategories.forEach((categorie) => {
 
 });
 
-// Choisir un mode de résolution
+// Choisir un mode de résolution et afficher ou non le range
 const allTypes = document.querySelectorAll(".mode-listener");
 if (allTypes !== null) {
   allTypes.forEach((type) => {
     type.addEventListener("click", (event) => {
       const mode = event.currentTarget.dataset.mode;
-      console.log(mode)
       document.getElementById('question_type_resolution').value = `${mode}`;
+      const attente = document.querySelector(".attente");
+      const titreAttente = document.querySelector(".ma-reponse");
+      console.log(mode);
+      if (mode === "Mode Démocratie") {
+        attente.classList.remove("hidden");
+        titreAttente.classList.remove("hidden");
+      }
+      else {
+        attente.classList.add("hidden");
+        titreAttente.classList.add("hidden");
+      }
     });
   });
 };
@@ -73,8 +83,6 @@ if (buttonCross !== null){
   };
 };
 
-
-
 // IMAGE OPACITY
   Array.from(document.querySelectorAll('.progress-bar')).forEach(function(bar){
     if (bar.getAttribute('aria-valuenow') == 100) {
@@ -85,7 +93,6 @@ if (buttonCross !== null){
 
 
 // click on choose file when clicking on the camera icon
-
 const pictureIcons = document.querySelectorAll(".fa-camera");
   pictureIcons.forEach((icon) => {
   icon.addEventListener("click", (event) => {
@@ -95,7 +102,6 @@ const pictureIcons = document.querySelectorAll(".fa-camera");
 });
 
 // Afficher les images en preview
-
 const photoCachee = document.querySelectorAll(".picture");
 photoCachee.forEach((photo) => {
   photo.addEventListener("change", (event) => {
@@ -111,7 +117,6 @@ photoCachee.forEach((photo) => {
 });
 
 // Prepopulate-answer when clicking on an option
-
 const options = document.querySelectorAll(".option");
   options.forEach((option) => {
     option.addEventListener("click", (event) => {
@@ -127,30 +132,8 @@ const options = document.querySelectorAll(".option");
   })
 });
 
-// Display attente range when type resolution = Démocratie
-
-const typeResolution = document.querySelector(".resolution");
-if (typeResolution !== null){
-  typeResolution.addEventListener("blur", (event) => {
-    const attente = document.querySelector(".attente");
-    const titreAttente = document.querySelector(".ma-reponse");
-    if (typeResolution.value === "Mode Démocratie") {
-      attente.classList.remove("hidden");
-      titreAttente.classList.remove("hidden");
-    }
-    else {
-      attente.classList.add("hidden");
-      titreAttente.classList.add("hidden");
-    }
-  });
-}
-
-
-
-
 
 // hide option 3 and 4
-
 const optionOne = document.querySelector("#option_fields_0")
 const optionTwo = document.querySelector("#option_fields_1")
 const optionThree = document.querySelector("#option_fields_2")
