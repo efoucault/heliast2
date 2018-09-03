@@ -77,7 +77,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.user = current_user
-    @question.deadline = DateTime.now + @question.attente.minutes
+    @question.deadline = DateTime.now + @question.attente.hours
     @question.save!
     redirect_to question_path(@question)
   end

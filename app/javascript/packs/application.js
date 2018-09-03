@@ -93,7 +93,8 @@ if (buttonProgressThree !== null) {
   divOne.classList.add("hidden");
   divTwo.classList.add("hidden");
   divThree.classList.toggle("hidden");
-  buttonProgressThree.classList.toggle("turquoise");
+  buttonProgressTwo.classList.add("turquoise");
+  buttonProgressThree.classList.add("turquoise");
     });
   };
 };
