@@ -2,6 +2,7 @@
   <div class="inner">
     <div class="histo">
       <% total_answers = @question.answers.count %>
+      <h5><%= "Réponses apportées : #{total_answers}" %></h5>
       <% @question.options.each do |option| %>
         <% if option.titre.present? %>
           <div class="four histo-rate">
@@ -13,7 +14,7 @@
                 <% end %>
                 <div class="col-xs-8">
                   <div id="bar" class= "option1" style="width: <%= option.answers.count.fdiv(total_answers) * 100 %>%">
-                    <%= (option.answers.count.fdiv(total_answers) *100).round(1) %>%
+                    <%= (option.answers.count.fdiv(total_answers) *100).round(0) %>%
                   </div>
                 </div>
               </div>
