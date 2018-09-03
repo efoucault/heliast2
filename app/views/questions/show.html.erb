@@ -13,13 +13,22 @@
     </div>
 
     <div class="indecision-contenu text-center">
-
+      <% already_answered = false %>
+      <% @question.answers.each do |answer| %>
+        <% if answer.user == current_user %>
+          <% already_answered = true %>
+        <% end %>
+      <% end %>
       <span><p class="categorie"><%= @question.category.name.upcase %></p></span>
       <h4 style="padding: 0.5em;"><%= @question.description %> </h4>
-      <%if @question.user == current_user && @question.pending?%>
+      <%if @question.user == current_user && @question.answers.present? == false %>
         <p style="color: gray; margin-bottom: 2em; ">Voici tes hésitations :</p>
-      <%elsif @question.user != current_user && @question.pending?%>
-        <p style="color: gray; margin-bottom: 2em; ">Choisis parmi ces options :</p>
+      <%elsif @question.user != current_user %>
+        <% if @question.type_resolution == "Mode héliaste" && @question.pending? %>
+          <p style="color: gray; margin-bottom: 2em; ">Choisis parmi ces options :</p>
+        <% elsif @question.type_resolution == "Mode Démocratie" && @question.status != "closed" && already_answered == false %>
+          <p style="color: gray; margin-bottom: 2em; ">Choisis parmi ces options :</p>
+        <% end %>
       <%elsif @question.answered?%>
         <p style="color: gray; margin-bottom: 2em; "> Un héliaste a fait ce choix pour <%= @question.user.pseudo%> : </p>
       <%end%>
@@ -28,8 +37,30 @@
 
 
     <!-- Ceci est l'affichage des options -->
+    <% option_affichee = false %>
+    <% if current_user == @question.user %>
+      <% if @question.type_resolution == "Mode héliaste" %>
+        <% if @question.pending? %>
+          <% option_affichee = true %>
+        <% end %>
+      <% elsif @question.type_resolution == "Mode Démocratie" %>
+        <% if @question.answers.present? == false %>
+          <% option_affichee = true %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <% if @question.type_resolution == "Mode héliaste" && already_answered == false %>
+        <% if @question.pending? %>
+          <% option_affichee = true %>
+        <% end %>
+      <% elsif @question.type_resolution == "Mode Démocratie" && already_answered == false %>
+        <% if @question.status != "closed" %>
+          <% option_affichee = true %>
+        <% end %>
+      <% end %>
+    <% end %>
 
-    <% if @question.pending? %>
+    <% if option_affichee == true %>
       <div class="options">
         <% @question.options.each_with_index do |option, index| %>
           <% if option.photo.present? || option.titre.present? %>
@@ -58,7 +89,7 @@
     <%end%>
 
     <!-- end -->
-    <%if @question.user == current_user && @question.pending? %>
+    <%if @question.user == current_user && @question.answers.present? == false %>
       <p class="text-center" style="color: gray; margin-bottom: 2em; ">Un Héliaste va décider pour toi...</p>
     <%end%>
 
@@ -75,31 +106,34 @@
   <% end %>
 
   <!-- Création d'une réponse -->
-  <div class="indecision-card">
-    <% hide_answer_creation = false %>
-    <!-- Création d'une réponse cachée pour l'indécis -->
-    <% if current_user == @question.user %>
-        <% hide_answer_creation = true %>
+  <% hide_answer_creation = false %>
+  <!-- Création d'une réponse cachée pour l'indécis -->
+  <% if current_user == @question.user %>
+      <% hide_answer_creation = true %>
+  <% end %>
+  <!-- Création d'une réponse cachée pour un héliaste ayant déjà répondu -->
+  <% @question.answers.each do |answer| %>
+    <% if answer.user == current_user %>
+      <% hide_answer_creation = true %>
     <% end %>
-    <!-- Création d'une réponse cachée pour un héliaste ayant déjà répondu -->
-    <% @question.answers.each do |answer| %>
-      <% if answer.user == current_user %>
-        <% hide_answer_creation = true %>
-      <% end %>
-    <% end %>
-    <!-- Création d'une réponse cachée si type résolution = mono héliaste et qu'il y a déjà une réponse -->
-    <% if @question.type_resolution == "Mode héliaste" && @question.answers.present? %>
-        <% hide_answer_creation = true %>
-    <% end %>
-    <% if hide_answer_creation == false %>
-      <div class="create-answer">
-        <p class="text-center" style="color: gray; padding-top: 1em; ">Ajoute un commentaire :</p>
-        <div class="form-commentaire text-center" style="padding: 1em;">
-          <%= render "answers/new" %>
+  <% end %>
+  <!-- Création d'une réponse cachée si type résolution = mono héliaste et qu'il y a déjà une réponse -->
+  <% if @question.type_resolution == "Mode héliaste" && @question.answers.present? %>
+      <% hide_answer_creation = true %>
+  <% end %>
+  <% if @question.type_resolution == "Mode Démocratie" && @question.status == "closed" %>
+      <% hide_answer_creation = true %>
+  <% end %>
+  <% if hide_answer_creation == false %>
+    <div class="indecision-card">
+        <div class="create-answer">
+          <p class="text-center" style="color: gray; padding-top: 1em; ">Ajoute un commentaire :</p>
+          <div class="form-commentaire text-center" style="padding: 1em;">
+            <%= render "answers/new" %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <div class="indecision-card sat-parent" style="margin-bottom: 1em; text-align: center;">
     <% if @question.answers.present? && (@question.answers.first.created_at + 0.hours) < DateTime.now %>
