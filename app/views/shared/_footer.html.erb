@@ -13,6 +13,8 @@
           </li>
           <li class="picto-social"><%= link_to "", root_path, :class => current_class?(root_path) %></li>
           <li class="picto-trophe"><%= link_to "", classement_path, :class => current_class?(classement_path)  %></li>
+          <li class="picto-alarme"><%= link_to "", root_path, :class => current_class?(root_path) %><span class="nbre-notif" data-behavior="unread-count"></span>
+          </li>
           <li>
               <!-- Si l'user a une photo -->
              <% if current_user.photo.present? %>
@@ -27,10 +29,8 @@
             <% end %>
 
           </li>
-          <li class="picto-alarme"><%= link_to "", root_path, :class => current_class?(root_path) %><span class="nbre-notif" data-behavior="unread-count"></span>
-          </li>
 
-          <li>
+          <!-- <li>
             <div class="dropup">
               <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
               <ul class="dropdown-menu dropdown-menu-right dropdown-menu footer-wagon-dropdown-menu" aria-labelledby="dLabel">
@@ -43,7 +43,7 @@
                 <% end %></li>
               </ul>
             </div>
-          </li>
+          </li> -->
          </ul>
       </div>
   </footer>
