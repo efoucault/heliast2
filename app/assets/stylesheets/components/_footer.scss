@@ -8,9 +8,12 @@
 
 /* div global du menu footer */
 .menu-footer {
- z-index: 10;
- text-align: center;
+
+  position: relative;
+  z-index: 100;
+  text-align: center;
  min-height: 20px;
+
 }
 
 .nbre-notif {
@@ -29,6 +32,7 @@
 
 
 #sticky {
+  padding-top: 1em;
   text-align: center;
   transition: all 0.3s ease;
   height: 70px;
@@ -125,11 +129,13 @@
   width:37px;
   height:37px;
   display: block;
+  opacity: 0.6;
 }
 
 .footer-pictos .picto-new a.active {
   background-image: image-url('new-active.svg');
   display: block;
+
 }
 
 /* Page social active ou non */
@@ -139,6 +145,7 @@
   width:37px;
   height:37px;
   display: block;
+  opacity: 0.6;
 }
 
 .footer-pictos .picto-social a.active {
@@ -154,6 +161,7 @@
   width:37px;
   height:37px;
   display: block;
+  opacity: 0.6;
 }
 
 .footer-pictos .picto-trophe a.active{
@@ -167,6 +175,7 @@
   width:37px;
   height:37px;
   display: block;
+  opacity: 0.6;
 }
 
 .footer-pictos .picto-alarme a.active{
@@ -180,7 +189,7 @@
   height: 33px;
   width: 33px;
   border-radius: 50%;
-  border: solid 2px #d99ea4;
+  border: solid 2px rgba(145, 145, 145, 0.6);
 }
 
 .dropup {
