@@ -31,6 +31,8 @@ $('.choice-categories-cards').slick({
 const buttonProgressOne = document.getElementById("progress-partone");
 const buttonProgressTwo = document.getElementById("progress-parttwo");
 const buttonProgressThree = document.getElementById("progress-partthree");
+const barProgressTwo = document.getElementById("bar-two");
+const barProgressThree = document.getElementById("bar-three");
 
 const buttonNextOne = document.getElementById("bouton-partone");
 if (buttonNextOne !== null) {
@@ -42,6 +44,7 @@ if (buttonNextOne !== null) {
   divTwo.classList.toggle("hidden");
   buttonProgressTwo.classList.toggle("turquoise");
   buttonProgressThree.classList.remove("turquoise");
+  barProgressTwo.classList.toggle("turquoise");
     });
   };
 };
@@ -54,6 +57,10 @@ if (buttonNextTwo !== null) {
   divTwo.classList.toggle("hidden");
   divThree.classList.toggle("hidden");
   buttonProgressThree.classList.toggle("turquoise");
+  barProgressTwo.classList.add("turquoise");
+  barProgressThree.classList.add("turquoise");
+
+
     });
   };
 };
@@ -69,6 +76,8 @@ if (buttonProgressOne !== null) {
   divThree.classList.add("hidden");
   buttonProgressTwo.classList.remove("turquoise");
   buttonProgressThree.classList.remove("turquoise");
+  barProgressTwo.classList.remove("turquoise");
+  barProgressThree.classList.remove("turquoise");
     });
   };
 };
@@ -83,6 +92,9 @@ if (buttonProgressTwo !== null) {
   divThree.classList.add("hidden");
   buttonProgressTwo.classList.add("turquoise");
   buttonProgressThree.classList.remove("turquoise");
+  barProgressTwo.classList.add("turquoise");
+  barProgressThree.classList.remove("turquoise");
+
     });
   };
 };
@@ -97,6 +109,8 @@ if (buttonProgressThree !== null) {
   divThree.classList.toggle("hidden");
   buttonProgressTwo.classList.add("turquoise");
   buttonProgressThree.classList.add("turquoise");
+  barProgressThree.classList.add("turquoise");
+
     });
   };
 };
