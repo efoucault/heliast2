@@ -216,7 +216,9 @@ photoCachee.forEach((photo) => {
   photo.addEventListener("change", (event) => {
     const id = event.currentTarget.dataset.indeximg;
     const img = document.getElementById(`img_prev_${id}`);
+    const titleOption = document.querySelector(`#height_${id}`);
     img.classList.remove("hidden");
+    titleOption.classList.add("title-option-preview");
     let reader = new FileReader();
     reader.onload = function (e) {
         $(`#img_prev_${id}`).attr('src', e.target.result);
