@@ -1,9 +1,13 @@
+.no-margin {
+  width: 100%;
+
+}
 .form-post {
   background: white;
   margin-top: 1em;
+
   padding: 0.8em;
-  border-radius: 0.5em;
-  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.14);
+
   h1 {
     text-align: center;
     font-weight: bold;
@@ -59,13 +63,13 @@
   display:flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0;
+  margin: -1px;
   padding: 0;
 }
 
 .choice-category-card {
   height: 10em !important;
-  width: 4.3em !important;
+  width: 4.5em !important;
   position:relative;
   // background-color: white;
   border-radius: 12px;
@@ -186,6 +190,7 @@ opacity: 0.1;
 
 // Checkboxes design
 .category-choices {
+  margin-top: 1em;
   input[type=radio] {
     display: none;
   }

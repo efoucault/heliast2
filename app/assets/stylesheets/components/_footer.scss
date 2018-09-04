@@ -1,10 +1,10 @@
 /* footer menu */
 
-body {
-  margin:0; /*gets rid of white space around body*/
-  height: calc(100vh + 70px);
-  position:relative; /*REQUIRED Sets up positioning for your footer*/
-}
+// body {
+//   margin:0; /*gets rid of white space around body*/
+//   height: calc(100vh + 70px);
+//   position:relative; /*REQUIRED Sets up positioning for your footer*/
+// }
 
 /* div global du menu footer */
 .menu-footer {
@@ -185,13 +185,14 @@ body {
    padding-top: 0!important;
    padding-bottom: 0!important;
    margin-top: 0px!important;
-}
-
-.fa {
+   .fa {
    padding-top: 0!important;
    padding-bottom: 0!important;
    margin-top: 0px!important;
+  }
 }
+
+
 
 .dropdown-menu-right {
    padding-top: 0!important;
