@@ -1,4 +1,18 @@
 <div class="top-dashboard">
+  <div class="settings">
+      <div class="dropdown">
+              <i class="fa fa-cog dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+              <ul class="dropdown-menu dropdown-menu-right dropdown-menu footer-wagon-dropdown-menu" aria-labelledby="dLabel">
+                <li><a href="#">A propos de Heliast</a></li>
+                <li><a href="#">Aide</a></li>
+                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="#">Paramètres</a></li>
+                <li><%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Se déconnecter") %>
+                <% end %></li>
+              </ul>
+            </div>
+    </div>
   <div class="info-dashboard">
     <div class="photo-user">
       <%= link_to user_path(current_user) do %>
