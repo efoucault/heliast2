@@ -24,12 +24,13 @@
 <!-- iterer de ici jusqu'a Y -->
   <% classement = 0 %>
   <% @scores.keys.each do |id| %>
-    <div class="line-user">
-      <% classement += 1 %>
-      <h6><%= classement %></h6>
-      <p class= 'avatar-bordered avatar-classement' style="background-image: url(<%= User.find(id).photo %>); background-size: cover;"></p>
-      <h6><%= User.find(id).pseudo %></h6>
-      <p class="tip"> <%= @scores[id] %> pts </p>
+    <div class="line-user row">
+      <div class="col-xs-2"><% classement += 1 %><h6><%= classement %></h6></div>
+      <div class="col-xs-3"><p class= 'avatar-bordered avatar-classement' style="background-image: url(<%= User.find(id).photo %>); background-size: cover;"></p></div>
+      <div class="col-xs-4"><h6><%= User.find(id).pseudo %></h6></div>
+      <div class="col-xs-3"><p class="tip"> <%= @scores[id] %> pts </p></div>
+
+
     </div>
     <hr style="background-color: gray; height: 2px; opacity: 0.3;">
   <% end %>
