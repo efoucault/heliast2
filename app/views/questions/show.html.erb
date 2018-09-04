@@ -135,9 +135,10 @@
     </div>
   <% end %>
 
+  <% if @question.answers.present? %>
   <div class="indecision-card sat-parent" style="margin-bottom: 1em; text-align: center;">
-    <% if @question.answers.present? && (@question.answers.first.created_at + 0.hours) < DateTime.now %>
-      <% if @question.satisfied_by_recommended_option == nil && current_user == @question.user %>
+      <% if @question.answers.present? && (@question.answers.first.created_at + 0.hours) < DateTime.now %>
+        <% if @question.satisfied_by_recommended_option == nil && current_user == @question.user %>
         <h6 style="color:#24d6d6; padding-top: 1em;">Alors, c'était un bon choix ?</h6>
         <div class="satisfaction">
           <div class="satisfied"><%= link_to question_path(@question, question: {satisfied_by_recommended_option: true, status: :closed}), method: :patch do %>
@@ -164,4 +165,5 @@
       </div>
     <% end %>
   </div>
+  <% end %>
 </div>
