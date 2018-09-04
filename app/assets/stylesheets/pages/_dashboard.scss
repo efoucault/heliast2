@@ -235,7 +235,38 @@
   background-color: gray;
 }
 
-/* bouton dropdown setting dans profil show */
+.circle-mode-index {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0.5em;
+  right: 1.1em;
+  height: 5em;
+  width: 5em;
+  background-color: rgb(120,120,120);
+  // border-style: solid;
+  // border-width: 0.1em;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0.2em 0.3em 0 rgba(0,0,0,0.14);
+  width: 2em;
+  height: 2em;
+  }
+
+.mode-img-index {
+  width: 100%;
+}
+
+.number-answers-index {
+  position: absolute;
+  top: 0.1em;
+  right: 0.3em;
+  background-color: #ED6964;
+  border-radius: 50%;
+  color: white;
+  font-weight: 800;
+  padding: 0.15em 0.5em;
+  font-size: 0.8em;
 
 .settings {
   color: #e4e1e1;
