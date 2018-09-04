@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh;
+  height: 21vh;
   text-align: center;
   padding-left: 2em;
 
@@ -233,4 +233,13 @@
 
 .gray {
   background-color: gray;
+}
+
+/* bouton dropdown setting dans profil show */
+
+.settings {
+  color: #e4e1e1;
+  padding: 9px 12px;
+  text-align: right;
+  font-size: 20px;
 }
