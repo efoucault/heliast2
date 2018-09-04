@@ -377,5 +377,3 @@ answer22 = Answer.create!(user: manon , option: option21 , reponse: 'blablabla2'
 
 
 p Answer.all
-
-
