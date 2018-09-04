@@ -4,6 +4,8 @@ import '../components/category_choice';
 import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import '../components/notifications';
+
 
 $('.categories-cards').slick({
  // centerMode: true,

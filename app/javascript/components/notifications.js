@@ -29,6 +29,7 @@ Notifications = class Notifications {
       url: "/notifications/mark_as_read",
       dataType: "JSON",
       method: "POST",
+      data: {authenticity_token: window._token},
       success: function() {
         return $("[data-behavior='unread-count']").text(0);
       }
