@@ -8,9 +8,12 @@
 
 /* div global du menu footer */
 .menu-footer {
+
   position: relative;
   z-index: 100;
   text-align: center;
+ min-height: 20px;
+
 }
 
 .nbre-notif {
