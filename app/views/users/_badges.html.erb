@@ -18,7 +18,11 @@
           <%= image_tag "badge-11.png", width: 50, class:'no-badge' %>
         <%end%>
         <h6>Look</h6>
-        <p><%=@score_look%>/1000</p>
+        <% if @score_look.to_i < 1000 %>
+          <p><%=@score_look%>/1000</p>
+        <% else %>
+          <p><%=@score_look%> pts</p>
+        <% end %>
           <div class="progress">
             <div class="progress-bar" role="progressbar" style="width: <%= @score_look/10 %>%;" aria-valuenow="<%= @score_look/10 %>" aria-valuemin="0" aria-valuemax="100"><%= @score_look/10 %>%</div>
           </div>
@@ -30,7 +34,11 @@
           <%= image_tag "badge-09.png", width: 50, class:'no-badge' %>
         <%end%>
         <h6>Food</h6>
-        <p><%=@score_food%>/1000</p>
+        <% if @score_food.to_i < 1000 %>
+          <p><%=@score_food%>/1000</p>
+        <% else %>
+          <p><%=@score_food%> pts</p>
+        <% end %>
           <div class="progress">
             <div class="progress-bar" role="progressbar" style="width: <%= @score_food/10 %>%;" aria-valuenow="<%= @score_food/10 %>" aria-valuemin="0" aria-valuemax="100"><%= @score_food/10 %>%</div>
           </div>
@@ -42,7 +50,11 @@
           <%= image_tag "badge-07.png", width: 50, class:'no-badge' %>
         <%end%>
         <h6>Culture</h6>
-        <p><%=@score_culture%>/1000</p>
+        <% if @score_culture.to_i < 1000 %>
+          <p><%=@score_culture%>/1000</p>
+        <% else %>
+          <p><%=@score_culture%> pts</p>
+        <% end %>
         <div class="progress">
           <div class="progress-bar" role="progressbar" style="width: <%= @score_culture/10 %>%;" aria-valuenow="<%= @score_culture/10 %>" aria-valuemin="0" aria-valuemax="100"><%= @score_culture/10 %>%</div>
         </div>
@@ -56,7 +68,11 @@
           <%= image_tag "badge-08.png", width: 50, class:'no-badge' %>
         <%end%>
         <h6>Achats</h6>
-        <p><%=@score_achats%>/1000</p>
+        <% if @score_achats.to_i < 1000 %>
+          <p><%=@score_achats%>/1000</p>
+        <% else %>
+          <p><%=@score_achats%> pts</p>
+        <% end %>
         <div class="progress">
           <div class="progress-bar" role="progressbar" style="width: <%= @score_achats/10 %>%;" aria-valuenow="<%= @score_achats/10 %>" aria-valuemin="0" aria-valuemax="100"><%= @score_achats/10 %>%</div>
         </div>
@@ -68,7 +84,11 @@
           <%= image_tag "badge-10.png", width: 50, class:'no-badge' %>
         <%end%>
         <h6>Travail</h6>
-        <p><%=@score_travail%>/1000</p>
+        <% if @score_travail.to_i < 1000 %>
+          <p><%=@score_travail%>/1000</p>
+        <% else %>
+          <p><%=@score_travail%> pts</p>
+        <% end %>
         <div class="progress">
           <div class="progress-bar" role="progressbar" style="width: <%= @score_travail/10 %>%;" aria-valuenow="<%= @score_travail/10 %>" aria-valuemin="0" aria-valuemax="100"><%= @score_travail/10 %>%</div>
         </div>
@@ -80,7 +100,11 @@
           <%= image_tag "badge-12.png", width: 50, class:'no-badge' %>
         <%end%>
         <h6>Love</h6>
-        <p><%=@score_love%>/1000</p>
+        <% if @score_love < 1000 %>
+          <p><%=@score_love%>/1000</p>
+        <% else %>
+          <p><%=@score_love%> pts</p>
+        <% end %>
         <div class="progress">
           <div class="progress-bar" role="progressbar" style="width: <%= @score_love/10 %>%;" aria-valuenow="<%= @score_love/10 %>" aria-valuemin="0" aria-valuemax="100"><%= @score_love/10 %>%</div>
         </div>

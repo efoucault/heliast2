@@ -1,17 +1,20 @@
 
 <h5 style="color: white; text-align: center; margin-top: 1em;">Nouvelle indécision</h5>
-<div class="no-container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
+
+
+    <div class="no-margin">
       <div class="form-post">
 
 
               <div class="progression-form text-center" style="margin-bottom: 1em;">
-                <div class="dots">
+                <div class="dots-form">
                   <span class="dot-form turquoise" id="progress-partone"><i class="fa fa-pencil"></i></span>
+                  <span class="bar-form" id= "bar-two">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                   <span class="dot-form" id="progress-parttwo"><i class="fa fa-th-list"></i></span>
+                  <span class="bar-form" id="bar-three">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                   <span class="dot-form" id="progress-partthree"><i class="fa fa-check"></i></span>
                 </div>
+
               </div>
 
 
@@ -19,7 +22,7 @@
 
             <div class="part-one">
 
-              <div class="padding">
+              <div class="padding" style="margin-top: 2em;">
                 <p>Décris ton indécision*</p>
                 <%= f.input :description, label: false, placeholder: "Exemple : Que porter aujourd'hui ?", :input_html => { class: 'text-area', :rows => 4 } %>
 
@@ -39,7 +42,7 @@
               <%= f.input :category_id, as: :hidden, input_html: {:value => ""}%>
               </div>
             </div>
-          <div class="text-center">
+          <div class="text-center" style="margin-top: 1.5em; margin-bottom: 2.5em;">
             <div class='btn btn-add btn-partone' id="bouton-partone">
               Suivant
             </div>
@@ -52,7 +55,8 @@
 
 
           <div class="part-two hidden">
-            <p class="padding">Liste tes options possibles*</p>
+            <p class="padding" style="margin-top: 2em">Liste tes options possibles*</p>
+
             <div class="form-group">
                <div class="fields">
                 <%= f.simple_fields_for :options do |builder| %>
@@ -119,5 +123,4 @@
         </div>
 
 
-    </div>
-</div>
+

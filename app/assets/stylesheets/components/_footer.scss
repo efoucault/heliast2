@@ -1,14 +1,19 @@
 /* footer menu */
 
-body {
-  margin:0; /*gets rid of white space around body*/
-  height: calc(100vh + 70px);
-  position:relative; /*REQUIRED Sets up positioning for your footer*/
-}
+// body {
+//   margin:0; /*gets rid of white space around body*/
+//   height: calc(100vh + 70px);
+//   position:relative; /*REQUIRED Sets up positioning for your footer*/
+// }
 
 /* div global du menu footer */
 .menu-footer {
- text-align: center
+
+  position: relative;
+  z-index: 100;
+  text-align: center;
+ min-height: 20px;
+
 }
 
 .nbre-notif {
@@ -22,11 +27,12 @@ body {
 
   position: absolute; /* Position the badge within the relatively positioned button */
   top: 4px;
-  right: 66px;
+  right: 86px;
 }
 
 
 #sticky {
+  padding-top: 1em;
   text-align: center;
   transition: all 0.3s ease;
   height: 70px;
@@ -103,7 +109,7 @@ body {
 }
 
 .footer-pictos ul {
-  padding: 2px 10px; /* Add some padding so it looks nice */
+  padding: 0px 0px; /* Add some padding so it looks nice */
 }
 
 .footer-pictos ul .dropup{
@@ -113,7 +119,7 @@ body {
 
 .footer-pictos li {
   display:inline-block;
-  padding: 0px 11px;
+  padding: 0px 15px;
 }
 
 /* add active ou non */
@@ -123,11 +129,13 @@ body {
   width:37px;
   height:37px;
   display: block;
+  opacity: 0.6;
 }
 
 .footer-pictos .picto-new a.active {
   background-image: image-url('new-active.svg');
   display: block;
+
 }
 
 /* Page social active ou non */
@@ -137,6 +145,7 @@ body {
   width:37px;
   height:37px;
   display: block;
+  opacity: 0.6;
 }
 
 .footer-pictos .picto-social a.active {
@@ -152,6 +161,7 @@ body {
   width:37px;
   height:37px;
   display: block;
+  opacity: 0.6;
 }
 
 .footer-pictos .picto-trophe a.active{
@@ -165,6 +175,7 @@ body {
   width:37px;
   height:37px;
   display: block;
+  opacity: 0.6;
 }
 
 .footer-pictos .picto-alarme a.active{
@@ -178,20 +189,21 @@ body {
   height: 33px;
   width: 33px;
   border-radius: 50%;
-  border: solid 2px #d99ea4;
+  border: solid 2px rgba(145, 145, 145, 0.6);
 }
 
 .dropup {
    padding-top: 0!important;
    padding-bottom: 0!important;
    margin-top: 0px!important;
-}
-
-.fa {
+   .fa {
    padding-top: 0!important;
    padding-bottom: 0!important;
    margin-top: 0px!important;
+  }
 }
+
+
 
 .dropdown-menu-right {
    padding-top: 0!important;

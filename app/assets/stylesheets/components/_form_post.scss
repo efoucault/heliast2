@@ -1,9 +1,13 @@
+.no-margin {
+  width: 100%;
+
+}
 .form-post {
   background: white;
   margin-top: 1em;
+
   padding: 0.8em;
-  border-radius: 0.5em;
-  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.14);
+
   h1 {
     text-align: center;
     font-weight: bold;
@@ -59,13 +63,13 @@
   display:flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0;
+  margin: -1px;
   padding: 0;
 }
 
 .choice-category-card {
   height: 10em !important;
-  width: 4.3em !important;
+  width: 4.5em !important;
   position:relative;
   // background-color: white;
   border-radius: 12px;
@@ -186,6 +190,7 @@ opacity: 0.1;
 
 // Checkboxes design
 .category-choices {
+  margin-top: 1em;
   input[type=radio] {
     display: none;
   }
@@ -224,6 +229,14 @@ opacity: 0.1;
   height: auto;
 }
 
+.progression-form {
+  position: relative;
+}
+
+.dots-form {
+  // justify-content: space-between;
+ }
+
 .dot-form {
   height: 2em;
   width: 2em;
@@ -232,11 +245,26 @@ opacity: 0.1;
   display: inline-block;
   text-align: center;
   padding: 0.3em;
+  position: relative;
+  z-index: 1;
   i {
     color: white;
     font-size: 0.8em;
 
   }
+}
+
+.bar-form{
+  background-color: #e2dede;
+  margin-left: -0.8em;
+  margin-right: -0.8em;
+  font-size: 0.5em;
+  padding: 0.3em;
+  padding-bottom: 0;
+  padding-top: 0.5em;
+  position: relative;
+  z-index: 0;
+  line-height: -1em;
 }
 
 .envoie {

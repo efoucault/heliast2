@@ -1,0 +1,25 @@
+.commentaire {
+  display: flex;
+  margin-bottom: 2em;
+  .commentaire-img {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  .commentaire-content {
+    flex-grow: 1;
+    margin-right: 1em;
+  }
+  strong {
+    font-weight: 800;
+    margin-bottom: 1em;
+  }
+  .option-commentaire {
+    background-color: #2CD5D5;
+    font-weight: 600;
+    color: white;
+    border-radius: 10%;
+    padding: 0.1em 0.3em;
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+  }
+}

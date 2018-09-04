@@ -23,5 +23,24 @@
         <% end %>
       <% end %>
     </div>
+    <h5>Commentaires :</h5>
+  </div>
+  <div class="commentaires">
+    <%  @question.answers.each do |answer| %>
+      <div class="commentaire">
+        <div class="commentaire-img">
+          <% if answer.user.photo.present? %>
+            <%= cl_image_tag answer.user.photo, crop: :fill, class: 'avatar-large' %>
+          <% else %>
+            <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: 'avatar-large') %>
+          <% end %>
+        </div>
+        <div class="commentaire-content">
+          <strong><%= answer.user.pseudo %></strong>
+          <span class="option-commentaire"><%= answer.option.titre%></span>  <br>
+          <%= answer.reponse %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
