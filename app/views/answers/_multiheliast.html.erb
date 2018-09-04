@@ -29,7 +29,11 @@
     <%  @question.answers.each do |answer| %>
       <div class="commentaire">
         <div class="commentaire-img">
-          <%= cl_image_tag answer.user.photo, crop: :fill, class: 'avatar-large' %>
+          <% if answer.user.photo.present? %>
+            <%= cl_image_tag answer.user.photo, crop: :fill, class: 'avatar-large' %>
+          <% else %>
+            <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: 'avatar-large') %>
+          <% end %>
         </div>
         <div class="commentaire-content">
           <strong><%= answer.user.pseudo %></strong>
