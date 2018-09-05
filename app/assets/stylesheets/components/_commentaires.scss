@@ -7,19 +7,19 @@
   }
   .commentaire-content {
     flex-grow: 1;
-    margin-right: 1em;
+    margin-right: 0.5em;
   }
   strong {
     font-weight: 800;
     margin-bottom: 1em;
   }
   .option-commentaire {
-    background-color: #2CD5D5;
     font-weight: 600;
-    color: white;
+    color: #E5406E;
     border-radius: 10%;
     padding: 0.1em 0.3em;
-    margin-left: 1.5em;
+    margin-left: 0;
     margin-bottom: 1em;
+    font-size: 0.8em;
   }
 }

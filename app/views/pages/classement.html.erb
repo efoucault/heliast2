@@ -11,7 +11,16 @@
 <div class="col-sm-4 col-md-4 col-md-offset-4">
 <div class="title">
   <% if @category.present? %>
-  <h5 style="color: white; text-align: center; padding-top: 1em;">Les meilleurs Héliastes<br/>de la catégorie <%= @category.name %></h5>
+  <h5 style="color: white; text-align: center; padding-top: 1em;">Les meilleurs Héliastes<br/>de la catégorie
+    <% if @category != nil  %>
+
+    <span class='btn btn-add btn-catego'>
+      <!-- Astuces pour avoir du html avec link_to ;) @Ahmed -->
+    <%= link_to url: classement_path do %>
+    <%=@category.name%> <sup style="opacity: 0.8;">&nbsp;x</sup>
+    <% end %></span>
+    <!--  -->
+    <% end %></h5>
   <% else %>
     <h5 style="color: white; text-align: center; padding-top: 1em;">Les meilleurs Héliastes<br/>toutes catégories confondues</h5>
   <% end %>
@@ -26,26 +35,22 @@
   <% @scores.keys.each do |id| %>
     <div class="line-user row.no-gutters" style="margin-left: 0">
       <div class="col-xs-1.no-gutters"><% classement += 1 %><h6><%= classement %></h6></div>
-      <div class="col-xs-2.no-gutters" style="margin-left: 0"><p class= 'avatar-bordered avatar-classement' style="background-image: url(<%= User.find(id).photo %>); background-size: cover;"></p></div>
-      <div class="col-xs-5.no-gutters" style="text-align: center"><h6><%= User.find(id).pseudo %></h6></div>
-      <div class="col-xs-4.no-gutters" style="float: right"><p class="tip"> <%= @scores[id] %> pts </p></div>
+      <div class="col-xs-2.no-gutters" style="margin-left: 0; text-align: left;"><p class= 'avatar-bordered avatar-classement' style="background-image: url(<%= User.find(id).photo %>); background-size: cover;"></p></div>
+      <div class="col-xs-5.no-gutters" style="text-align: center; width: 4em;"><h6><%= User.find(id).pseudo %></h6></div>
+      <div class="col-xs-4.no-gutters" style="float: right; width: 6em; text-align: center;"><p class="tip"> <%= @scores[id] %> pts </p></div>
 
 
     </div>
     <hr style="background-color: gray; height: 2px; opacity: 0.3;">
   <% end %>
   <hr style="width: 0%;">
-
-  <!-- Y -->
-
-
-  <!-- X -->
-
-  <hr style="width: 0%;">
-</div>
-  <div>
-    <% if @category != nil  %>
-      <%= link_to "Classement global", classement_path, class: "btn btn-primary" %>
-    <% end %>
+  <div class="fin-classement">
+    <%= image_tag("heliast_ultime.png", size:"50x50")%>
   </div>
 </div>
+  <div>
+
+  </div>
+</div>
+
+<div class="more-bottom"></div>

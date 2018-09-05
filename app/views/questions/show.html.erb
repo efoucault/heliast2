@@ -59,6 +59,9 @@
         <% end %>
       <% end %>
     <% end %>
+    <% if @answer && @answer.errors.messages.key?(:option) %>
+      <% option_affichee = true %>
+    <% end %>
 
     <% if option_affichee == true %>
       <div class="options">
@@ -80,7 +83,7 @@
           <% end %>
         <% end %>
         <% if @answer && @answer.errors.messages.key?(:option) %>
-          <p class="text-danger">Please select an option above</p>
+          <p class="text-danger">Merci de sélectionner une option</p>
         <% end %>
       </div>
     <%end%>
@@ -92,18 +95,6 @@
     <%if @question.user == current_user && @question.answers.present? == false %>
       <p class="text-center" style="color: gray; margin-bottom: 2em; ">Un Héliaste va décider pour toi...</p>
     <%end%>
-
-  </div>
-  <!-- Partial : affichage de l'histogramme des réponses pour un mode de résolution "Multi Héliastes-->
-  <% if @question.type_resolution == "Mode Démocratie" %>
-    <% if @question.answers.present? %>
-      <%= render "answers/multiheliast" %>
-    <% end %>
-  <% end %>
-  <!-- Partial : affichage de la réponse pour un mode de résolution "Mono Héliastes-->
-  <% if @question.type_resolution == "Mode héliaste" %>
-    <%= render "answers/monoheliast" %>
-  <% end %>
 
   <!-- Création d'une réponse -->
   <% hide_answer_creation = false %>
@@ -125,7 +116,7 @@
       <% hide_answer_creation = true %>
   <% end %>
   <% if hide_answer_creation == false %>
-    <div class="indecision-card">
+    <div class="indecision-card answer-creation hidden">
         <div class="create-answer">
           <p class="text-center" style="color: gray; padding-top: 1em; ">Ajoute un commentaire :</p>
           <div class="form-commentaire text-center" style="padding: 1em;">
@@ -133,6 +124,18 @@
           </div>
         </div>
     </div>
+  <% end %>
+
+  </div>
+  <!-- Partial : affichage de l'histogramme des réponses pour un mode de résolution "Multi Héliastes-->
+  <% if @question.type_resolution == "Mode Démocratie" %>
+    <% if @question.answers.present? %>
+      <%= render "answers/multiheliast" %>
+    <% end %>
+  <% end %>
+  <!-- Partial : affichage de la réponse pour un mode de résolution "Mono Héliastes-->
+  <% if @question.type_resolution == "Mode héliaste" %>
+    <%= render "answers/monoheliast" %>
   <% end %>
 
   <% if @question.answers.present? %>
