@@ -5,6 +5,7 @@ import 'slick-carousel';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../components/notifications';
+import swal from 'sweetalert';
 
 
 $('.categories-cards').slick({
@@ -323,21 +324,19 @@ deleteButtons.forEach((button) => {
   });
 });
 
-// Histogram
-$(document).ready(function() {
-  // $('.bar span').hide();
-  // $('#option1').animate({
-  //    const optionOne = document.querySelector("#option1");
-  //    width: '75%'}, 1000);
-  // $('#option2').animate({
-  //    width: '35%'}, 1000);
-  // $('#option3').animate({
-  //    width: '20%'}, 1000);
-  // $('#option4').animate({
-  //    width: '15%'}, 1000);
+const swalButton = document.querySelector('.new-answer');
 
-  setTimeout(function() {
-    $('.bar span').fadeIn('slow');
-  }, 1000);
+if (swalButton) { // protect other pages
 
-});
+  swalButton.addEventListener('click', () => {
+  const nbPoints = document.querySelector('#nb-points').dataset.points;
+    swal({
+      title: "Bravo !",
+      text: `Tu viens de gagner ${nbPoints} points !`,
+      icon: "success"
+    })
+    .then((value) => {
+      window.location.href = '/questions';
+    });
+  });
+}

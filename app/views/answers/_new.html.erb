@@ -1,5 +1,6 @@
 <%= simple_form_for [@question, Answer.new] do |f| %>
   <%= f.hidden_field :option_id %>
   <%= f.input :reponse, label: false %>
-  <%= f.submit "enregistrer la réponse", class: "btn btn-success btn-add" %>
+  <p class="hidden" data-points="<%= @score %>" id="nb-points"></p>
+  <%= f.submit "enregistrer la réponse", class: "btn btn-success btn-add new-answer" %>
 <% end %>

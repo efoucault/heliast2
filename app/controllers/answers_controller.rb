@@ -26,7 +26,7 @@ class AnswersController < ApplicationController
       Notification.create(recipient: @question.user, actor: current_user, action: "a répondu", notifiable: @answer)
       end
 
-      redirect_to questions_path
+      # redirect_to questions_path
     else
       render "questions/show"
     end
