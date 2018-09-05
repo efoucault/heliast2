@@ -20,10 +20,10 @@
         </div>
         <div class="mode-picto">
           <% if question.type_resolution == "Mode héliaste" %>
-            <div class="circle-mode-index"><%= image_tag "mode-heliast.png", class: 'mode-img-index' %></div>
+            <div class="circle-mode-index"><%= image_tag "mode-13.png", class: 'mode-img-index' %></div>
           <% elsif question.type_resolution == "Mode Démocratie" %>
             <div class="circle-mode-index">
-              <%= image_tag "mode-multi.png", class: 'mode-img-index' %>
+              <%= image_tag "mode-14.png", class: 'mode-img-index-2' %>
             </div>
             <div class="number-answers-index">
                <%= question.answers.count %>
