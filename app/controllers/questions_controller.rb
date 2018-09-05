@@ -67,6 +67,9 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     status_info
     @category = @question.category
+    time_diff = TimeDifference.between(@question.created_at, DateTime.now).in_minutes
+    scoring = 70 - time_diff.to_i
+    @score = (scoring > 10) ? scoring : 10
   end
 
   def new
