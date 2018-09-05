@@ -46,8 +46,10 @@
             <div class='btn btn-add btn-partone' id="bouton-partone">
               Suivant
             </div>
+            <br>
           </div>
             </div>
+            <br>
 
 
 
@@ -75,6 +77,8 @@
               </div>
             </div>
           </div>
+
+          <br>
 
           <div class="part-three hidden">
             <p class="padding">Choisis le mode de résolution*</p>
@@ -112,7 +116,7 @@
             <%= f.input :type_resolution, as: :hidden, input_html: { class: 'resolution' }%>
 
               <div class="envoie">
-              <%= f.submit "J'envoie !", class: "btn btn-add" %>
+              <%= f.button :button, "J'envoie".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Envoi..."}, class: "btn btn-add" %>
             </div>
           <% end %>
 
@@ -121,6 +125,8 @@
           </div>
 
         </div>
+         <br>
+        <br>
 
 
 
