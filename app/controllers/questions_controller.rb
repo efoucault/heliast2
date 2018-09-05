@@ -81,8 +81,13 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.user = current_user
     @question.deadline = DateTime.now + @question.attente.hours
-    @question.save!
-    redirect_to question_path(@question)
+    if @question.save
+      @question.save!
+      redirect_to question_path(@question)
+    else
+      @question.errors.messages
+      render "questions/new"
+    end
   end
 
   def edit
