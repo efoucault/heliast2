@@ -1,0 +1,22 @@
+<div class="options">
+  <% @question.options.each_with_index do |option, index| %>
+    <% if option.photo.present? || option.titre.present? %>
+      <div class="option option<%= option.id %>" data-optionid="<%= option.id %>">
+        <% if option.photo.present? %>
+          <%= cl_image_tag option.photo, crop: :fill, class: 'option-image' %>
+        <% else %>
+          <div class="option-image-none"></div>
+        <%end%>
+
+        <div class="option-title">
+          <%= option.titre %>
+          <i class="fa fa-check hidden"></i>
+        </div>
+        <div class="circle"><p><%=index+1%></p></div>
+      </div>
+    <% end %>
+  <% end %>
+  <% if @answer && @answer.errors.messages.key?(:option) %>
+    <p class="text-danger">Merci de sélectionner une option</p>
+  <% end %>
+</div>

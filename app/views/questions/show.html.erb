@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container flex-parent">
   <div class="indecision-card">
 
     <div class="top-card top-<%= @question.status %> text-center">
@@ -64,34 +64,9 @@
     <% end %>
 
     <% if option_affichee == true %>
-      <div class="options">
-        <% @question.options.each_with_index do |option, index| %>
-          <% if option.photo.present? || option.titre.present? %>
-            <div class="option option<%= option.id %>" data-optionid="<%= option.id %>">
-              <% if option.photo.present? %>
-                <%= cl_image_tag option.photo, crop: :fill, class: 'option-image' %>
-              <% else %>
-                <div class="option-image-none"></div>
-              <%end%>
+      <%= render "options_show" %>
+    <% end %>
 
-              <div class="option-title">
-                <%= option.titre %>
-                <i class="fa fa-check hidden"></i>
-              </div>
-              <div class="circle"><p><%=index+1%></p></div>
-            </div>
-          <% end %>
-        <% end %>
-        <% if @answer && @answer.errors.messages.key?(:option) %>
-          <p class="text-danger">Merci de sélectionner une option</p>
-        <% end %>
-      </div>
-    <%end%>
-
-    <% if @question.answered? %>
-    <%end%>
-
-    <!-- end -->
     <%if @question.user == current_user && @question.answers.present? == false %>
       <p class="text-center" style="color: gray; margin-bottom: 2em; ">Un Héliaste va décider pour toi...</p>
     <%end%>
@@ -135,7 +110,19 @@
   <% end %>
   <!-- Partial : affichage de la réponse pour un mode de résolution "Mono Héliastes-->
   <% if @question.type_resolution == "Mode héliaste" %>
-    <%= render "answers/monoheliast" %>
+    <% if @question.answers.present? %>
+      <label for="flip-control" class="btn btn-add flip" style="margin-bottom: 0; width: 16em; margin-left: 12%">Réponse / Options</label>
+      <input type="checkbox" id="flip-control">
+      <div class="answer-show">
+        <% if @question.type_resolution == "Mode héliaste" %>
+          <%= render "answers/monoheliast" %>
+        <% end %>
+      </div>
+      <div class="indecision-card hidden options-show">
+        <h4>Les options possibles</h3>
+        <%= render "options_show" %>
+      </div>
+    <% end %>
   <% end %>
 
   <% if @question.answers.present? %>
