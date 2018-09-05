@@ -59,6 +59,9 @@
         <% end %>
       <% end %>
     <% end %>
+    <% if @answer && @answer.errors.messages.key?(:option) %>
+      <% option_affichee = true %>
+    <% end %>
 
     <% if option_affichee == true %>
       <div class="options">
@@ -80,7 +83,7 @@
           <% end %>
         <% end %>
         <% if @answer && @answer.errors.messages.key?(:option) %>
-          <p class="text-danger">Please select an option above</p>
+          <p class="text-danger">Merci de sélectionner une option</p>
         <% end %>
       </div>
     <%end%>
@@ -125,7 +128,7 @@
       <% hide_answer_creation = true %>
   <% end %>
   <% if hide_answer_creation == false %>
-    <div class="indecision-card">
+    <div class="indecision-card answer-creation hidden">
         <div class="create-answer">
           <p class="text-center" style="color: gray; padding-top: 1em; ">Ajoute un commentaire :</p>
           <div class="form-commentaire text-center" style="padding: 1em;">
