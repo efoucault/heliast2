@@ -207,6 +207,7 @@ question56 = Question.create!(user: aaron , description: 'Dormir un peu plus ou 
 question57 = Question.create!(user: adam , description: 'PS4 Pro ou Xbox one X?', category: achats, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
 #Question 58 mode démocratie pour le démo-day
 question58 = Question.create!(user: ines, description: 'Que faire à la fin de l année?', category: culture, type_resolution: "Mode Démocratie", status: 0, deadline: DateTime.now)
+
 #Question 59 réponse par manon lors du demo-day à la question cultur d'adam
 question59 = Question.create!(user: adam , description: 'Quel film pour mon date ce soir?', category: culture, type_resolution: "Mode héliaste", status: 0, deadline: DateTime.now)
 
@@ -392,9 +393,24 @@ option114= Option.create!(titre: "Xbox One X", question: question57)
 ###
 #Questions de manon our le demo-day
 #Question 58, culture, mode démocratie, pour le demo day
-option115= Option.create!(titre: "Le Wagon", question: question58)
-option116= Option.create!(titre: "Faire un stage chez Google", question: question58)
-option117= Option.create!(titre: "Tour d'Europe à vélo", question: question58)
+#option115= Option.create!(titre: "Le Wagon", question: question58)
+
+url_photo_option115 = "https://res.cloudinary.com/offbatt/image/upload/v1536152977/LeWagon.jpg"
+option115 = Option.new(titre: "Le Wagon", question: question58)
+option115.remote_photo_url = url_photo_option115
+option115.save
+
+#option116= Option.create!(titre: "Faire un stage chez Google", question: question58)
+url_photo_option116 = "https://res.cloudinary.com/offbatt/image/upload/v1536152977/Google_logo-300x300.jpg"
+option116 = Option.new(titre: "Faire un stage chez Google", question: question58)
+option116.remote_photo_url = url_photo_option116
+option116.save
+
+#option117= Option.create!(titre: "Tour d'Europe à vélo", question: question58)
+url_photo_option117 = "https://res.cloudinary.com/offbatt/image/upload/v1536152977/tourdeurope.jpg"
+option117 = Option.new(titre: "Tour d'Europe à vélo", question: question58)
+option117.remote_photo_url = url_photo_option117
+option117.save
 #Question 59, réponse de manon à la question d'adam, culture
 option118= Option.create!(titre: "Mission Impossible Fallout", question:question59)
 option119= Option.create!(titre: "My Lady", question:question59)
@@ -447,7 +463,7 @@ answer21 = Answer.create!(user: gabriel , option: option42, reponse: 'Un peu che
 #Réponse à la question 22, food
 answer22 = Answer.create!(user: ines , option: option43, reponse:'', score:410)
 #Réponse à la question 23, achats
-answer23 = Answer.create!(user: jules , option: option45, reponse: 'ira plus facilement avec ta garde robe', score:750)
+answer23 = Answer.create!(user: jules , option: option45, reponse: 'ira plus facilement avec ta garde robe', score:950)
 #Réponse à la question 24, travail
 answer24 = Answer.create!(user: lucie , option: option48, reponse: 'bon courage', score:675)
 #Réponse à la question 25, travail
@@ -498,16 +514,16 @@ answer57 = Answer.create!(user: manon, option: option113, reponse:'J espere avoi
 ###
 #Réponse à la question 58, mode démocratie, demo-day,
 #3 votes pour le wagon, 3 votes pour Google, 4 votes pour le tour d'Europe
-answer58 = Answer.create!(user: lucas, option: option115, reponse:'', score:675)
-answer58 = Answer.create!(user: lou, option: option115, reponse:'', score:675)
-answer58 = Answer.create!(user: leo, option: option115, reponse:'', score:675)
-answer58 = Answer.create!(user: arthur, option: option116, reponse:'', score:675)
-answer58 = Answer.create!(user: louise, option: option116, reponse:'', score:675)
-answer58 = Answer.create!(user: eric, option: option116, reponse:'', score:675)
-answer58 = Answer.create!(user: aaron, option: option117, reponse:'', score:675)
-answer58 = Answer.create!(user: ophelie, option: option117, reponse:'', score:675)
-answer58 = Answer.create!(user: ahmed, option: option117, reponse:'', score:675)
-answer58 = Answer.create!(user: elina, option: option117, reponse:'', score:675)
+answer58 = Answer.create!(user: lucas, option: option115, reponse:'Un ami à moi ne m en a dis que du bien', score:675)
+answer58 = Answer.create!(user: arthur, option: option116, reponse:'Si tu as l occasion, fonce! C est Goggle!', score:680)
+answer58 = Answer.create!(user: lou, option: option115, reponse:'Super ambiance, super profs, super niveau', score:685)
+answer58 = Answer.create!(user: aaron, option: option117, reponse:'Je l ai fait avec mes parents, à faire sans hésiter', score:700)
+answer58 = Answer.create!(user: ahmed, option: option117, reponse:'Tour d Europe vu que j ai deja fait les 2 autres', score:705)
+answer58 = Answer.create!(user: louise, option: option116, reponse:'Google sans hésiter, pense a ton cv', score:575)
+answer58 = Answer.create!(user: eric, option: option116, reponse:'Google pour une experience supplémentaire', score:475)
+answer58 = Answer.create!(user: leo, option: option115, reponse:'Super aventure', score:375)
+answer58 = Answer.create!(user: ophelie, option: option117, reponse:'Le tour d Europe à vélo, aventure inoubliable', score:275)
+answer58 = Answer.create!(user: elina, option: option117, reponse:'Je préfère le sport', score:175)
 
 p Answer.all
 
