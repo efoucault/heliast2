@@ -348,3 +348,16 @@ if (swalButton) { // protect other pages
     });
   });
 }
+
+const flip = document.querySelector('.flip');
+
+if (flip) { // protect other pages
+
+  flip.addEventListener('click', () => {
+  const optionsShow = document.querySelector('.options-show');
+  const answerShow = document.querySelector('.answer-show');
+  optionsShow.classList.toggle("hidden");
+  answerShow.classList.toggle("hidden");
+  });
+}
+element.classList.toggle("red");
