@@ -151,30 +151,30 @@ puts "questions creation"
 question1 = Question.create!(user: manon , description: 'La soirée cocktail ou un ciné tranquille? ', category: culture, type_resolution: "Mode héliaste", status:2, deadline: DateTime.now )
 question2 = Question.create!(user: manon , description: 'Maillot une pièce ou deux pièces?', category: look, type_resolution: "Mode héliaste", status: 2, deadline: DateTime.now )
 question3 = Question.create!(user: manon , description: 'Quel musée pour ce mercredi aprem?', category: culture, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
-question4 = Question.create!(user: manon , description: 'J hésite entre un Mac et un PC', category: achats, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
-question5 = Question.create!(user: manon , description: 'Je lui SMS ou je l appelle pour l inviter ', category: love, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
-question6 = Question.create!(user: manon , description: 'J hésite entre la spé Maths ou Eco', category: travail, type_resolution: "Mode héliaste", status:2, deadline: DateTime.now)
+question4 = Question.create!(user: manon , description: 'J\'hésite entre un Mac et un PC', category: achats, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
+question5 = Question.create!(user: manon , description: 'Je lui SMS ou je l\'appelle pour l\'inviter ', category: love, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
+question6 = Question.create!(user: manon , description: 'J\'hésite entre la spé Maths ou Eco', category: travail, type_resolution: "Mode héliaste", status:2, deadline: DateTime.now)
 question7 = Question.create!(user: manon , description: 'Robe rouge ou verte', category: look, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now )
-question8 = Question.create!(user: manon , description: 'Ce jean ou ce jean ?', category: look, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
+question8 = Question.create!(user: manon , description: 'Ce jean ou ce jean?', category: look, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
 question9 = Question.create!(user: eva , description: 'Quelle nouvelle série commencer?', category: culture, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
 question10 = Question.create!(user: ines , description: 'Chemise blanche ou rose', category: look, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now  )
-question11 = Question.create!(user: lou , description: 'Où déjeuner', category: food, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
+question11 = Question.create!(user: lou , description: 'Où déjeuner?', category: food, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
 question12 = Question.create!(user: lucas , description: 'Pour un mariage: cravate ou noeud pap?', category: look, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
 question13 = Question.create!(user: arthur , description: 'Je commence les Sopranos ou Peaky Blinders?', category: culture, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
-question14 = Question.create!(user: aaron , description: ' Confiture ou Nutella ?', category: food, type_resolution: "Mode héliaste", status: 0, deadline: DateTime.now )
-question15 = Question.create!(user: eric , description: 'Oreo ou Kinder ?', category: food, type_resolution: "Mode héliaste", status: 0, deadline: DateTime.now )
+question14 = Question.create!(user: aaron , description: ' Confiture ou Nutella?', category: food, type_resolution: "Mode héliaste", status: 0, deadline: DateTime.now )
+question15 = Question.create!(user: eric , description: 'Oreo ou Kinder?', category: food, type_resolution: "Mode héliaste", status: 0, deadline: DateTime.now )
 question16 = Question.create!(user: louis , description: 'Frites ou légumes?', category: food, type_resolution: "Mode héliaste", status: 1, deadline: DateTime.now )
 question17 = Question.create!(user: gabriel , description: 'Pizza ou burger?', category: food, type_resolution: "Mode héliaste", status: 1, deadline: DateTime.now )
 question18 = Question.create!(user: julia , description: 'Lire ou se mettre un film?', category: culture, type_resolution: "Mode héliaste", status: 1, deadline: DateTime.now )
 question19 = Question.create!(user: lea , description: 'Dormir un peu plus ou avoir plus de temps pour se préparer?', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
 question20 = Question.create!(user: lou , description: 'PS4 Pro ou Xbox one X?', category: achats, type_resolution:"Mode héliaste", status: 0, deadline: DateTime.now)
-question21 = Question.create!(user: ophelie , description: 'Pour cet hiver j hésite entre une Canada goose ou une Parajumper?', category: achats, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
-question22 = Question.create!(user: adam , description: 'Mangue ou ananas ?', category: food, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
-question23 = Question.create!(user: aaron , description: 'J hésite entre 2 converses all stars: rouge ou fuschia ?', category: achats, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
+question21 = Question.create!(user: ophelie , description: 'Pour cet hiver j\'hésite entre une Canada goose ou une Parajumper', category: achats, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
+question22 = Question.create!(user: adam , description: 'Mangue ou ananas?', category: food, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
+question23 = Question.create!(user: aaron , description: 'J\'hésite entre 2 converses all stars: rouge ou fuschia', category: achats, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
 question24 = Question.create!(user: louis , description: 'Hésitation sur mon orientation : rh ou marketing ?', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
-question25 = Question.create!(user: eric , description: 'J hésite entre un espace de coworking et trouver un bureau à partager', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
-question26 = Question.create!(user: jules, description: 'Mes parents m offrent un séjour linguistique, j ai le choix entre Londres et New-York et je n arrive pas à faire mon choix...', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
-question27 = Question.create!(user: louise , description: 'Besoin de reprendre le sport pour m assouplir et me détendre: yoga ou pilates?', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
+question25 = Question.create!(user: eric , description: 'J\'hésite entre un espace de coworking et trouver un bureau à partager', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
+question26 = Question.create!(user: jules, description: 'Mes parents m\'offrent un séjour linguistique, j\'ai le choix entre Londres et New-York mais je n\'arrive pas à faire mon choix...', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
+question27 = Question.create!(user: louise , description: 'Besoin de reprendre le sport pour m\'assouplir et me détendre: yoga ou pilates?', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
 question28 = Question.create!(user: lucas , description: 'Quelle nouvelle série commencer?', category: culture, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
 question29 = Question.create!(user: eric , description: 'Pour un mariage: cravate ou noeud pap?', category: look, type_resolution: "Mode héliaste", status:0,  deadline: DateTime.now )
 question30 = Question.create!(user: arthur , description: 'Je commence les Sopranos ou Peaky Blinders?', category: culture, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
@@ -183,14 +183,14 @@ question32 = Question.create!(user: lea , description: 'Dormir un peu plus ou av
 question33 = Question.create!(user: lou , description: 'MacBookPro ou MacBook Air?', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
 question34 = Question.create!(user: gabriel , description: 'Ce midi, pizza ou burger?', category: food, type_resolution: "Mode héliaste", status: 0, deadline: DateTime.now )
 question35 = Question.create!(user: ines , description: 'Parapluie ou ciré ?', category: look, type_resolution: "Mode héliaste", status: 1, deadline: DateTime.now )
-question36 = Question.create!(user: julia , description: 'Je n arrive pas à faire mon choix: Stan smith ou all stars?', category: look, type_resolution:"Mode héliaste", status:1, deadline: DateTime.now)
+question36 = Question.create!(user: julia , description: 'Je n\'arrive pas à faire mon choix: Stan smith ou all stars?', category: look, type_resolution:"Mode héliaste", status:1, deadline: DateTime.now)
 question37 = Question.create!(user: julia , description: 'Iphone X ou Galaxy S9 ?', category: achats, type_resolution:"Mode héliaste", status:1, deadline: DateTime.now)
 question38 = Question.create!(user: ahmed , description: 'La soirée cocktail ou un ciné tranquille? ', category: culture, type_resolution: "Mode héliaste", status:2, deadline: DateTime.now )
 question39 = Question.create!(user: lucas , description: 'Maillot une pièce ou deux pièces?', category: look, type_resolution: "Mode héliaste", status: 2, deadline: DateTime.now )
 question40 = Question.create!(user: eric , description: 'Quel musée pour ce mercredi aprem?', category: culture, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
-question41 = Question.create!(user: ophelie , description: 'J hésite entre un Mac et un PC', category: achats, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
-question42 = Question.create!(user: louis , description: 'Je lui SMS ou je l appelle pour l inviter ', category: love, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
-question43 = Question.create!(user: jules , description: 'J hésite entre la spé Maths ou Eco', category: travail, type_resolution: "Mode héliaste", status:2, deadline: DateTime.now)
+question41 = Question.create!(user: ophelie , description: 'J\'hésite entre un Mac et un PC', category: achats, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
+question42 = Question.create!(user: louis , description: 'Je lui SMS ou je l\'appelle pour l\'inviter ?', category: love, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
+question43 = Question.create!(user: jules , description: 'J\'hésite entre la spé Maths ou Eco', category: travail, type_resolution: "Mode héliaste", status:2, deadline: DateTime.now)
 question44 = Question.create!(user: gabriel , description: 'Robe rouge ou verte', category: look, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now )
 question45 = Question.create!(user: leo , description: 'Ce jean ou ce jean ?', category: look, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
 question46 = Question.create!(user: arthur , description: 'Quelle nouvelle série commencer?', category: culture, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
@@ -206,7 +206,7 @@ question55 = Question.create!(user: elina , description: 'Lire ou se mettre un f
 question56 = Question.create!(user: aaron , description: 'Dormir un peu plus ou avoir plus de temps pour se préparer?', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
 question57 = Question.create!(user: adam , description: 'PS4 Pro ou Xbox one X?', category: achats, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
 #Question 58 mode démocratie pour le démo-day
-question58 = Question.create!(user: ines, description: 'Que faire à la fin de l année?', category: culture, type_resolution: "Mode Démocratie", status: 0, deadline: DateTime.now)
+question58 = Question.create!(user: ines, description: 'Que faire à la fin de l\'année?', category: culture, type_resolution: "Mode Démocratie", status: 0, deadline: DateTime.now)
 
 #Question 59 réponse par manon lors du demo-day à la question cultur d'adam
 question59 = Question.create!(user: adam , description: 'Quel film pour mon date ce soir?', category: culture, type_resolution: "Mode héliaste", status: 0, deadline: DateTime.now)
@@ -395,21 +395,21 @@ option114= Option.create!(titre: "Xbox One X", question: question57)
 #Question 58, culture, mode démocratie, pour le demo day
 #option115= Option.create!(titre: "Le Wagon", question: question58)
 
-url_photo_option115 = "https://res.cloudinary.com/offbatt/image/upload/v1536152977/LeWagon.jpg"
+url_option115 = "https://res.cloudinary.com/offbatt/image/upload/v1536152977/LeWagon.jpg"
 option115 = Option.new(titre: "Le Wagon", question: question58)
-option115.remote_photo_url = url_photo_option115
+option115.remote_photo_url = url_option115
 option115.save
 
 #option116= Option.create!(titre: "Faire un stage chez Google", question: question58)
-url_photo_option116 = "https://res.cloudinary.com/offbatt/image/upload/v1536152977/Google_logo-300x300.jpg"
+url_option116 = "https://res.cloudinary.com/offbatt/image/upload/v1536152977/Google_logo-300x300.jpg"
 option116 = Option.new(titre: "Faire un stage chez Google", question: question58)
-option116.remote_photo_url = url_photo_option116
+option116.remote_photo_url = url_option116
 option116.save
 
 #option117= Option.create!(titre: "Tour d'Europe à vélo", question: question58)
-url_photo_option117 = "https://res.cloudinary.com/offbatt/image/upload/v1536152977/tourdeurope.jpg"
+url_option117 = "https://res.cloudinary.com/offbatt/image/upload/v1536152977/tourdeurope.jpg"
 option117 = Option.new(titre: "Tour d'Europe à vélo", question: question58)
-option117.remote_photo_url = url_photo_option117
+option117.remote_photo_url = url_option117
 option117.save
 #Question 59, réponse de manon à la question d'adam, culture
 option118= Option.create!(titre: "Mission Impossible Fallout", question:question59)
@@ -428,7 +428,7 @@ answer2 = Answer.create!(user: ines , option: option4 , reponse: 'les deux te vo
 #Réponse à la question 3, culture
 answer3 = Answer.create!(user: adam , option: option5 , reponse: 'un réponse de plus pour moi', score: 810)
 #Réponse à la question 4, achats
-answer4 = Answer.create!(user: ines , option: option7 , reponse: 'en esperant t aider, bon courage!', score: 750)
+answer4 = Answer.create!(user: ines , option: option7 , reponse: 'en esperant t\'aider, bon courage!', score: 750)
 #Réponse à la question 5, love
 answer5 = Answer.create!(user: ines , option: option9 , reponse: '', score: 750)
 #Réponse à la question 6, look
@@ -443,9 +443,9 @@ answer9 = Answer.create!(user: manon , option: option17 , reponse: '', score: 99
 #Réponse à la question 11, food
 answer11 = Answer.create!(user: aaron , option: option21 ,reponse: '', score: 780)
 #Réponse à la question 12, look
-answer12 = Answer.create!(user: manon , option: option23 , reponse: 'en esperant avoir ete utile', score: 790)
+answer12 = Answer.create!(user: manon , option: option23 , reponse: 'en esperant avoir été utile', score: 790)
 #Réponse à la question 13, culture
-answer13 = Answer.create!(user: leo , option: option25 , reponse: '', score: 850)
+answer13 = Answer.create!(user: leo , option: option25 , reponse: '', score: 150)
 #Réponse à la question 14, food
 #Réponse à la question 15, food
 #Réponse à la question 16, food
@@ -453,13 +453,13 @@ answer16 = Answer.create!(user: jules , option: option31 , reponse: 'au revoir e
 #Réponse à la question 17, food
 answer17 = Answer.create!(user: louis , option: option33 ,reponse: 'bonne chance', score: 540)
 #Réponse à la question 18, culture
-answer18 = Answer.create!(user: ophelie , option: option35 , reponse: 'en esperant avoir ete utile', score: 940)
+answer18 = Answer.create!(user: ophelie , option: option35 , reponse: 'en esperant avoir été utile', score: 140)
 #Réponse à la question 19, travail
-answer19 = Answer.create!(user: adam , option: option37 , reponse: "j'espere que ça marche pour toi", score: 660)
-#Réponse à la question 20, achats
+answer19 = Answer.create!(user: adam , option: option37 , reponse: "j\'espere que ça marche pour toi", score: 660)
+#Réponse à la question 20, achats\
 #answer20 = Answer.create!(user: manon , option: option39 , reponse: 'Mon frêre possède les deux et préfère la ps4', score: 675)
 #Réponse à la question 21, achats
-answer21 = Answer.create!(user: gabriel , option: option42, reponse: 'Un peu cher à l achat mais je n ai jamais eu froid depuis que je l ai', score: 385)
+answer21 = Answer.create!(user: gabriel , option: option42, reponse: 'Un peu cher à l\'achat mais je n\'ai jamais eu froid depuis que je l\'ai', score: 385)
 #Réponse à la question 22, food
 answer22 = Answer.create!(user: ines , option: option43, reponse:'', score:410)
 #Réponse à la question 23, achats
@@ -471,26 +471,26 @@ answer25 = Answer.create!(user: leo , option: option50, reponse: 'bureau moins c
 #Réponse à la question 26, travail
 answer26 = Answer.create!(user: louise , option: option52, reponse: 'que des bons souvenirs', score:740)
 #Réponse à la question 27, travail
-answer27 = Answer.create!(user: elina, option: option53, reponse: 'depuis que j en fais je n ai plus de stress et je dors mieux!)', score:680)
+answer27 = Answer.create!(user: elina, option: option53, reponse: 'depuis que j\'en fais je n\'ai plus de stress et je dors mieux!)', score:680)
 
 #Les questions 28 à 37 non pas de réponses car statut 0 (en attente de réponse)
 
 #Réponse à la question 38, culture
-answer38 = Answer.create!(user: manon , option: option75 , reponse: 'en esperant avoir ete utile', score: 0)
+answer38 = Answer.create!(user: manon , option: option75 , reponse: 'en espérant avoir été utile', score: 0)
 #Répnse à la question 39, look
 answer39 = Answer.create!(user: adam , option: option77 , reponse: '', score: 400)
 #Réponse à la question 40, culture
-answer40 = Answer.create!(user: jules , option: option79 , reponse: 'au revoir et a bientot', score: 740)
+answer40 = Answer.create!(user: jules , option: option79 , reponse: 'au revoir et a bientot', score: 240)
 #Réponse à la question 41, achats
 answer41 = Answer.create!(user: louis , option: option81 ,reponse: 'bonne chance', score: 630)
 #Réponse à la question 42, love
-answer42 = Answer.create!(user: ophelie , option: option83 , reponse: 'en esperant avoir ete utile', score: 890)
+answer42 = Answer.create!(user: ophelie , option: option83 , reponse: 'en espérant avoir été utile', score: 890)
 #Réponse à la question 43, travail
 answer43 = Answer.create!(user: adam , option: option85 , reponse: "j'espere que ça marche pour toi", score: 870)
 #Réponse à la question 44, look
 answer44 = Answer.create!(user: manon , option: option87 , reponse: 'Mon frêre possède les deux et préfère la ps4', score: 470)
 #Réponse à la question 45, look
-answer45 = Answer.create!(user: gabriel , option: option89, reponse: 'Un peu cher à l achat mais je n ai jamais eu froid depuis que je l ai', score: 820)
+answer45 = Answer.create!(user: gabriel , option: option89, reponse: 'Un peu cher à l\'achat mais je n\'ai jamais eu froid depuis que je l\'ai', score: 820)
 #Réponse à la question 46, culture
 answer46 = Answer.create!(user: gabriel , option: option89, reponse: 'Cette série est vraiment à voir', score: 560)
 #Réponse à la question 47, look
@@ -502,27 +502,27 @@ answer49 = Answer.create!(user: leo , option: option95, reponse: 'bureau moins c
 #Réponse à la question 50, culture
 answer50 = Answer.create!(user: louise , option: option97, reponse: 'que des bons souvenirs', score:430)
 #Réponse à la question 51, food
-answer51 = Answer.create!(user: elina, option: option99, reponse: 'depuis que j en fais je n ai plus de stress et je dors mieux!)', score:275)
+answer51 = Answer.create!(user: elina, option: option99, reponse: 'depuis que j\'en fais je n\'ai plus de stress et je dors mieux!)', score:275)
 #Réponse à la question 52, food
 #Réponse à la question 53, food
 #Réponse à la question 54, food
 #Réponse à la question 55, culture
 #Réponse à la question 56, travail
 #Réponse à la question 57, achats
-answer57 = Answer.create!(user: manon, option: option113, reponse:'J espere avoir ete utile', score:675)
+answer57 = Answer.create!(user: manon, option: option113, reponse:'J\'espere avoir été utile', score:675)
 
 ###
 #Réponse à la question 58, mode démocratie, demo-day,
 #3 votes pour le wagon, 3 votes pour Google, 4 votes pour le tour d'Europe
-answer58 = Answer.create!(user: lucas, option: option115, reponse:'Un ami à moi ne m en a dis que du bien', score:675)
-answer58 = Answer.create!(user: arthur, option: option116, reponse:'Si tu as l occasion, fonce! C est Goggle!', score:680)
+answer58 = Answer.create!(user: lucas, option: option115, reponse:'Un ami à moi ne m\'en a dis que du bien', score:675)
+answer58 = Answer.create!(user: arthur, option: option116, reponse:'Si tu as l\'occasion, fonce! C est Goggle!', score:680)
 answer58 = Answer.create!(user: lou, option: option115, reponse:'Super ambiance, super profs, super niveau', score:685)
-answer58 = Answer.create!(user: aaron, option: option117, reponse:'Je l ai fait avec mes parents, à faire sans hésiter', score:700)
-answer58 = Answer.create!(user: ahmed, option: option117, reponse:'Tour d Europe vu que j ai deja fait les 2 autres', score:705)
+answer58 = Answer.create!(user: aaron, option: option117, reponse:'Je l\'ai fait avec mes parents, à faire sans hésiter', score:700)
+answer58 = Answer.create!(user: ahmed, option: option117, reponse:'Tour d Europe vu que j\'ai deja fait les 2 autres', score:705)
 answer58 = Answer.create!(user: louise, option: option116, reponse:'Google sans hésiter, pense a ton cv', score:575)
 answer58 = Answer.create!(user: eric, option: option116, reponse:'Google pour une experience supplémentaire', score:475)
 answer58 = Answer.create!(user: leo, option: option115, reponse:'Super aventure', score:375)
-answer58 = Answer.create!(user: ophelie, option: option117, reponse:'Le tour d Europe à vélo, aventure inoubliable', score:275)
+answer58 = Answer.create!(user: ophelie, option: option117, reponse:'Le tour d\'Europe à vélo, aventure inoubliable', score:275)
 answer58 = Answer.create!(user: elina, option: option117, reponse:'Je préfère le sport', score:175)
 
 p Answer.all
