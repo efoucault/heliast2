@@ -2,9 +2,9 @@
 
 <h5 style="color: white; text-align: center; padding-top: 1em;">Mes notifications</h5>
 
-<div class="list-notifs">
+<div class="list-notifs" data-behavior="notifications" data-notifications='<%= render template: "notifications/index", formats: [:json] %>'>
 <!-- iterer de ici jusqu'a Y -->
-    <div class="line-notif row.no-gutters" data-behavior="notifications" data-notifications='<%= render template: "notifications/index", formats: [:json] %>'>
+    <div class="line-notif row.no-gutters">
 
       <div class="col-xs-12.no-gutters" style="text-align: left;" data-behavior="notification-items"></div>
 
