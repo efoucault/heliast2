@@ -255,6 +255,8 @@ const options = document.querySelectorAll(".option");
       })
     const check = document.querySelector(`.option${optionid} .fa-check`);
     check.classList.remove("hidden");
+    const answerBloc = document.querySelector(".answer-creation");
+    answerBloc.classList.remove("hidden");
   })
 });
 
@@ -273,7 +275,6 @@ if (optionThree !== null){
  }
 
 // click on add option when clicking on the plis icon
-
 const addIcon = document.querySelector(".plus-icon");
 if (addIcon !== null){
     addIcon.addEventListener("click", (event) => {
@@ -314,7 +315,6 @@ const deleteIcons = document.querySelectorAll(".fa-trash");
 });
 
 // hide-option
-
 const deleteButtons = document.querySelectorAll(".remove");
 deleteButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
@@ -330,6 +330,7 @@ if (swalButton) { // protect other pages
 
   swalButton.addEventListener('click', () => {
   const nbPoints = document.querySelector('#nb-points').dataset.points;
+  if (valide != true) {
     swal({
       title: "Bravo !",
       text: `Tu viens de gagner ${nbPoints} points !`,
@@ -338,5 +339,6 @@ if (swalButton) { // protect other pages
     .then((value) => {
       window.location.href = '/questions';
     });
+  }
   });
 }
