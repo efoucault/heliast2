@@ -2,7 +2,9 @@ json.array! @notifications do |notification|
     json.id notification.id
     # json.recipient notification.recipient
     json.unread !notification.read_at?
+    # on sépare les différents types de notification en fonction de leur notification.action par exemple :
     if notification.action == "a répondu"
+      # on créé une partial différente par type de notification
       json.template render partial: "notifications/answers/answer", locals: {notification: notification}, formats: [:html]
     else
       json.template render partial: "notifications/questions/feedback", locals: {notification: notification}, formats: [:html]
