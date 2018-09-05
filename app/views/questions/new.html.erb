@@ -79,31 +79,36 @@
                 Suivant
               </div>
             </div>
+            <div class="more-bottom"></div>
+
           </div>
 
           <br>
 
           <div class="part-three hidden">
-            <p class="padding">Choisis le mode de résolution*</p>
+            <p class="padding" style="margin-top: -2em;">Choisis le mode de résolution*</p>
 
 
 
+                  <!-- <div id='mode-un'> -->
                   <div class="mode text-center mode-listener" data-mode="Mode héliaste">
-                    <div class="circle-mode"><%= image_tag "mode-23.png", class: 'mode-img' %></div>
                     <div class="info-mode">
+                      <%= image_tag("uni-heliast.png", size:"50x50")%>
                       <h5>Un Héliaste </h5>
                       <p>Un seul membre d'Heliast prendra la décision pour toi !</p>
                     </div>
                   </div>
+                  <!-- </div> -->
 
-
+                  <!-- <div id="mode-deux"> -->
                   <div class="mode text-center mode-listener" data-mode="Mode Démocratie">
-                    <div class="circle-mode"><%= image_tag "mode-24.png", class: 'mode-img' %></div>
                       <div class="info-mode">
+                        <%= image_tag("heliast-multi.png", size:"80x42")%>
                     <h5>Multi Héliastes </h5>
                     <p>Tous les membres pourront voter pour la décision à prendre.</p>
                     </div>
                   </div>
+                  <!-- </div> -->
 
                 <div class="range-attente">
                   <p class="ma-reponse hidden" style="text-align: center;">Dans combien d'heure(s) veux-tu la décision ?</p>
@@ -122,6 +127,7 @@
               <%= f.button :button, "J'envoie".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Envoi..."}, class: "btn btn-add" %>
             </div>
           <% end %>
+          <div class="more-bottom"></div>
 
       </div>
 
