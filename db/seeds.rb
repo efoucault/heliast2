@@ -148,9 +148,9 @@ travail.save
 
 p Category.all
 puts "questions creation"
-question1 = Question.create!(user: manon , description: 'La soirée cocktail ou un ciné tranquille? ', category: culture, type_resolution: "Mode héliaste", status:2, deadline: DateTime.now )
+question3 = Question.create!(user: manon , description: 'La soirée cocktail ou un ciné tranquille? ', category: culture, type_resolution: "Mode héliaste", status:2, deadline: DateTime.now )
 question2 = Question.create!(user: manon , description: 'Maillot une pièce ou deux pièces?', category: look, type_resolution: "Mode héliaste", status: 2, deadline: DateTime.now )
-question3 = Question.create!(user: manon , description: 'Quel musée pour ce mercredi aprem?', category: culture, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
+question1 = Question.create!(user: manon , description: 'Quel musée pour ce mercredi aprem?', category: culture, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
 question4 = Question.create!(user: manon , description: 'J\'hésite entre un Mac et un PC', category: achats, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
 question5 = Question.create!(user: manon , description: 'Je lui SMS ou je l\'appelle pour l\'inviter ', category: love, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
 question6 = Question.create!(user: manon , description: 'J\'hésite entre la spé Maths ou Eco', category: travail, type_resolution: "Mode héliaste", status:2, deadline: DateTime.now)
@@ -196,7 +196,7 @@ question45 = Question.create!(user: leo , description: 'Ce jean ou ce jean ?', c
 question46 = Question.create!(user: arthur , description: 'Quelle nouvelle série commencer?', category: culture, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
 question47 = Question.create!(user: louise , description: 'Chemise blanche ou rose', category: look, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
 question48 = Question.create!(user: lea , description: 'Où déjeuner', category: food, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
-question49 = Question.create!(user: manon , description: 'Pour un mariage: cravate ou noeud pap?', category: look, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
+question49 = Question.create!(user: louise , description: 'Pour un mariage: cravate ou noeud pap?', category: look, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
 question50 = Question.create!(user: eva , description: 'Je commence les Sopranos ou Peaky Blinders?', category: culture, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
 question51 = Question.create!(user: ines , description: ' Confiture ou Nutella ?', category: food, type_resolution: "Mode héliaste", status: 1, deadline: DateTime.now )
 question52 = Question.create!(user: lou , description: 'Oreo ou Kinder ?', category: food, type_resolution: "Mode héliaste", status: 1, deadline: DateTime.now )
@@ -206,7 +206,7 @@ question55 = Question.create!(user: elina , description: 'Lire ou se mettre un f
 question56 = Question.create!(user: aaron , description: 'Dormir un peu plus ou avoir plus de temps pour se préparer?', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
 question57 = Question.create!(user: adam , description: 'PS4 Pro ou Xbox one X?', category: achats, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
 #Question 58 mode démocratie pour le démo-day
-question58 = Question.create!(user: ines, description: 'Que faire à la fin de l\'année?', category: culture, type_resolution: "Mode Démocratie", status: 0, deadline: DateTime.now)
+question58 = Question.create!(user: manon, description: 'Que faire à la fin de l\'année?', category: travail, type_resolution: "Mode Démocratie", status: 0, deadline: DateTime.now)
 
 #Question 59 réponse par manon lors du demo-day à la question cultur d'adam
 question59 = Question.create!(user: adam , description: 'Quel film pour mon date ce soir?', category: culture, type_resolution: "Mode héliaste", status: 0, deadline: DateTime.now)
@@ -218,14 +218,14 @@ puts 'all options'
 
 #8 questions posées par Manon
 #Question 1, culture
-option1 = Option.create!(titre: "Soirée cocktail", question: question1)
-option2 = Option.create!(titre: "Soirée ciné", question: question1)
+option5 = Option.create!(titre: "Soirée cocktail", question: question1)
+option6 = Option.create!(titre: "Soirée ciné", question: question1)
 #Question 2, look
 option3 = Option.create!(titre: "Maillot de bain une pièce", question: question2)
 option4 = Option.create!(titre: "Maillot de bain deux pièces", question: question2)
 #Question 3, culture
-option5 = Option.create!(titre: "Palais de Tokyo", question: question3)
-option6 = Option.create!(titre: "Musée des arts déco", question: question3)
+option1 = Option.create!(titre: "Palais de Tokyo", question: question3)
+option2 = Option.create!(titre: "Musée des arts déco", question: question3)
 #Question 4, achats
 option7 = Option.create!(titre: "MacBookPro", question: question4)
 option8 = Option.create!(titre: "Acer", question: question4)
@@ -422,11 +422,11 @@ option120= Option.create!(titre: "Mamma Mia", question:question59)
 p Option.all
 puts 'answer all'
 #Répone à la question 1, culture
-answer1 = Answer.create!(user: ines , option: option2,reponse: 'il y a tellement de bons films en ce moment!', score: 1010)
+answer3 = Answer.create!(user: ines , option: option2,reponse: 'il y a tellement de bons films en ce moment!', score: 1010)
 #Réponse à la question 2, look
 answer2 = Answer.create!(user: ines , option: option4 , reponse: 'les deux te vont trop bien', score: 750)
 #Réponse à la question 3, culture
-answer3 = Answer.create!(user: adam , option: option5 , reponse: 'un réponse de plus pour moi', score: 810)
+answer1 = Answer.create!(user: adam , option: option5 , reponse: 'un réponse de plus pour moi', score: 810)
 #Réponse à la question 4, achats
 answer4 = Answer.create!(user: ines , option: option7 , reponse: 'en esperant t\'aider, bon courage!', score: 750)
 #Réponse à la question 5, love
