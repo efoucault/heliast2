@@ -110,6 +110,7 @@ if (buttonProgressThree !== null) {
   divThree.classList.toggle("hidden");
   buttonProgressTwo.classList.add("turquoise");
   buttonProgressThree.classList.add("turquoise");
+  barProgressTwo.classList.add("turquoise");
   barProgressThree.classList.add("turquoise");
 
     });
@@ -170,13 +171,20 @@ if (allTypes !== null) {
       const attente = document.querySelector(".attente");
       const titreAttente = document.querySelector(".ma-reponse");
       console.log(mode);
+      // const modeUn = getElementById("mode-un");
+      // const modeDeux = getElementById("mode-deux");
       if (mode === "Mode Démocratie") {
+        // modeUn.classList.remove("mode-turquoise");
+        // modeDeux.classList.add("mode-turquoise");
         attente.classList.remove("hidden");
         titreAttente.classList.remove("hidden");
+
       }
       else {
         attente.classList.add("hidden");
         titreAttente.classList.add("hidden");
+        // modeDeux.classList.remove("mode-turquoise");
+        // modeUn.classList.add("mode-turquoise");
       }
     });
   });
