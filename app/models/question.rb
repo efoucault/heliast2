@@ -7,7 +7,7 @@ class Question < ApplicationRecord
   # has_many :categories, through: :question_categories
   accepts_nested_attributes_for :options, allow_destroy: true
   STATUSES = ["Mode héliaste", "Mode Démocratie"]
-  validates :type_resolution, inclusion: {in: STATUSES}
+  validates :type_resolution, inclusion: {in: STATUSES}, :presence => {message: "Merci de renseigner un type de résolution"}
   enum status: [:pending, :answered, :closed]
 
   # create the association to get all the users in the thread.
