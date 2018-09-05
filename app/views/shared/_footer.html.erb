@@ -13,7 +13,15 @@
           </li>
           <li class="picto-social"><%= link_to "", root_path, :class => current_class?(root_path) %></li>
           <li class="picto-trophe"><%= link_to "", classement_path, :class => current_class?(classement_path)  %></li>
-          <li class="picto-alarme"><%= link_to "", historique_path, :class => current_class?(historique_path) %><span class="nbre-notif" data-behavior="unread-count"></span>
+          <li class="picto-alarme"><%= link_to "", historique_path, :class => current_class?(historique_path) %>
+
+           <!-- TODO? if unread-count == 0
+            alors afficher :
+            <span class="classe vierge"></span>
+            else
+            <span class="nbre-notif" data-behavior="unread-count"></span> -->
+
+            <span class="nbre-notif" data-behavior="unread-count"></span>
           </li>
           <li>
               <!-- Si l'user a une photo -->

@@ -1,24 +1,21 @@
 
 <!-- Bloc a activer si on veut afficher la liste de notifs dans la page historique  -->
 
-<!-- <div class="notif-back <%= "unread" if !notification.read_at? %>">
-  <%= link_to question_path(notification.notifiable) do %>
-    Découvre ce que <%= notification.actor.pseudo %>
-    <%= notification.action %>
-  <% end %>
-</div> -->
 
 <div class="notif-back <%= "unread" if !notification.read_at? %>">
   <div class="line-notif row.no-gutters">
-        <div class="col-xs-2.no-gutters" style="margin-left: 0; text-align: left;">
+
+        <!-- colone avatar -->
+        <div class="col-xs-3.no-gutters" style="margin-left: 0; text-align: left; width: 4em;">
           <% if notification.actor.photo.present? %>
               <%= cl_image_tag notification.actor.photo, class: 'avatar-notif-bordered' %>
           <% else %>
-            <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: 'avatar-notif-bordered') %>
+              <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: 'avatar-notif-bordered') %>
           <%end%>
         </div>
 
-        <div class="col-xs-8.no-gutters" style="text-align: left;">
+        <!-- colone message notification -->
+        <div class="col-xs-6.no-gutters" style="text-align: left; width: 15em;">
           <%= link_to question_path(notification.notifiable) do %>
             Découvre ce que <%= notification.actor.pseudo %>
                 <%= notification.action %>
@@ -26,7 +23,8 @@
           <p style="text-align: left!important;"><span class="time">Il y'a 1h</span></p>
         </div>
 
-        <div class="col-xs-1.no-gutters" style="float: right; text-align: center;">
+        <!-- colone icone show more -->
+        <div class="col-xs-3.no-gutters" style="float: right; text-align: center;">
             <i class="fa fa-ellipsis-h" style="color: #9a888e;"></i>
         </div>
   </div>
@@ -42,4 +40,11 @@
 
 </li> -->
 
-<!-- link_to question_path(notifiable) -->
+<!-- ou -->
+
+<!-- <div class="notif-back <%= "unread" if !notification.read_at? %>">
+  <%= link_to question_path(notification.notifiable) do %>
+    Découvre ce que <%= notification.actor.pseudo %>
+    <%= notification.action %>
+  <% end %>
+</div> -->
