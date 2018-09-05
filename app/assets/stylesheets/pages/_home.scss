@@ -6,3 +6,7 @@ body {
   min-height: 100vh;
 }
 
+.div-totale {
+  height: calc(100vh - 70px);
+  overflow: scroll;
+}

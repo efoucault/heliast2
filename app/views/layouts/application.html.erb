@@ -33,12 +33,16 @@
 
   </head>
   <body>
+    <div id="content">
+    <div class="div-totale">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
+</div>
   </body>
 </html>
