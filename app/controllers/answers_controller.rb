@@ -23,7 +23,7 @@ class AnswersController < ApplicationController
       # a chaque fois qu'une réponse est créée :
       # on crée une nouvelle instance de Notification où recipient (recipient_id) est la personne qui recoit la notif
       # et actor est la personne (actor_id) qui enclenche l'action de la notif mais ne reçcoit pas de notif pour autant
-      Notification.create(recipient: @question.user, actor: current_user, action: "a répondu", notifiable: @answer)
+        Notification.create(recipient: @question.user, actor: current_user, action: "a répondu", notifiable: @answer)
       end
 
       # redirect_to questions_path

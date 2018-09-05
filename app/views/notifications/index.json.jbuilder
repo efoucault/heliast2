@@ -2,7 +2,11 @@ json.array! @notifications do |notification|
     json.id notification.id
     # json.recipient notification.recipient
     json.unread !notification.read_at?
-    json.template render partial: "notifications/answers/answer", locals: {notification: notification}, formats: [:html]
+    if notification.action == "a répondu"
+      json.template render partial: "notifications/answers/answer", locals: {notification: notification}, formats: [:html]
+    else
+      json.template render partial: "notifications/questions/feedback", locals: {notification: notification}, formats: [:html]
+    end
     # json.actor notification.actor.pseudo
     # json.action notification.action
     # json.notifiable do #notification.notifiable

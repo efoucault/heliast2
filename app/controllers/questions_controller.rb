@@ -93,6 +93,16 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.update(question_params)
     redirect_to question_path(@question)
+
+    if @question.satisfied_by_recommended_option != nil
+      @question.answers.each do |answer|
+      # a chaque fois qu'un feedback de l'indécis est envoyé, on envoie à tous les heliastes qui ont répondu
+      # on crée une nouvelle instance de Notification où recipient (recipient_id) est l'heliaste qui a répondu qui recoit la notif
+      # et actor est la personne (actor_id) qui enclenche l'action de la notif mais ne reçcoit pas de notif pour autant
+        Notification.create(recipient: answer.user, actor: current_user, action: "a pensé de ta décision", notifiable: @question)
+      end
+    end
+
   end
 
   def destroy
@@ -100,6 +110,11 @@ class QuestionsController < ApplicationController
     @question.destroy!
     redirect_to questions_path
   end
+
+  # def feedback
+  #   @question = Question.satisfied_by_recommended_option
+  #   Notification.create
+  # end
 
   # def naviguation
   #   @navigation = "add"
