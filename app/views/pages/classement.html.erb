@@ -11,7 +11,16 @@
 <div class="col-sm-4 col-md-4 col-md-offset-4">
 <div class="title">
   <% if @category.present? %>
-  <h5 style="color: white; text-align: center; padding-top: 1em;">Les meilleurs Héliastes<br/>de la catégorie <%= @category.name %></h5>
+  <h5 style="color: white; text-align: center; padding-top: 1em;">Les meilleurs Héliastes<br/>de la catégorie
+    <% if @category != nil  %>
+
+    <span class='btn btn-add btn-catego'>
+      <!-- Astuces pour avoir du html avec link_to ;) @Ahmed -->
+    <%= link_to url: classement_path do %>
+    <%=@category.name%> <sup style="opacity: 0.8;">&nbsp;x</sup>
+    <% end %></span>
+    <!--  -->
+    <% end %></h5>
   <% else %>
     <h5 style="color: white; text-align: center; padding-top: 1em;">Les meilleurs Héliastes<br/>toutes catégories confondues</h5>
   <% end %>
@@ -44,8 +53,6 @@
   <hr style="width: 0%;">
 </div>
   <div>
-    <% if @category != nil  %>
-      <%= link_to "Classement global", classement_path, class: "btn btn-primary" %>
-    <% end %>
+
   </div>
 </div>
