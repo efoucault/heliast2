@@ -1,7 +1,7 @@
 <div class="top-dashboard">
   <div class="settings">
       <div class="dropdown">
-              <i class="fa fa-cog dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+              <i class="fa fa-cog dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="opacity: 0.8;"></i>
               <ul class="dropdown-menu dropdown-menu-right dropdown-menu footer-wagon-dropdown-menu" aria-labelledby="dLabel">
                 <li><a href="#">A propos de Heliast</a></li>
                 <li><a href="#">Aide</a></li>
@@ -27,7 +27,9 @@
       <h4>Hey <%= current_user.pseudo %>, indécis(e) ?</h4>
       <p>Tu as <%= @user.questions.size%> indécisions<br/>
       dont <strong style='color: black;'><%= @user.questions.pending.size%></strong> en attente.</p>
-      <h4 style='color:black;'> Score : <%=  @score %> pts</h4>
+      <div class="tip-score"'>
+        <p><%=  @score %> pts</p>
+      </div>
     </div>
   </div>
   <div class="banner-dashboard">
@@ -59,13 +61,13 @@
         </p>
         <div class="questions">
           <%= render "questions/my_questions" %>
-          <p class="log-out"><%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Se déconnecter") %>
-                <% end %></p>
         </div>
       </div>
     </div>
 
   </div>
-
+    <div class="fin-show">
+    <%= image_tag("indecise.png", size:"50x50")%>
+  </div>
+<div class="more-bottom"></div>
 </div>

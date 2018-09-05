@@ -5,8 +5,7 @@
 .banner-dashboard {
   color: white;
   text-align: center;
-  height: 30vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  height: 25vh;
   background-size: cover !important;
   text-align: left;
   vertical-align: bottom;
@@ -20,7 +19,7 @@
   align-items: center;
   height: 21vh;
   text-align: center;
-  padding-left: 2em;
+  padding-left: 1em;
 
 }
 .info-user {
@@ -274,4 +273,20 @@
   padding: 9px 12px;
   text-align: right;
   font-size: 20px;
+}
+
+.tip-score {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 6em;
+  padding: 0.2em;
+  border-radius: 2em;
+  p {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+.fin-show {
+  text-align: center;
 }
