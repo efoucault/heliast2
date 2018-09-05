@@ -1,31 +1,91 @@
-<div class="wrapper-login">
+<div class="banner" style="background-image: linear-gradient(-180deg, rgba(227, 66, 104,0.5) 0%, rgba(227, 66, 104,0.5) 90%), url('https://www.aht.li/3278529/banner.jpg');">
+  <div class="banner-content" style="margin-top:7em;">
+    <p>Ne reste pas coincé<br/>entre plusieurs choix.
+  </p>
+  <a href="#sign-in" class="btn btn-add" style="margin-top: 0;">Délègue tes décisions !</a>
+
+  </div>
+</div>
+<div class="bg-light">
   <div class="container">
+    <h5 class="text-center">Heliast, premier réseau social de l'indécision</h5>
+    <br/>
+    <div class="feature">
+      <div class="img-feature">
+        <%= image_tag("indecise.png", size:"80x80")%>
+      </div>
+      <div class="info-feature">
+        <h5>Poste tes indécisions</h5>
+        <p>À tout moment de la journée, ajoute tes indécisions sur l'app. Un membre d'Heliast prendra la décision pour toi. </p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="img-feature">
+       <%= image_tag("heliast.png", size:"80x80")%>
+      </div>
+      <div class="info-feature">
+        <h5>Décide pour les autres</h5>
+        <p>Toi aussi réponds aux indécisions d'inconnus. Fais le bon choix pour eux et obtiens plus de points !</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="img-feature">
+       <%= image_tag("heliast_ultime.png", size:"80x80")%>
+      </div>
+      <div class="info-feature">
+        <h5>Deviens l'Héliaste ultime</h5>
+        <p>Réponds rapidement aux indécisions pour augmenter ton score ! Deviens Heliast n°1 en Look, Food et autres...  </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="wrapper-login" id="sign-in">
+
     <div class="row">
       <div class="col-sm-12 col-md-8 col-md-offset-2">
+        <h5 style="margin-top: 3em; color:white; text-align: center;">Prendre une décision<br/>n'a jamais été aussi fun !</h5>
+
         <div class="sign">
-          <h2>Log in</h2>
+          <h4 class="text-center">Connecte-toi !</h4>
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="input-field col s12">
               <%= f.input :email,
                           required: false,
                           autofocus: true,
-                          input_html: { autocomplete: "email" } %>
+                          input_html: { autocomplete: "E-mail" } %>
               <%= f.input :password,
                           required: false,
-                          input_html: { autocomplete: "current-password" } %>
-              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                          input_html: { autocomplete: "Mot de passe" } %>
+
+              <!-- mettre as: :boolean opour le faire apparaitre -->
+              <%= f.input :remember_me, as: :hidden if devise_mapping.rememberable? %>
             </div>
 
-            <div class="form-actions">
-              <%= f.button :button, "Se connecter".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Connexion..."}, class: "col s12 btn btn-large waves-effect waves-light btn" %>
+
+
+            <div class="form-actions text-center" >
+              <%= f.button :button, "Go !".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Connexion..."}, class: "btn btn-large waves-effect waves-light btn btn-add no-margin-top" %>
             </div>
+
+            <div class='no-margin-top' style="padding-top: 1em; text-align:center; color: #24d6d6;">
+              <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                <%= link_to "Mot de passe oublié?", new_password_path(resource_name), class: "navbar-wagon-item navbar-wagon-link" %><br />
+              <% end -%>
+            </div>
+
           <% end %>
-          <br><br>
-          <%= render "devise/shared/links" %>
         </div>
       </div>
     </div>
-  </div>
+
+</div>
+<div class="what-they-think">
+  <%= render "devise/sessions/quotes" %>
 </div>
 
 

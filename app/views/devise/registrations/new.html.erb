@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-12 col-md-8 col-md-offset-2">
         <div class="sign">
-          <h2>Sign up</h2>
+          <h4 class="text-center">Inscris-toi !</h4>
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
 
@@ -23,13 +23,11 @@
             </div>
 
             <div class="form-actions">
-              <%= f.button :button, "S'enregistrer".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Enregistrement..."}, class: "col s12 btn btn-large waves-effect waves-light btn" %>
+              <%= f.button :button, "Je m'inscris !".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Enregistrement..."}, class: "btn btn-large waves-effect waves-light btn btn-add no-margin-top" %>
 
             </div>
 
           <% end %>
-
-          <%= render "devise/shared/links" %>
         </div>
       </div>
     </div>
