@@ -330,7 +330,6 @@ if (swalButton) { // protect other pages
 
   swalButton.addEventListener('click', () => {
   const nbPoints = document.querySelector('#nb-points').dataset.points;
-  if (valide != true) {
     swal({
       title: "Bravo !",
       text: `Tu viens de gagner ${nbPoints} points !`,
@@ -339,6 +338,5 @@ if (swalButton) { // protect other pages
     .then((value) => {
       window.location.href = '/questions';
     });
-  }
   });
 }
