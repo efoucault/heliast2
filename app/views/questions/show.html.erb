@@ -27,7 +27,7 @@
           <p style="color: gray; margin-bottom: 2em; ">Choisis parmi ces options :</p>
         <% end %>
       <%elsif @question.answered?%>
-        <p style="color: gray; margin-bottom: 2em; "> Un héliaste a fait ce choix pour <%= @question.user.pseudo%> : </p>
+        <p style="color: gray; margin-bottom: 2em; padding-left: 1em; padding-right: 1em; "> Un héliaste a fait ce choix pour <%= @question.user.pseudo%> : </p>
       <%end%>
 
     </div>
@@ -151,10 +151,10 @@
         <% if @question.satisfied_by_recommended_option != nil %>
           <h6 style="color:#24d6d6; padding-top: 1em;">Ce que <%=@question.user.pseudo %> en a pensé :</h6>
           <% if @question.satisfied_by_recommended_option == true %>
-            <i class="fa fa-thumbs-up"></i>
+            <i style="padding-left: 0em;"class="fa fa-thumbs-up"></i>
           <% end %>
           <% if @question.satisfied_by_recommended_option == false %>
-            <i class="fa fa-thumbs-down"></i>
+            <i style="padding-left: 0em;"class="fa fa-thumbs-down"></i>
           <% end %>
         <% end %>
       </div>
