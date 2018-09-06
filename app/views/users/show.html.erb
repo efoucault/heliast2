@@ -28,6 +28,14 @@
             <%end%>
         <% else %>
           <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "avatar-bordered") %>
+          <!-- User online -->
+            <% if @user.current_sign_in_at? %>
+              <!-- pastille verte -->
+              <div class="online"></div>
+            <% else %>
+              <!-- pastille rouge -->
+              <div class="offline"></div>
+            <%end%>
         <%end%>
       <%end%>
     </div>
