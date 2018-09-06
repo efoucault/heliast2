@@ -33,7 +33,7 @@
                <% end %>
              <% else %>
               <!-- image par défaut si l'user n'a pas de photo -->
-             <%= link_to user_path(current_user), class: "avatar-footer" do %>
+             <%= link_to user_path(current_user) do %>
                <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "avatar-footer") %>
               <% end %>
             <% end %>
