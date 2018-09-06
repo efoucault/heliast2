@@ -514,11 +514,11 @@ answer57 = Answer.create!(user: manon, option: option113, reponse:'J\'espere avo
 ###
 #Réponse à la question 58, mode démocratie, demo-day,
 #3 votes pour le wagon, 3 votes pour Google, 4 votes pour le tour d'Europe
-answer58 = Answer.create!(user: lucas, option: option115, reponse:'Un ami à moi ne m\'en a dis que du bien', score:675)
-answer58 = Answer.create!(user: arthur, option: option116, reponse:'Si tu as l\'occasion, fonce! C est Goggle!', score:680)
+answer58 = Answer.create!(user: lucas, option: option115, reponse:'Fonce, les retours sont très positifs', score:675)
+answer58 = Answer.create!(user: arthur, option: option116, reponse:'Si tu as l\'occasion, fonce chez Google !', score:680)
 answer58 = Answer.create!(user: lou, option: option115, reponse:'Super ambiance, super profs, super niveau', score:685)
 answer58 = Answer.create!(user: aaron, option: option117, reponse:'Je l\'ai fait avec mes parents, à faire sans hésiter', score:700)
-answer58 = Answer.create!(user: ahmed, option: option117, reponse:'Tour d Europe vu que j\'ai deja fait les 2 autres', score:705)
+answer58 = Answer.create!(user: ahmed, option: option117, reponse:'Expérience extraordinaire garantie', score:705)
 answer58 = Answer.create!(user: louise, option: option116, reponse:'Google sans hésiter, pense a ton cv', score:575)
 answer58 = Answer.create!(user: eric, option: option116, reponse:'Google pour une experience supplémentaire', score:475)
 answer58 = Answer.create!(user: leo, option: option115, reponse:'Super aventure', score:375)
