@@ -25,6 +25,7 @@
 }
 
 .notif-back {
+  position: relative;
   background-color: white;
   padding: 0.2em;
   // border-radius: 1em;
@@ -47,6 +48,8 @@
 }
 
 .notif-link-div {
+  // background-color: black;
+  display:block;
   position: absolute;
   top: 0px;
   bottom: 0px;
