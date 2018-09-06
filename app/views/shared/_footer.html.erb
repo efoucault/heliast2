@@ -21,7 +21,9 @@
             else
             <span class="nbre-notif" data-behavior="unread-count"></span> -->
 
-            <div data-behavior="notifications" data-notifications='<%= render template: "notifications/index", formats: [:json] %>'><span class="nbre-notif" data-behavior="unread-count"></span></div>
+            <div data-behavior="notifications" data-notifications='<%= render template: "notifications/index", formats: [:json] %>'>
+              <span class="nbre-notif" data-behavior="unread-count"></span>
+            </div>
           </li>
           <li>
               <!-- Si l'user a une photo -->

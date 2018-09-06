@@ -282,6 +282,15 @@ if (optionThree !== null){
   });
  }
 
+ // hide notif if 0
+// const numberNotif = document.querySelector(".nbre-notif")
+
+// if (numberNotif !== null){
+//   document.addEventListener("change", (event) => {
+//     numberNotif.classList.add("hidden");
+//   });
+//  }
+
 // click on add option when clicking on the plis icon
 const addIcon = document.querySelector(".plus-icon");
 if (addIcon !== null){
