@@ -7,7 +7,7 @@
 
 .top-card {
   border-radius: 0.5em 0.5em 0em 0em;
-  padding: 1em;
+  padding: 0.5em;
   color: white;
   margin-bottom: 1em;
   font-size: 0.8em;
@@ -54,7 +54,7 @@
 
 .option-title {
   position: absolute;
-  bottom: 0;
+  top: 0;
   background-color: rgba(150, 150, 150, 0.6);
   width: 100%;
   color: white;
@@ -65,7 +65,7 @@
 
 .circle {
   position: absolute;
-  bottom: 0;
+  top: 0;
   margin: 0.6em;
   height: 2.2em;
   width: 2.2em;
@@ -76,4 +76,42 @@
     font-size: 1.2em;
     text-align: center;
   }
+}
+
+.flip-btn {
+  position: relative;
+}
+.flip {
+  text-align: center;
+  border-radius: 3em;
+  color: white;
+  height: 6em;
+  font-size: 0.5em;
+  top: 3em;
+  position: absolute;
+  margin-right: 0;
+  right: 1.5em;
+  align-items: center;
+  background-color: #e5e5e5;
+  transition: width .1s;
+  padding-bottom: 0;
+  padding-left: 0.6em;
+  padding-top: 0.3em;
+  padding-right: 0.6em;
+  width: 3.4em !important;
+}
+
+.div-btnrep {
+  margin-bottom: -2em;
+  margin-top: -0.4em;
+}
+
+.add-turquoise {
+  color: #24d6d6;
+}
+
+.flip:hover {
+  width: 20%;
+  background-color: #e5e5e5;
+
 }
