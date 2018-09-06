@@ -354,10 +354,14 @@ const flip = document.querySelector('.flip');
 if (flip) { // protect other pages
 
   flip.addEventListener('click', () => {
+  const btnRep = document.querySelector('.div-btnrep');
+  const btnOpt = document.querySelector('.div-btnopt');
   const optionsShow = document.querySelector('.options-show');
   const answerShow = document.querySelector('.answer-show');
   optionsShow.classList.toggle("hidden");
   answerShow.classList.toggle("hidden");
+  btnRep.classList.toggle("add-turquoise");
+  btnOpt.classList.toggle("add-turquoise");
   });
 }
 element.classList.toggle("red");

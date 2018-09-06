@@ -1,12 +1,9 @@
-<div class="container flex-parent">
+<div class="flex-parent" style="margin-left: 1em; margin-right: 1em;">
   <div class="indecision-card">
 
     <div class="top-card top-<%= @question.status %> text-center">
       <%if @question.user == current_user %>
         <%= @status_message%>
-        <%= link_to question_path(@question), method: :delete do%>
-          <i class="fa fa-trash" style="color: white;"></i>
-        <% end %>
       <%else%>
         <%= @status_heliast%> <%= @question.user.pseudo%> !
       <%end%>
@@ -111,7 +108,15 @@
   <!-- Partial : affichage de la réponse pour un mode de résolution "Mono Héliastes-->
   <% if @question.type_resolution == "Mode héliaste" %>
     <% if @question.answers.present? %>
-      <label for="flip-control" class="btn btn-add flip" style="margin-bottom: 0; width: 16em; margin-left: 12%">Réponse / Options</label>
+      <div class="flip-btn">
+        <label for="flip-control" class="btn btn-add flip" style="width: 5em;">
+          <div class="div-btnrep add-turquoise"><i class="fa fa-check"></i></div>
+          <div class="div-btnopt">
+          <i class="fa fa-th-list"></i>
+          </div>
+
+        </label>
+      </div>
       <input type="checkbox" id="flip-control">
       <div class="answer-show">
         <% if @question.type_resolution == "Mode héliaste" %>
@@ -119,7 +124,7 @@
         <% end %>
       </div>
       <div class="indecision-card hidden options-show">
-        <h4>Les options possibles</h3>
+        <h4>Les options possibles</h4>
         <%= render "options_show" %>
       </div>
     <% end %>
