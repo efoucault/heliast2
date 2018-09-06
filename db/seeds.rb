@@ -175,7 +175,7 @@ question24 = Question.create!(user: louis , description: 'Hésitation sur mon or
 question25 = Question.create!(user: eric , description: 'J\'hésite entre un espace de coworking et trouver un bureau à partager', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
 question26 = Question.create!(user: jules, description: 'Mes parents m\'offrent un séjour linguistique, j\'ai le choix entre Londres et New-York mais je n\'arrive pas à faire mon choix...', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
 question27 = Question.create!(user: louise , description: 'Besoin de reprendre le sport pour m\'assouplir et me détendre: yoga ou pilates ?', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
-question28 = Question.create!(user: lucas , description: 'Quelle nouvelle série commencer?', category: culture, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
+question28 = Question.create!(user: adam , description: 'Quel film pour un 1er rdv ?', category: culture, type_resolution: "Mode héliaste", status: 0, deadline: DateTime.now)
 question29 = Question.create!(user: eric , description: 'Pour un mariage: cravate ou noeud pap ?', category: look, type_resolution: "Mode héliaste", status:0,  deadline: DateTime.now )
 question30 = Question.create!(user: arthur , description: 'Je commence les Sopranos ou Peaky Blinders ?', category: culture, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
 question31 = Question.create!(user: louis , description: 'Frites ou légumes ?', category: food, type_resolution: "Mode héliaste", status: 0, deadline: DateTime.now )
@@ -209,8 +209,7 @@ question57 = Question.create!(user: adam , description: 'PS4 Pro ou Xbox one X ?
 question58 = Question.create!(user: manon, description: 'Que faire à la fin de l\'année ?', category: travail, type_resolution: "Mode Démocratie", status: 0, deadline: DateTime.now)
 
 #Question 59 réponse par manon lors du demo-day à la question cultur d'adam
-question59 = Question.create!(user: adam , description: 'Quel film pour une 1ère "date" ?', category: culture, type_resolution: "Mode héliaste", status: 0, deadline: DateTime.now)
-
+question59 = Question.create!(user: lucas , description: 'Quelle nouvelle série commencer?', category: culture, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
 
 
 p Question.all
@@ -300,8 +299,8 @@ option52 = Option.create!(titre: "New-York", question: question26)
 option53 = Option.create!(titre: "Yoga", question: question27)
 option54 = Option.create!(titre: "Pilates", question: question27)
 #Question 28, culture
-option55 = Option.create!(titre: "Malcom", question: question28)
-option56 = Option.create!(titre: "Friends", question: question28)
+option55 = Option.create!(titre: "Malcom", question: question59)
+option56 = Option.create!(titre: "Friends", question: question59)
 #Question 29, look
 option57 = Option.create!(titre: "Cravate", question: question29)
 option58 = Option.create!(titre: "Noeud pap", question: question29)
@@ -412,9 +411,9 @@ option117 = Option.new(titre: "Tour d'Europe à vélo", question: question58)
 option117.remote_photo_url = url_option117
 option117.save
 #Question 59, réponse de manon à la question d'adam, culture
-option118= Option.create!(titre: "Mission Impossible Fallout", question:question59)
-option119= Option.create!(titre: "My Lady", question:question59)
-option120= Option.create!(titre: "Mamma Mia", question:question59)
+option118= Option.create!(titre: "Mission Impossible Fallout", question:question28)
+option119= Option.create!(titre: "My Lady", question:question28)
+option120= Option.create!(titre: "Mamma Mia", question:question28)
 
 
 # Réponses Manon
@@ -422,7 +421,7 @@ option120= Option.create!(titre: "Mamma Mia", question:question59)
 p Option.all
 puts 'answer all'
 #Répone à la question 1, culture
-answer3 = Answer.create!(user: ines , option: option2,reponse: 'il y a tellement de bons films en ce moment!', score: 1010)
+answer3 = Answer.create!(user: ines , option: option2,reponse: 'il y a tellement de bons films en ce moment!', score: 995)
 #Réponse à la question 2, look
 answer2 = Answer.create!(user: ines , option: option4 , reponse: 'les deux te vont trop bien', score: 750)
 #Réponse à la question 3, culture
