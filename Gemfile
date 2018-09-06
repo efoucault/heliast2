@@ -23,6 +23,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'materialize-sass', '~> 1.0.0.rc2'
 gem 'time_difference'
+gem 'pg_search'
 
 
 group :development do

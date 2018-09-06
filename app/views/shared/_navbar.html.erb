@@ -8,6 +8,19 @@
   <div class="navbar-wagon-right">
 
     <% if user_signed_in? %>
+      <div class="search-form">
+        <div class="form">
+          <%= form_tag questions_path, method: :get do %>
+            <%= text_field_tag :requete,
+              params[:requete],
+              placeholder: "Recherche"
+            %>
+          <% end %>
+        </div>
+        <div class="loop">
+          <i class="fa fa-search"></i>
+        </div>
+      </div>
 
   <!-- path et classes CSS + "active" à changer pour activer la couleur du picto en fonction de la page -->
       <div class="pictos">

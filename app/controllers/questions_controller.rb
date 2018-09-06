@@ -58,6 +58,8 @@ class QuestionsController < ApplicationController
             format.js { render 'showcategory' }
         end
     end
+    elsif params[:requete].present?
+      @questions = Question.where("description ILIKE ?", "%#{params[:requete]}%")
     else
       @questions = Question.all.order(created_at: :desc)
     end
