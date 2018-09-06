@@ -404,13 +404,13 @@ option115.save
 
 #option116= Option.create!(titre: "Faire un stage chez Google", question: question58)
 url_option116 = "https://res.cloudinary.com/offbatt/image/upload/v1536220938/photogoogle.png"
-option116 = Option.new(titre: "Un stage chez Google", question: question28)
+option116 = Option.new(titre: "Un stage chez Google", question: question58)
 option116.remote_photo_url = url_option116
 option116.save
 
 #option117= Option.create!(titre: "Tour d'Europe à vélo", question: question58)
 url_option117 = "https://res.cloudinary.com/offbatt/image/upload/v1536237228/velo.jpg"
-option117 = Option.new(titre: "Tour d'Europe à vélo", question: question28)
+option117 = Option.new(titre: "Tour d'Europe à vélo", question: question58)
 option117.remote_photo_url = url_option117
 option117.save
 #Question 60 réponse de manon à la question d'adam, culture
