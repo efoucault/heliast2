@@ -32,6 +32,8 @@ Notifications = class Notifications {
       data: {authenticity_token: window._token},
       success: function() {
         return $("[data-behavior='unread-count']").text(0);
+
+        // document.getElementsByClassName("nbre-notif").style.visibility = "hidden";
       }
     });
   }
