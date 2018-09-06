@@ -185,6 +185,8 @@
 
 /* affiche les notifs qui ne sont pas encore lues */
 .unread {
-  border-left: 3px solid red;
+  border-left: 4px solid red;
+  background-color: #dcf4f4!important
+  ;
 }
 

@@ -1,5 +1,23 @@
-<h1>Historique</h1>
+<div id="notifications"></div>
 
-<div id="notifications">
+<h5 style="color: white; text-align: center; padding-top: 1em;">Mes notifications</h5>
 
+<div class="list-notifs" data-behavior="notifications" data-notifications='<%= render template: "notifications/index", formats: [:json] %>'>
+<!-- iterer de ici jusqu'a Y -->
+    <div class="line-notif row.no-gutters">
+
+      <div class="col-xs-12.no-gutters" style="text-align: left;" data-behavior="notification-items"></div>
+
+    </div>
+    <hr style="background-color: gray; height: 2px; opacity: 0.3;">
+  <hr style="width: 0%;">
+  <div class="fin-notif">
+    <%= image_tag("heliast_ultime.png", size:"50x50")%>
+  </div>
 </div>
+  <div>
+
+  </div>
+</div>
+
+<div class="more-bottom"></div>
