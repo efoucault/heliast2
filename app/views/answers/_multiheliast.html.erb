@@ -2,17 +2,22 @@
   <div class="inner">
     <div class="histo">
       <% total_answers = @question.answers.count %>
-      <h5><%= "Réponses apportées : #{total_answers}" %></h5>
+      <h5 class="text-center"><strong style="color: #E5406E;"><%= total_answers %></strong> héliastes ont voté</h5>
       <% @question.options.each do |option| %>
+      <div class="option-tovote">
+      <% if option.photo.present? %>
+
+        <div class="picture-vote">
+          <%= cl_image_tag option.photo, class: "mini-picture" %></div>
+          <div class="info-option-tovote">
         <% if option.titre.present? %>
           <div class="four histo-rate">
             <div class="bar-block">
-              <div class="row">
-                <div class="col-xs-2"><%= option.titre %></div>
-                <% if option.photo.present? %>
-                  <div class="col-xs-2"><%= cl_image_tag option.photo, class: "mini-picture" %></div>
+              <div class="">
+                <div class=""><%= option.titre %></div>
+
                 <% end %>
-                <div class="col-xs-8">
+                <div class="">
                   <div id="bar" class= "option1" style="width: <%= option.answers.count.fdiv(total_answers) * 100 %>%">
                     <%= (option.answers.count.fdiv(total_answers) *100).round(0) %>%
                   </div>
@@ -21,8 +26,11 @@
             </div>
           </div>
         <% end %>
+        </div>
+        </div>
       <% end %>
     </div>
+
     <h5>Commentaires :</h5>
   </div>
   <div class="commentaires">
