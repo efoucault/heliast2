@@ -31,9 +31,8 @@ Notifications = class Notifications {
       method: "POST",
       data: {authenticity_token: window._token},
       success: function() {
+        // document.getElementsByClassName("nbre-notif").classList.add("hidden");
         return $("[data-behavior='unread-count']").text(0);
-
-        // document.getElementsByClassName("nbre-notif").style.visibility = "hidden";
       }
     });
   }
@@ -54,9 +53,21 @@ Notifications = class Notifications {
       }
     });
 
+    if (unread_count === 0 ) {
+        $(".nbre-notif").addClass("hidden")
+        // document.getElementsByClassName("nbre-notif").classList.add("hidden");
+        }else {
+          $(".nbre-notif").removeClass("hidden")
+          // document.getElementsByClassName("nbre-notif").classList.remove("hidden");
+        }
+
     $("[data-behavior='unread-count']").text(unread_count);
     return $("[data-behavior='notification-items']").html(items);
   }
+
+  // notifZero(data) {
+  // document.getElementsByClassName("nbre-notif").classList.add("hidden");
+  // });
 
 };
 
