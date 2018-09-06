@@ -17,7 +17,12 @@
         <% end %>
       <% end %>
       <span><p class="categorie"><%= @question.category.name.upcase %></p></span>
-      <h4 style="padding: 0.5em;"><%= @question.description %> </h4>
+      <h4 style="padding: 0.5em;">
+        <%= link_to question_path(@question), class: 'no-link' do %>
+        <%= @question.description %>
+        <%end%>
+      </h4>
+
       <%if @question.user == current_user && @question.answers.present? == false %>
         <p style="color: gray; margin-bottom: 2em; ">Voici tes hésitations :</p>
       <%elsif @question.user != current_user %>
