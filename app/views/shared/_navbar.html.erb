@@ -1,4 +1,5 @@
 <div class="navbar-wagon">
+
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.svg", width:110 %>
@@ -22,23 +23,22 @@
         </div>
       </div>
 
-  <!-- path et classes CSS + "active" à changer pour activer la couleur du picto en fonction de la page -->
-      <div class="pictos">
+  <!-- bloc a activer si on veut faire un un dropdown menu avec les notifications depuis la navbar (en haut à droite avec alarme et count de notifs) -->
+
+    <!-- 2eme bloc a activer si on veut un menu de pictos rond en navbar -->
+
+      <!-- <div class="pictos">
          <ul>
           <li class="nav-item btn-group" data-behavior="notifications" data-notifications='<%= render template: "notifications/index", formats: [:json] %>'>
                <a class="dropdown-toggle nav-link" type="button" data-behavior="notifications-link" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  <%= fa_icon "bell" %> <span data-behavior="unread-count"></span>
                </a>
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" data-behavior="notification-items">
-
-                 <!-- <a class="dropdown-item" href="#">Action</a>
-                 <a class="dropdown-item" href="#">Another action</a>
-                 <a class="dropdown-item" href="#">Something else here</a> -->
-
                </div>
              </li>
           </ul>
-      </div>
+      </div> -->
+
            <!--<li class="picto-add"><%= link_to "", new_question_path, :class => current_class?(new_question_path)  %></li> -->
            <!-- <li class="picto-questions"><%= link_to "", root_path, :class => current_class?(root_path) %></li>
            <li class="picto-classement"><%= link_to "", classement_path, :class => current_class?(classement_path)  %></li> -->

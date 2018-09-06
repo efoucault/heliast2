@@ -72,6 +72,19 @@ class QuestionsController < ApplicationController
     time_diff = TimeDifference.between(@question.created_at, DateTime.now).in_minutes
     scoring = 70 - time_diff.to_i
     @score = (scoring > 10) ? scoring : 10
+
+    clear_notifications
+  end
+
+  def clear_notifications
+    # notifications current user received and hasn't read yet
+    unread_notifications = Notification.unread.where(recipient: current_user)
+
+    # mark as read the ones he received on his/her questions
+    unread_notifications.where(notifiable: @question).update_all(read_at: Time.zone.now)
+
+    # mark as read the ones he received on his/her answers
+    unread_notifications.where(notifiable: @question.answers).update_all(read_at: Time.zone.now)
   end
 
   def new
