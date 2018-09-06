@@ -27,7 +27,7 @@
                   <%= @question.errors.messages %><br>
                 <% end %>
                 <p>Décris ton indécision*</p>
-                <%= f.input :description, label: false, placeholder: "Exemple : Que porter aujourd'hui ?", :input_html => { class: 'text-area', :rows => 4 } %>
+                <%= f.input :description, label: false, placeholder: "Exemple : Que porter aujourd'hui ?", :input_html => { class: 'text-area', :rows => 2 } %>
 
               </div>
                 <div class="category-choices">
@@ -45,7 +45,7 @@
               <%= f.input :category_id, as: :hidden, input_html: {:value => ""}%>
               </div>
             </div>
-          <div class="text-center" style="margin-top: 1.5em; margin-bottom: 2.5em;">
+          <div class="text-center" style="margin-top: 1em; margin-bottom: 2.5em;">
             <div class='btn btn-add btn-partone' id="bouton-partone">
               Suivant
             </div>
@@ -60,7 +60,7 @@
 
 
           <div class="part-two hidden">
-            <p class="padding" style="margin-top: 2em">Liste tes options possibles*</p>
+            <p class="padding" style="margin-top: 0em">Liste tes options possibles*</p>
 
             <div class="form-group">
                <div class="fields">
@@ -74,7 +74,7 @@
                  <p id="add-option" class="hidden"><%= link_to_add_fields "Add Option", f, :options %></p>
                </div>
             </div>
-            <div class="text-center">
+            <div class="text-center" style="margin-top: 0.5em;">
               <div class='btn btn-add btn-parttwo' id='bouton-parttwo'>
                 Suivant
               </div>
@@ -83,10 +83,9 @@
 
           </div>
 
-          <br>
 
           <div class="part-three hidden">
-            <p class="padding" style="margin-top: -2em;">Choisis le mode de résolution*</p>
+            <p class="padding" style="margin-top: -1em;">Choisis le mode de résolution*</p>
 
 
 
@@ -123,19 +122,18 @@
 
             <%= f.input :type_resolution, as: :hidden, input_html: { class: 'resolution' }%>
 
-              <div class="envoie">
+              <div class="envoie" style="margin-top: -1em;">
               <%= f.button :button, "J'envoie".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Envoi..."}, class: "btn btn-add" %>
             </div>
           <% end %>
-          <div class="more-bottom"></div>
+
 
       </div>
-
+          <div class="more-bottom"></div>
           </div>
 
         </div>
-         <br>
-        <br>
+
 
 
 
