@@ -116,6 +116,27 @@
 
 }
 
+
+.swal-footer {
+  text-align: center;
+}
+.swal-button {
+  border-radius: 5em;
+  background-color: #24d6d6;
+}
+.swal-button--confirm {
+  border-radius: 5em;
+  background-color: #24d6d6 !important;
+  &:hover {
+  border-radius: 5em;
+  background-color: #24d6d6;
+  }
+  &:active {
+  border-radius: 5em;
+  background-color: #24d6d6;
+  }
+}
+
 .no-link{
     color: rgba(0, 0, 0, 0.87) !important;
 
@@ -128,3 +149,4 @@
     color: rgba(0, 0, 0, 0.87);
   }
 }
+
