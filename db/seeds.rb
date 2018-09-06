@@ -155,7 +155,7 @@ question4 = Question.create!(user: manon , description: 'J\'hésite entre un Mac
 question5 = Question.create!(user: manon , description: 'Je lui SMS ou je l\'appelle pour l\'inviter ', category: love, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
 question6 = Question.create!(user: manon , description: 'J\'hésite entre la spé Maths ou Eco', category: travail, type_resolution: "Mode héliaste", status:2, deadline: DateTime.now)
 question7 = Question.create!(user: manon , description: 'Robe rouge ou verte', category: look, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now )
-question8 = Question.create!(user: manon , description: 'Ce jean ou ce jean?', category: look, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
+question8 = Question.create!(user: manon , description: 'Lequel de ces jeans choisir?', category: look, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
 question9 = Question.create!(user: eva , description: 'Quelle nouvelle série commencer?', category: culture, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
 question10 = Question.create!(user: ines , description: 'Chemise blanche ou rose', category: look, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now  )
 question11 = Question.create!(user: lou , description: 'Où déjeuner?', category: food, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
@@ -192,7 +192,7 @@ question41 = Question.create!(user: ophelie , description: 'J\'hésite entre un 
 question42 = Question.create!(user: louis , description: 'Je lui SMS ou je l\'appelle pour l\'inviter ?', category: love, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
 question43 = Question.create!(user: jules , description: 'J\'hésite entre la spé Maths ou Eco', category: travail, type_resolution: "Mode héliaste", status:2, deadline: DateTime.now)
 question44 = Question.create!(user: gabriel , description: 'Robe rouge ou verte', category: look, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now )
-question45 = Question.create!(user: leo , description: 'Ce jean ou ce jean ?', category: look, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
+question45 = Question.create!(user: leo , description: 'Lequel de ces jeans choisir?', category: look, type_resolution: "Mode héliaste", status: 2,  deadline: DateTime.now  )
 question46 = Question.create!(user: arthur , description: 'Quelle nouvelle série commencer?', category: culture, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now )
 question47 = Question.create!(user: louise , description: 'Chemise blanche ou rose', category: look, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
 question48 = Question.create!(user: lea , description: 'Où déjeuner', category: food, type_resolution: "Mode héliaste", status: 1,  deadline: DateTime.now  )
@@ -394,15 +394,15 @@ option114= Option.create!(titre: "Xbox One X", question: question57)
 #Questions de manon our le demo-day
 #Question 58, culture, mode démocratie, pour le demo day
 #option115= Option.create!(titre: "Le Wagon", question: question58)
-
-url_option115 = "https://res.cloudinary.com/offbatt/image/upload/v1536152977/LeWagon.jpg"
+#nouvelles photos
+url_option115 = "https://res.cloudinary.com/offbatt/image/upload/v1536220938/photolewagon.png"
 option115 = Option.new(titre: "Le Wagon", question: question58)
 option115.remote_photo_url = url_option115
 option115.save
 
 #option116= Option.create!(titre: "Faire un stage chez Google", question: question58)
-url_option116 = "https://res.cloudinary.com/offbatt/image/upload/v1536152977/Google_logo-300x300.jpg"
-option116 = Option.new(titre: "Faire un stage chez Google", question: question58)
+url_option116 = "https://res.cloudinary.com/offbatt/image/upload/v1536220938/photogoogle.png"
+option116 = Option.new(titre: "Un stage chez Google", question: question58)
 option116.remote_photo_url = url_option116
 option116.save
 
