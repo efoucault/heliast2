@@ -3,20 +3,27 @@
     <div class="histo">
       <% total_answers = @question.answers.count %>
       <h5 class="text-center"><strong style="color: #E5406E;"><%= total_answers %></strong> héliastes ont voté</h5>
+
       <% @question.options.each do |option| %>
+
+      <% if option.titre.present? || option.photo.present? %>
       <div class="option-tovote">
-      <% if option.photo.present? %>
+        <% if option.photo.present? %>
+          <div class="picture-vote">
+            <%= cl_image_tag option.photo, class: "mini-picture" %>
+          </div>
 
-        <div class="picture-vote">
-          <%= cl_image_tag option.photo, class: "mini-picture" %></div>
+        <% end %>
+
           <div class="info-option-tovote">
-        <% if option.titre.present? %>
-          <div class="four histo-rate">
-            <div class="bar-block">
+            <% if option.titre.present? %>
               <div class="">
-                <div class=""><%= option.titre %></div>
+                <%= option.titre %>
+              </div>
+            <% end %>
 
-                <% end %>
+            <div class="four histo-rate">
+              <div class="bar-block">
                 <div class="">
                   <div id="bar" class= "option1" style="width: <%= option.answers.count.fdiv(total_answers) * 100 %>%">
                     <%= (option.answers.count.fdiv(total_answers) *100).round(0) %>%
@@ -24,15 +31,15 @@
                 </div>
               </div>
             </div>
+
           </div>
-        <% end %>
-        </div>
-        </div>
+      </div>
       <% end %>
+      <%end%>
     </div>
 
     <h5>Commentaires :</h5>
-  </div>
+</div>
   <div class="commentaires">
     <%  @question.answers.each do |answer| %>
       <div class="commentaire">
@@ -52,3 +59,4 @@
     <% end %>
   </div>
 </div>
+
