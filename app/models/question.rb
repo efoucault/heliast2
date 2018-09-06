@@ -15,4 +15,10 @@ class Question < ApplicationRecord
   # so we need some association on the question/answers thread to get all the users
   has_many :users, through: :answers
 
+  # include PgSearch
+  #   pg_search_scope :search_by_description,
+  #     against: [ :description ],
+  #     using: {
+  #       tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  #   }
 end

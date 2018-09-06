@@ -190,3 +190,25 @@
   ;
 }
 
+.search-form {
+  display: flex;
+  background-color: white;
+  margin-left: 3em;
+  height: 1.5em;
+  font-size: 1em;
+  border-radius: 0.5em;
+  padding: 0.2em 0em;
+  input {
+    border-bottom: none !important;
+    margin-top: 0;
+    padding-left: 1em !important;
+    padding-top: 0;
+    height: 0.8em !important;
+    color: rgb(50, 50, 50) !important;
+  }
+  .loop {
+    margin-right: 0.5em;
+    color: rgb(200, 200, 200) !important;
+    font-weight: 400;
+  }
+}
