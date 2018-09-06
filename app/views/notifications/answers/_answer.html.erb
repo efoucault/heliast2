@@ -1,10 +1,10 @@
 <!-- Bloc a activer si on veut afficher la liste de notifs dans la page historique  -->
 
 <div class="notif-back <%= "unread" if !notification.read_at? %>">
-  <div class="line-notif row.no-gutters">
+  <div class="line-notif row">
 
         <!-- colone avatar -->
-        <div class="col-xs-3.no-gutters" style="margin-left: 0; text-align: left; width: 5em;">
+        <div class="col-xs-3" style="margin-left: 0; text-align: left;">
           <% if notification.actor.photo.present? %>
               <%= cl_image_tag notification.actor.photo, class: "avatar-notif-bordered" %>
           <% else %>
@@ -12,25 +12,25 @@
           <%end%>
 
           <!-- petit picto representant la notification de réponse -->
-          <%= link_to question_path(notification.notifiable.option.question) do %>
+          <!-- <%= link_to question_path(notification.notifiable.option.question) do %>
              <%= image_tag "reponse.png", class: "picto-notif-reponse" %>
-          <% end %>
+          <% end %> -->
 
         </div>
 
         <!-- colone message notification -->
-        <div class="col-xs-6.no-gutters" style="text-align: left; width: 14em;">
+        <div class="col-xs-9" style="text-align: left;">
           <%= link_to question_path(notification.notifiable.option.question) do %>
             <%= notification.actor.pseudo %>
-            <%= notification.action %> à ton indécision
+            <%= notification.action %> à ton indécision "<%= notification.notifiable.option.question.description.truncate(40, omission:"...") %>"
           <% end %>
           <p style="text-align: left!important;"><span class="time">Il y'a 1h</span></p>
         </div>
 
         <!-- colone icone show more -->
-        <div class="col-xs-3.no-gutters" style="float: right; text-align: center;">
+       <!--  <div class="col-xs-2" style="float: right; text-align: center;">
             <i class="fa fa-ellipsis-h" style="color: #9a888e;"></i>
-        </div>
+        </div> -->
   </div>
 </div>
 
