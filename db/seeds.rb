@@ -394,7 +394,7 @@ option114= Option.create!(titre: "Xbox One X", question: question57)
 #Questions de manon our le demo-day
 #Question 58, culture, mode démocratie, pour le demo day
 #option115= Option.create!(titre: "Le Wagon", question: question58)
-
+#nouvelles photos
 url_option115 = "https://res.cloudinary.com/offbatt/image/upload/v1536220938/photolewagon.png"
 option115 = Option.new(titre: "Le Wagon", question: question58)
 option115.remote_photo_url = url_option115
