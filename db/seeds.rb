@@ -204,12 +204,15 @@ question53 = Question.create!(user: julia , description: 'Frites ou légumes ?',
 question54 = Question.create!(user: lucie , description: 'Pizza ou burger ?', category: food, type_resolution: "Mode héliaste", status: 1, deadline: DateTime.now )
 question55 = Question.create!(user: elina , description: 'Lire ou se mettre un film ?', category: culture, type_resolution: "Mode héliaste", status: 1, deadline: DateTime.now )
 question56 = Question.create!(user: aaron , description: 'Dormir un peu plus ou avoir plus de temps pour se préparer ?', category: travail, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
-question57 = Question.create!(user: adam , description: 'PS4 Pro ou Xbox one X ?', category: achats, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now)
+question57 = Question.create!(user: adam , description: 'PS4 Pro ou Xbox one X ?', category: achats, type_resolution:"Mode héliaste", status: 1, deadline: DateTime.now )
 #Question 58 mode démocratie pour le démo-day
-question58 = Question.create!(user: manon, description: 'Que faire à la fin de l\'année ?', category: travail, type_resolution: "Mode Démocratie", status: 0, deadline: DateTime.now)
+question58 = Question.create!(user: manon, description: 'Que faire à la fin de l\'année ?', category: travail, type_resolution: "Mode Démocratie", status: 0, deadline: DateTime.now )
 
 #Question 59 réponse par manon lors du demo-day à la question cultur d'adam
-question59 = Question.create!(user: lucas , description: 'Quelle nouvelle série commencer?', category: culture, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
+question59 = Question.create!(user: lucas , description: 'Quelle nouvelle série commencer ?', category: culture, type_resolution: "Mode héliaste", status: 0,  deadline: DateTime.now )
+
+#Question60
+question60 = Question.create!(user: manon , description: 'Que faire ce soir ?', category: travail, type_resolution: "Mode Démocratie", status: 0, deadline: DateTime.now )
 
 
 p Question.all
@@ -401,19 +404,23 @@ option115.save
 
 #option116= Option.create!(titre: "Faire un stage chez Google", question: question58)
 url_option116 = "https://res.cloudinary.com/offbatt/image/upload/v1536220938/photogoogle.png"
-option116 = Option.new(titre: "Un stage chez Google", question: question58)
+option116 = Option.new(titre: "Un stage chez Google", question: question28)
 option116.remote_photo_url = url_option116
 option116.save
 
 #option117= Option.create!(titre: "Tour d'Europe à vélo", question: question58)
 url_option117 = "https://res.cloudinary.com/offbatt/image/upload/v1536237228/velo.jpg"
-option117 = Option.new(titre: "Tour d'Europe à vélo", question: question58)
+option117 = Option.new(titre: "Tour d'Europe à vélo", question: question28)
 option117.remote_photo_url = url_option117
 option117.save
-#Question 59, réponse de manon à la question d'adam, culture
+#Question 60 réponse de manon à la question d'adam, culture
 option118= Option.create!(titre: "Mission Impossible Fallout", question:question28)
 option119= Option.create!(titre: "My Lady", question:question28)
 option120= Option.create!(titre: "Mamma Mia", question:question28)
+
+#Question 60, travail, manon
+option121= Option.create!(titre: "Continuer à coder sur Héliast", question:question60)
+option121= Option.create!(titre: "Féter la fin du batch", question:question60)
 
 
 # Réponses Manon
