@@ -413,7 +413,7 @@ url_option117 = "https://res.cloudinary.com/offbatt/image/upload/v1536237228/vel
 option117 = Option.new(titre: "Tour d'Europe à vélo", question: question58)
 option117.remote_photo_url = url_option117
 option117.save
-#Question 60 réponse de manon à la question d'adam, culture
+#Question 59 réponse de manon à la question d'adam, culture
 option118= Option.create!(titre: "Mission Impossible Fallout", question:question28)
 option119= Option.create!(titre: "My Lady", question:question28)
 option120= Option.create!(titre: "Mamma Mia", question:question28)
@@ -425,7 +425,7 @@ option121.remote_photo_url = url_option121
 option121.save
 
 url_option122 = "https://res.cloudinary.com/offbatt/image/upload/v1536315694/fete.jpg"
-option122 = Option.new(titre: "Féter la fin du batch", question: question60)
+option122 = Option.new(titre: "Fêter le démo-day", question: question60)
 option122.remote_photo_url = url_option122
 option122.save
 
@@ -541,3 +541,4 @@ answer58 = Answer.create!(user: leo, option: option115, reponse:'Super aventure'
 answer58 = Answer.create!(user: ophelie, option: option117, reponse:'Le tour d\'Europe à vélo, aventure inoubliable', score:275)
 answer58 = Answer.create!(user: elina, option: option117, reponse:'Je préfère le sport', score:175)
 
+3
