@@ -18,4 +18,7 @@ class PagesController < ApplicationController
   def historique
     @notifications = Notification.where(recipient: current_user).recent
   end
+
+  def apropos
+  end
 end
