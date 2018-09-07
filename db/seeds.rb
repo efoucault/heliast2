@@ -419,7 +419,17 @@ option119= Option.create!(titre: "My Lady", question:question28)
 option120= Option.create!(titre: "Mamma Mia", question:question28)
 
 #Question 60, travail, manon
-option121= Option.create!(titre: "Continuer à coder sur Héliast", question:question60)
+url_option121 = "https://res.cloudinary.com/offbatt/image/upload/v1536315712/work.jpg"
+option121 = Option.new(titre: "Continuer à coder sur Héliast", question: question60)
+option121.remote_photo_url = url_option121
+option121.save
+
+url_option122 = "https://res.cloudinary.com/offbatt/image/upload/v1536315694/fete.jpg"
+option122 = Option.new(titre: "Continuer à coder sur Héliast", question: question60)
+option122.remote_photo_url = url_option122
+option122.save
+
+
 option121= Option.create!(titre: "Féter la fin du batch", question:question60)
 
 
@@ -444,7 +454,7 @@ answer7 = Answer.create!(user: leo , option: option13 , reponse: '', score: 720)
 #Réponse à la question 8, look
 answer8 = Answer.create!(user: lucie , option: option15 , reponse: '', score: 840)
 #Réponse à la question 9, culture
-answer9 = Answer.create!(user: manon , option: option17 , reponse: '', score: 990)
+answer9 = Answer.create!(user: manon , option: option17 , reponse: '', score: 992)
 #Réponse à la question 10
 #Réponse à la question 11, food
 answer11 = Answer.create!(user: aaron , option: option21 ,reponse: '', score: 780)
@@ -530,7 +540,4 @@ answer58 = Answer.create!(user: eric, option: option116, reponse:'Google pour un
 answer58 = Answer.create!(user: leo, option: option115, reponse:'Super aventure', score:375)
 answer58 = Answer.create!(user: ophelie, option: option117, reponse:'Le tour d\'Europe à vélo, aventure inoubliable', score:275)
 answer58 = Answer.create!(user: elina, option: option117, reponse:'Je préfère le sport', score:175)
-
-p Answer.all
-
 
