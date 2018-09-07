@@ -171,11 +171,13 @@ if (allTypes !== null) {
       const attente = document.querySelector(".attente");
       const titreAttente = document.querySelector(".ma-reponse");
       console.log(mode);
-      // const modeUn = getElementById("mode-un");
-      // const modeDeux = getElementById("mode-deux");
+      const modeUn = document.querySelector(".mode-un");
+      console.log(modeUn);
+      const modeDeux = document.querySelector(".mode-deux");
+      console.log(modeDeux);
       if (mode === "Mode Démocratie") {
-        // modeUn.classList.remove("mode-turquoise");
-        // modeDeux.classList.add("mode-turquoise");
+        modeUn.classList.remove("mode-turquoise");
+        modeDeux.classList.add("mode-turquoise");
         attente.classList.remove("hidden");
         titreAttente.classList.remove("hidden");
 
@@ -183,8 +185,8 @@ if (allTypes !== null) {
       else {
         attente.classList.add("hidden");
         titreAttente.classList.add("hidden");
-        // modeDeux.classList.remove("mode-turquoise");
-        // modeUn.classList.add("mode-turquoise");
+        modeDeux.classList.remove("mode-turquoise");
+        modeUn.classList.add("mode-turquoise");
       }
     });
   });
@@ -373,4 +375,4 @@ if (flip) { // protect other pages
   btnOpt.classList.toggle("add-turquoise");
   });
 }
-element.classList.toggle("red");
+// element.classList.toggle("red");
