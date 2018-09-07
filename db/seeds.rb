@@ -425,12 +425,12 @@ option121.remote_photo_url = url_option121
 option121.save
 
 url_option122 = "https://res.cloudinary.com/offbatt/image/upload/v1536315694/fete.jpg"
-option122 = Option.new(titre: "Continuer à coder sur Héliast", question: question60)
+option122 = Option.new(titre: "Féter la fin du batch", question: question60)
 option122.remote_photo_url = url_option122
 option122.save
 
 
-option121= Option.create!(titre: "Féter la fin du batch", question:question60)
+
 
 
 # Réponses Manon
@@ -521,7 +521,7 @@ answer50 = Answer.create!(user: louise , option: option97, reponse: 'que des bon
 answer51 = Answer.create!(user: elina, option: option99, reponse: 'depuis que j\'en fais je n\'ai plus de stress et je dors mieux!)', score:275)
 #Réponse à la question 52, food
 #Réponse à la question 53, food
-#Réponse à la question 54, food
+#Réponse à la question 54, foquestions/4511od
 #Réponse à la question 55, culture
 #Réponse à la question 56, travail
 #Réponse à la question 57, achats
