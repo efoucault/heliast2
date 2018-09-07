@@ -1,0 +1,67 @@
+<div class="banner" style="background-image: linear-gradient(-180deg, rgba(227, 66, 104,0.5) 0%, rgba(227, 66, 104,0.5) 90%), url('https://cdn.welcometothejungle.co/uploads/website_organization/cover_image/wttj_fr/large_le-wagon.jpg');">
+  <div class="banner-content" style="margin-top:7em;">
+    <p>Projet codé avec amour<br/>au Wagon, Paris.
+  </p>
+  <a href="#contact" class="btn btn-add" style="margin-top: 0;">Contacte-nous !</a>
+
+  </div>
+</div>
+
+<div class="heliast-info">
+  <h5 class="text-center">Pourquoi Heliast ?</h5>
+  <br>
+   <p>Dans la Grèce Antique, l’Héliée était le tribunal populaire. Il était chargé de prendre les décisions judiciaires. Les membres de l’Héliée, les héliastes, étaient désignés par tirage au sort.</p>
+</div>
+
+<div class="bg-light">
+  <div class="container">
+    <h5 class="text-center" id="contact">L'équipe <%= image_tag("love-team.png", size:"30x30")%></h5>
+    <br/>
+    <div class="feature">
+        <%= image_tag('ophelie.png', class: "img-team") %>
+      <div class="info-feature">
+        <h5>Ophélie Battaglia</h5>
+        <p>Paris</p>
+        <p><a href="https://github.com/off-batt"><i class="fa fa-github" style="font-size: 18px;"></i></a></p>
+      </div>
+    </div>
+
+    <div class="feature">
+
+       <%= image_tag("ahmed.jpeg", class: "img-team") %>
+
+      <div class="info-feature">
+        <h5>Ahmed Menouni</h5>
+        <p>Paris</p>
+         <p><a href="https://github.com/demtzu"><i class="fa fa-github" style="font-size: 18px;"></i></a></p>
+      </div>
+    </div>
+
+    <div class="feature">
+
+       <%= image_tag("eric.jpeg", class: "img-team")%>
+
+      <div class="info-feature">
+        <h5>Eric Foucault</h5>
+        <p>Paris</p>
+         <p><a href="https://github.com/efoucault"><i class="fa fa-github" style="font-size: 18px;"></i></a></p>
+      </div>
+    </div>
+
+    <div class="feature">
+
+       <%= image_tag("loig.jpeg", class: "img-team")%>
+
+      <div class="info-feature">
+        <h5>Loig Kerebel</h5>
+        <p>Paris</p>
+         <p><a href="https://github.com/letomeet"><i class="fa fa-github" style="font-size: 18px;"></i></a></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="what-they-think">
+  <%= render "devise/sessions/quotes" %>
+</div>
