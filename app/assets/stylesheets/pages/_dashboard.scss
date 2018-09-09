@@ -88,11 +88,13 @@
 
 // Catégories en forme de cards dans marketplace
 
+
 .categories-cards {
   display:flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 20px 0;
+  width: 100%;
 }
 
 
