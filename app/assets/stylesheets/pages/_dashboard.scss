@@ -2,6 +2,7 @@
   position: relative;
   margin-bottom: 1em;
 }
+
 .banner-dashboard {
   color: white;
   text-align: center;
@@ -9,7 +10,7 @@
   background-size: cover !important;
   text-align: left;
   vertical-align: bottom;
-}
+  }
 
 
 .info-dashboard {
@@ -93,6 +94,7 @@
   flex-wrap: wrap;
   margin: 20px 0;
 }
+
 
 .category-card {
   height: 170px !important;
@@ -294,4 +296,16 @@
 
 .fin-show {
   text-align: center;
+}
+
+.questions {
+  width: 80%;
+  padding-left: 20%;
+}
+
+@media(max-width: 720px) {
+  .questions {
+    width: 100%;
+    padding-left: 0%;
+  }
 }
