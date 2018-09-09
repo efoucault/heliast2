@@ -1,0 +1,20 @@
+<div class="wrapper-login">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-md-offset-2">
+        <div class="sign">
+          <%= simple_form_for @user do |f| %>
+            <div class="input-field">
+              <%= f.input :pseudo, required: true %>
+              <%= f.input :photo, required: true %>
+              <%= f.input :photo_cache, as: :hidden %><br>
+            </div>
+            <div class="form-actions">
+              <%= f.submit "Mettre à jour", class: "btn btn-large waves-effect waves-light btn btn-add no-margin-top" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
