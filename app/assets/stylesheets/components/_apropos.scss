@@ -1,0 +1,22 @@
+.img-team {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  border: 1px solid white;
+  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.14);
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.heliast-info {
+  background-color: white;
+  width: 100%;
+  padding: 15px;
+  color: gray;
+  h5 {
+    color: #b1324b;
+  }
+  p {
+    opacity: 0.7;
+  }
+}
