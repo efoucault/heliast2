@@ -6,6 +6,7 @@
           <%= simple_form_for @user do |f| %>
             <div class="input-field">
               <%= f.input :pseudo, required: true %>
+              <%= link_to "Changer mon mot de passe", edit_user_registration_path %>
               <%= f.input :photo, required: true %>
               <%= f.input :photo_cache, as: :hidden %><br>
             </div>
