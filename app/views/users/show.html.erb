@@ -18,13 +18,29 @@
       <%= link_to user_path(current_user) do %>
         <% if current_user.photo.present? %>
           <%= cl_image_tag @user.photo, class: 'avatar-bordered' %>
+            <!-- User online -->
+            <% if @user.current_sign_in_at? %>
+              <!-- pastille verte -->
+              <div class="online"></div>
+            <% else %>
+              <!-- pastille rouge -->
+              <div class="offline"></div>
+            <%end%>
         <% else %>
           <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: "avatar-bordered") %>
+          <!-- User online -->
+            <% if @user.current_sign_in_at? %>
+              <!-- pastille verte -->
+              <div class="online"></div>
+            <% else %>
+              <!-- pastille rouge -->
+              <div class="offline"></div>
+            <%end%>
         <%end%>
       <%end%>
     </div>
     <div class="info-user">
-      <h4>Hey <%= current_user.pseudo %>, indécis(e) ?</h4>
+      <h4>Hey <%= @user.pseudo %>, indécis(e) ?</h4>
       <p>Tu as <%= @user.questions.size%> indécisions<br/>
       dont <strong style='color: black;'><%= @user.questions.pending.size%></strong> en attente.</p>
       <div class="tip-score"'>
