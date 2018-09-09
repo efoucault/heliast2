@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get :home, to: "pages#home"
 
   get :historique, to: "pages#historique"
+  get :apropos, to: "pages#apropos"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

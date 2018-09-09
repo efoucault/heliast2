@@ -9,8 +9,24 @@
         <div class="col-xs-3" style="margin-left: 0; text-align: left;">
           <% if notification.actor.photo.present? %>
               <%= cl_image_tag notification.actor.photo, class: 'avatar-notif-bordered' %>
+              <!-- User online -->
+              <% if notification.actor.current_sign_in_at? %>
+              <!-- pastille verte -->
+              <div class="online-notif"></div>
+              <% else %>
+              <!-- pastille rouge -->
+              <div class="offline-notif"></div>
+            <%end%>
           <% else %>
               <%= image_tag('https://www.limestone.edu/sites/default/files/user.png', class: 'avatar-notif-bordered') %>
+                <!-- User online -->
+                <% if notification.actor.current_sign_in_at? %>
+                <!-- pastille verte -->
+                <div class="online-notif"></div>
+                <% else %>
+                <!-- pastille rouge -->
+                <div class="offline-notif"></div>
+              <%end%>
           <%end%>
 
           <!-- petit picto representant la notification de réponse -->
